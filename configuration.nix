@@ -33,6 +33,8 @@ in {
 			btop
 			fd
 			fzf
+			jetbrains.clion
+			jetbrains.idea
 			jetbrains.webstorm
 			keepassxc
 			mpdas
@@ -96,8 +98,6 @@ in {
 		};
 
 		home.sessionVariables = {
-  			ELECTRON_FORCE_IS_PACKAGED = "1";
-
 			XDG_DATA_DIRS = "$HOME/.nix-profile/share:/run/current-system/sw/share:/nix/var/nix/profiles/default/share:$XDG_DATA_DIRS";
 		};
 
@@ -117,11 +117,14 @@ in {
 			twemoji-color-font
 		];
 
-		fontconfig.defaultFonts = {
-			emoji = [
-				"Twitter Color Emoji"
-				"Noto Color Emoji"
-			];
+		fontconfig = {
+			defaultFonts = {
+				sansSerif = [ "Noto Sans" "Noto Sans CJK JP" ];
+      			serif = [ "Noto Serif" "Noto Serif CJK JP" ];
+				emoji = [ "Noto Color Emoji" "Twitter Color Emoji" ];
+			};
+
+			useEmbeddedBitmaps = true;
 		};
 
 	};
