@@ -3,6 +3,7 @@
 let
 	username = "ashley";
 	tree = inputs.import-tree;
+	hm = config.home-manager.users.${username};
 in {
 	imports = [
     	./hardware-configuration.nix
@@ -18,6 +19,12 @@ in {
 
 	home-manager.extraSpecialArgs = { inherit inputs; };
 	home-manager.users.${username} = { pkgs, ... }: {
+		itsyunaya-nix = {
+			# currently unused
+			compositor = "hyprland";
+			lock-app = "swaylock";
+		};
+
 		/*
 			to avoid clutter in the main file all program specific configuration is
 			performed in respective .nix module files.
@@ -220,7 +227,11 @@ in {
     	Defaults env_reset,pwfeedback
   	'';
 
-  	security.pam.services.swaylock = { };
+	# needed so the screen lockers can actually validate my password
+	# modular setup depending on which lock is in use
+  	security.pam.services =
+        lib.optionalAttrs hm.programs.swaylock.enable { swaylock = { }; }
+        // lib.optionalAttrs hm.programs.hyprlock.enable { hyprlock = { }; };
 
 	services.xserver.videoDrivers = ["nvidia"];
 	hardware.graphics = {
