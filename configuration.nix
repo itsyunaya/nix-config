@@ -220,6 +220,8 @@ in {
     	Defaults env_reset,pwfeedback
   	'';
 
+  	security.pam.services.swaylock = { };
+
 	services.xserver.videoDrivers = ["nvidia"];
 	hardware.graphics = {
 		enable = true;
