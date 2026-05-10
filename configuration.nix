@@ -51,6 +51,7 @@ in {
 			qbittorrent
 			rmpc
 			ripgrep
+			(pkgs.callPackage ./packages/spotiflac/default.nix { })
 			steam
 			telegram-desktop
 			vesktop
