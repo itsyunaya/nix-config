@@ -1,8 +1,6 @@
 { theme, config, lib, ... }:
 
-let
-	src = "${toString ./.}/../../../assets/wallpapers/clouds.jpg";
-in {
+{
 	config = lib.mkIf (config.itsyunaya-nix.lock-app == "hyprlock") {
 		programs.hyprlock = {
 			enable = true;
@@ -11,7 +9,7 @@ in {
 			settings = {
 				background = {
 					monitor = "";
-					path = "${src}";
+					path = "${theme.wallpaper}";
 
 					blur_size = 5;
 					blur_passes = 1;

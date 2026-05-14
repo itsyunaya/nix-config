@@ -1,4 +1,4 @@
-{ theme, inputs, config, pkgs, lib, ... }:
+{ theme, inputs, config, pkgs, lib, self, ... }:
 
 let
 	username = "ashley";
@@ -17,7 +17,7 @@ in {
 	home-manager.useGlobalPkgs = true;
 	home-manager.useUserPackages = true;
 
-	home-manager.extraSpecialArgs = { inherit inputs theme; };
+	home-manager.extraSpecialArgs = { inherit inputs theme self; };
 	home-manager.users.${username} = { pkgs, ... }: {
 		itsyunaya-nix = {
 			# currently unused
@@ -53,6 +53,7 @@ in {
 			})
 
 			alsa-utils
+			aseprite
 			btop
 			fd
 			fzf
@@ -122,6 +123,26 @@ in {
 			package = pkgs.whitesur-cursors;
 			name = "WhiteSur-cursors";
 			size = 24;
+		};
+
+		xdg.mimeApps = {
+			enable = true;
+			defaultApplications = {
+				"x-scheme-handler/http" = "zen-beta.desktop";
+				"x-scheme-handler/https" = "zen-beta.desktop";
+				"x-scheme-handler/chrome" = "zen-beta.desktop";
+				"text/html" = "zen-beta.desktop";
+				"x-scheme-handler/discord" = "vesktop.desktop";
+				"x-scheme-handler/tg" = "org.telegram.desktop.desktop";
+				"inode/directory" = "thunar.desktop";
+
+				"image/png" = "qimgv.desktop";
+				"image/jpeg" = "qimgv.desktop";
+				"image/gif" = "qimgv.desktop";
+				"image/webp" = "qimgv.desktop";
+				"image/bmp" = "qimgv.desktop";
+				"image/svg+xml" = "qimgv.desktop";
+			};
 		};
 
 		home.sessionVariables = {
@@ -250,6 +271,7 @@ in {
 		tumbler
 		ffmpegthumbnailer
 		poppler
+		qimgv
 
 		# styling
 		whitesur-cursors

@@ -1,4 +1,8 @@
+{ self, ... }:
+
 {
+	wallpaper = "${self}/assets/wallpapers/clouds.jpg";
+
 	colours = {
 		bg = "191A1C";
 		bg-lighter = "595959";

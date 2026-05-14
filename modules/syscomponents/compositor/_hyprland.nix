@@ -1,8 +1,6 @@
-{ inputs, pkgs, ... }:
+{ theme, inputs, pkgs, ... }:
 
-let
-	wallpaper = "./assets/wallpapers/clouds.jpg";
-in {
+{
 	wayland.windowManager.hyprland = {
 		enable = true;
         package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
@@ -12,7 +10,7 @@ in {
 			exec-once = [
 				"waybar"
 				"awww-daemon"
-				"awww img ${wallpaper}"
+				"awww img ${theme.wallpaper}"
 				"mpd-mpris"
 				"mpdas"
 				"musicpresence"
@@ -36,8 +34,8 @@ in {
 
 				border_size = "2";
 
-				"col.active_border" = "rgba(ffc8ddee) rgba(cdb4dbee) 45deg";
-				"col.inactive_border" = "rgba(595959aa)";
+				"col.active_border" = "rgba(${theme.colours.accent-pink}ee) rgba(${theme.colours.accent-purple}ee) 45deg";
+				"col.inactive_border" = "rgba(${theme.colours.bg-lighter}aa)";
 
 				layout = "dwindle";
 			};

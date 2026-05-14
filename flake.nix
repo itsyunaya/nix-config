@@ -50,7 +50,7 @@
 			inherit system;
 			specialArgs = {
 				inherit inputs;
-				theme = import ./theme.nix;
+				theme = import ./theme.nix { inherit self; };
 			};
 
 			modules = [
