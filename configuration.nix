@@ -76,7 +76,9 @@ in {
 			keepassxc
 			mpdas
 			(pkgs.callPackage ./packages/musicpresence.nix {})
+			nicotine-plus
 			pavucontrol
+			picard
 			prismlauncher
 			qbittorrent
 			rmpc
@@ -275,6 +277,8 @@ in {
 		pnpm
 		poppler
 		qimgv
+		qt6.qtwayland
+		qt5.qtwayland
 		rustup
 		samba
 		thunar
@@ -300,6 +304,8 @@ in {
 		XMODIFIERS = "@im=fcitx";
 		SDL_IM_MODULE = "fcitx";
 		GLFW_IM_MODULE = "ibus";
+		QT_QPA_PLATFORM = "wayland";
+		NIXOS_OZONE_WL = "1";
 	};
 
 	virtualisation.podman = {

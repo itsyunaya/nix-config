@@ -22,7 +22,10 @@
 		};
 
 		# https://codeberg.org/LGFae/awww
-        awww.url = "git+https://codeberg.org/LGFae/awww";
+        awww = {
+        	url = "git+https://codeberg.org/LGFae/awww";
+        	inputs.nixpkgs.follows = "nixpkgs";
+        };
 
         # https://github.com/denful/import-tree
         import-tree.url = "github:vic/import-tree";
@@ -49,13 +52,19 @@
 		};
 
         # https://github.com/Gerg-L/spicetify-nix/
-        spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+        spicetify-nix = {
+        	url = "github:Gerg-L/spicetify-nix";
+        	inputs.nixpkgs.follows = "nixpkgs";
+        };
 
 		# https://github.com/itsyunaya/xwl-notifier-rs
 		xwl-notifier.url = "github:itsyunaya/xwl-notifier-rs";
 
 		# https://github.com/0xc000022070/zen-browser-flake
-		zen-browser.url = "github:0xc000022070/zen-browser-flake";
+		zen-browser = {
+			url = "github:0xc000022070/zen-browser-flake";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 	};
 
 	outputs = inputs @ { self, nixpkgs, home-manager, aagl, alejandra, nixvim, spicetify-nix, xwl-notifier, ... }:
@@ -85,13 +94,10 @@
 
 				home-manager.nixosModules.home-manager
 				aagl.nixosModules.default
-				#mangowm.nixosModules.mango
-				#niri.nixosModules.niri
 
 				{
                 	home-manager.sharedModules = [
 						spicetify-nix.homeManagerModules.spicetify
-						#mangowm.hmModules.mango
 						nixvim.homeModules.nixvim
 					];
 				}
