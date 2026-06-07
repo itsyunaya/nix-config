@@ -76,7 +76,7 @@ in {
 			jetbrains.webstorm
 			keepassxc
 			mpdas
-			(pkgs.callPackage ./packages/musicpresence.nix {})
+			(pkgs.callPackage "${self}/packages/musicpresence.nix" {})
 			nicotine-plus
 			pavucontrol
 			picard
