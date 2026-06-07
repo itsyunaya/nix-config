@@ -10,6 +10,12 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
+        # https://github.com/nix-darwin/nix-darwin
+        nix-darwin = {
+            url = "github:LnL7/nix-darwin";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+
 		# https://github.com/an-anime-team/an-anime-game-launcher
 		aagl = {
 			url = "github:ezKEa/aagl-gtk-on-nix";
@@ -65,21 +71,33 @@
 		};
 	};
 
-	outputs = inputs @ { self, nixpkgs, home-manager, aagl, alejandra, mangowm, nixvim, spicetify-nix, xwl-notifier, ... }:
-	let
-		system = "x86_64-linux";
-	in {
+	outputs = inputs @ {
+	    self,
+	    nixpkgs,
+	    home-manager,
+	    nix-darwin,
+	    aagl,
+	    alejandra,
+	    mangowm,
+	    nixvim,
+	    spicetify-nix,
+	    xwl-notifier,
+	    ...
+    }:
+
+    {
 		nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
 
-			inherit system;
+			system = "x86_64-linux";
 			specialArgs = {
-				inherit inputs;
+				inherit inputs self;
 				theme = import ./theme.nix { inherit self; };
 			};
 
 			modules = [
-				./configuration.nix
-				./hardware-configuration.nix
+				./hosts/desktop/configuration.nix
+				./hosts/desktop/hardware-configuration.nix
+				./options.nix
 
 				{
 					nixpkgs.overlays = [
@@ -102,6 +120,25 @@
 					];
 				}
 			];
+		};
+
+		darwinConfigurations.ashleys-MacBook-Pro = nix-darwin.lib.darwinSystem {
+            system = "aarch64-darwin";
+            specialArgs = { inherit inputs self; };
+
+            modules = [
+                ./hosts/macbook/configuration.nix
+
+				{
+					nixpkgs.overlays = [
+                    	(final: prev: {
+                    		alejandra = alejandra.packages.${prev.stdenv.hostPlatform.system}.default;
+                    	})
+					];
+				}
+
+                home-manager.darwinModules.home-manager
+            ];
 		};
 	};
 }
