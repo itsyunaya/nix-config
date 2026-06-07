@@ -3,11 +3,6 @@
 	tree = inputs.import-tree;
 	hm = config.home-manager.users.${username};
 in {
-	imports = [
-		./hardware-configuration.nix
-		./options.nix
-	];
-
 	nix.settings.experimental-features = [
 		"nix-command"
 		"flakes"
@@ -27,17 +22,22 @@ in {
 		terminal = "kitty";
 	};
 
-	home-manager.useGlobalPkgs = true;
-	home-manager.useUserPackages = true;
+	home-manager = {
+		useGlobalPkgs = true;
+		useUserPackages = true;
+		extraSpecialArgs = { inherit inputs theme self; };
+	};
 
-	home-manager.extraSpecialArgs = { inherit inputs theme self; };
 	home-manager.users.${username} = { pkgs, ... }: {
 		/*
 		to avoid clutter in the main file all program specific configuration is
 		performed in respective .nix module files.
 		imports are handled with import-tree
 		*/
-		imports = [ (tree ./modules) ];
+		imports = [
+		    (tree "${self}/modules/linux")
+		    (tree "${self}/modules/shared")
+		];
 
 		home.packages = with pkgs; [
 			(pkgs.texlive.combine {
@@ -112,6 +112,7 @@ in {
 			startInBackground = true;
 		};
 
+		# todo: move out of hm
 		gtk = {
 			enable = true;
 			gtk3.extraConfig.gtk-application-prefer-dark-theme = true;
@@ -122,6 +123,7 @@ in {
 			};
 		};
 
+		# todo: move out of hm
 		qt = {
 			enable = true;
 			platformTheme.name = "gtk";
@@ -130,14 +132,6 @@ in {
 
 		dconf.settings = {
 			"org/gnome/desktop/interface".color-scheme = "prefer-dark";
-		};
-
-		home.pointerCursor = {
-			gtk.enable = true;
-			x11.enable = true;
-			package = pkgs.whitesur-cursors;
-			name = "WhiteSur-cursors";
-			size = 24;
 		};
 
 		xdg.mimeApps = {
@@ -160,11 +154,21 @@ in {
 			};
 		};
 
-		home.sessionVariables = {
-			XDG_DATA_DIRS = "$HOME/.nix-profile/share:/run/current-system/sw/share:/nix/var/nix/profiles/default/share:$XDG_DATA_DIRS";
-		};
+		home = {
+			pointerCursor = {
+            	gtk.enable = true;
+            	x11.enable = true;
+            	package = pkgs.whitesur-cursors;
+            	name = "WhiteSur-cursors";
+            	size = 24;
+            };
 
-		home.stateVersion = "25.11";
+			sessionVariables = {
+            	XDG_DATA_DIRS = "$HOME/.nix-profile/share:/run/current-system/sw/share:/nix/var/nix/profiles/default/share:$XDG_DATA_DIRS";
+            };
+
+            stateVersion = "25.11";
+		};
 	};
 
 	fonts = {
@@ -206,41 +210,43 @@ in {
 		anime-game-launcher.enable = true;
 	};
 
-	boot.loader.systemd-boot.enable = true;
-	boot.loader.efi.canTouchEfiVariables = true;
-	boot.kernelPackages = pkgs.linuxPackages_latest;
+	boot = {
+		loader.systemd-boot.enable = true;
+		loader.efi.canTouchEfiVariables = true;
+		kernelPackages = pkgs.linuxPackages_latest;
+	};
 
-	networking.hostName = "nixos";
-	networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
-	networking.networkmanager.enable = true;
+	networking = {
+		hostName = "nixos";
+		wireless.enable = true; # Enables wireless support via wpa_supplicant.
+		networkmanager.enable = true;
+	};
 
 	time.timeZone = "Europe/Berlin";
-	i18n.defaultLocale = "en_US.UTF-8";
-	i18n.extraLocaleSettings = {
-		LC_ADDRESS = "de_DE.UTF-8";
-		LC_IDENTIFICATION = "de_DE.UTF-8";
-		LC_MEASUREMENT = "de_DE.UTF-8";
-		LC_MONETARY = "de_DE.UTF-8";
-		LC_NAME = "de_DE.UTF-8";
-		LC_NUMERIC = "de_DE.UTF-8";
-		LC_PAPER = "de_DE.UTF-8";
-		LC_TELEPHONE = "de_DE.UTF-8";
-		LC_TIME = "de_DE.UTF-8";
-	};
 
-	i18n.inputMethod = {
-		enable = true;
-		type = "fcitx5";
-		fcitx5.waylandFrontend = true;
-		fcitx5.addons = with pkgs; [
-			fcitx5-mozc
-			fcitx5-gtk
-		];
-	};
+	i18n = {
+		defaultLocale = "en_US.UTF-8";
+		extraLocaleSettings = {
+        	LC_ADDRESS = "de_DE.UTF-8";
+        	LC_IDENTIFICATION = "de_DE.UTF-8";
+        	LC_MEASUREMENT = "de_DE.UTF-8";
+        	LC_MONETARY = "de_DE.UTF-8";
+        	LC_NAME = "de_DE.UTF-8";
+        	LC_NUMERIC = "de_DE.UTF-8";
+        	LC_PAPER = "de_DE.UTF-8";
+        	LC_TELEPHONE = "de_DE.UTF-8";
+        	LC_TIME = "de_DE.UTF-8";
+        };
 
-	services.xserver.xkb = {
-		layout = "us";
-		variant = "";
+        inputMethod = {
+        	enable = true;
+        	type = "fcitx5";
+        	fcitx5.waylandFrontend = true;
+        	fcitx5.addons = with pkgs; [
+        		fcitx5-mozc
+        		fcitx5-gtk
+        	];
+        };
 	};
 
 	users.users.${username} = {
@@ -315,28 +321,38 @@ in {
 		dockerCompat = true;
 	};
 
-	services.gvfs.enable = true;
-	services.samba.enable = true;
-	services.tumbler.enable = true;
+	services = {
+		xserver = {
+			xkb = {
+				layout = "us";
+				variant = "";
+			};
 
-	# TODO: nixpkgs ships an old version, make own derivation
-	services.displayManager.ly.enable = true;
+			videoDrivers = [ "nvidia" ];
+		};
 
-	services.mullvad-vpn = {
-		enable = true;
-		package = pkgs.mullvad-vpn;
-	};
+		gvfs.enable = true;
+		samba.enable = true;
+		tumbler.enable = true;
 
-	# needed for mullvad
-	services.resolved.enable = true;
+		displayManager.ly.enable = true;
 
-	services.pipewire = {
-		enable = true;
-		alsa.enable = true;
-		alsa.support32Bit = true;
-		pulse.enable = true;
-		jack.enable = true;
-		wireplumber.enable = true;
+		mullvad-vpn = {
+        	enable = true;
+        	package = pkgs.mullvad-vpn;
+        };
+
+        # needed for mullvad
+        resolved.enable = true;
+
+        pipewire = {
+        	enable = true;
+        	alsa.enable = true;
+        	alsa.support32Bit = true;
+        	pulse.enable = true;
+        	jack.enable = true;
+        	wireplumber.enable = true;
+        };
 	};
 
 	programs.gnupg.agent = {
@@ -356,28 +372,29 @@ in {
 		lib.optionalAttrs hm.programs.swaylock.enable { swaylock = {}; }
 		// lib.optionalAttrs hm.programs.hyprlock.enable { hyprlock = {}; };
 
-	services.xserver.videoDrivers = [ "nvidia" ];
-	hardware.graphics = {
-		enable = true;
-		enable32Bit = true;
-	};
+	hardware = {
+		graphics = {
+        	enable = true;
+        	enable32Bit = true;
+        };
 
-	hardware.nvidia = {
-		modesetting.enable = true;
-		open = false;
-		nvidiaSettings = true;
-	};
+        nvidia = {
+        	modesetting.enable = true;
+        	open = false;
+        	nvidiaSettings = true;
+        };
 
-	# makes my bluetooth not explode hopefully
-	hardware.firmware = [ pkgs.linux-firmware ];
+    	# makes my bluetooth not explode hopefully
+        firmware = [ pkgs.linux-firmware ];
 
-	hardware.bluetooth = {
-		enable = true;
-		powerOnBoot = true;
-		settings.General = {
-			Experimental = true;
-			FastConnectable = true;
-		};
+        bluetooth = {
+        	enable = true;
+        	powerOnBoot = true;
+        	settings.General = {
+        		Experimental = true;
+        		FastConnectable = true;
+        	};
+        };
 	};
 
 	# This value determines the NixOS release from which the default

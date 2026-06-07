@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 
 {
 	# alejandra doesnt currently allow passing config directly to its run command,
