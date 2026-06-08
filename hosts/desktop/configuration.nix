@@ -80,7 +80,10 @@ in {
 			nicotine-plus
 			pavucontrol
 			picard
-			prismlauncher
+			(prismlauncher.override {
+				# lets the game run on native wayland instead of the israeli display server
+				additionalLibs = [ glfw ];
+			})
 			qbittorrent
 			rmpc
 			ripgrep
