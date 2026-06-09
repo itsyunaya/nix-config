@@ -91,7 +91,7 @@
 		xwl-notifier,
 		...
 	}: {
-		nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+		nixosConfigurations.juno = nixpkgs.lib.nixosSystem {
 			system = "x86_64-linux";
 			specialArgs = {
 				inherit inputs self;
@@ -99,8 +99,8 @@
 			};
 
 			modules = [
-				./hosts/desktop/configuration.nix
-				./hosts/desktop/hardware-configuration.nix
+				./hosts/juno/configuration.nix
+				./hosts/juno/hardware-configuration.nix
 				./options.nix
 
 				{
@@ -131,7 +131,7 @@
 			specialArgs = { inherit inputs self; };
 
 			modules = [
-				./hosts/macbook/configuration.nix
+				./hosts/ashleys-MacBook-Pro/configuration.nix
 
 				{
 					nixpkgs.overlays = [
@@ -160,11 +160,6 @@
 		nixosConfigurations.ceres = nixpkgs.lib.nixosSystem {
 			system = "aarch64-linux";
 			specialArgs = { inherit inputs self; };
-
-			#pkgs = import nixpkgs {
-			#	localSystem = "x86_64-linux";
-			#	crossSystem = "aarch64-linux";
-			#};
 
 			modules = [
 				./hosts/ceres/configuration.nix

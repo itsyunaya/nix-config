@@ -1,4 +1,4 @@
-{ osConfig, pkgs, ... }:
+{ osConfig, ... }:
 
 let
 	shell = osConfig.itsyunaya-nix.sh.shell;
@@ -42,9 +42,9 @@ in {
 			enableNushellIntegration = shell == "nushell";
 
         	nix-direnv.enable = true;
-        	stdlib = builtins.readFile (pkgs.runCommand "devenv-direnvrc" {} ''
+        	/*stdlib = builtins.readFile (pkgs.runCommand "devenv-direnvrc" {} ''
         		${pkgs.devenv}/bin/devenv direnvrc > $out
-        	'');
+        	'');*/
         };
 	};
 }

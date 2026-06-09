@@ -1,4 +1,4 @@
-{ inputs, self, pkgs, ... }: let
+{ inputs, self, ... }: let
 	username = "ashley";
 	tree = inputs.import-tree;
 in {
@@ -14,7 +14,7 @@ in {
 
 	home-manager.users.${username} = { pkgs, ... }: {
 		imports = [
-			(tree "${self}/modules/macOS")
+			(tree "${self}/modules/ashleys-MacBook-Pro")
 			(tree "${self}/modules/shared")
 		];
 

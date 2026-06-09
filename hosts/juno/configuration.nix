@@ -1,6 +1,5 @@
 { theme, inputs, config, pkgs, lib, self, ... }: let
 	username = "ashley";
-	tree = inputs.import-tree;
 	hm = config.home-manager.users.${username};
 in {
 	nix.settings.experimental-features = [
@@ -15,167 +14,29 @@ in {
 		it might fall back to a default one which needs to be removed manually
 		since hm can't overwrite it anymore at that point
 		*/
+		# "mango" or "hyprland"
 		compositor = "hyprland";
 
 		sh = {
+			# "zsh" or "nushell"
 			shell = "zsh";
+			# this option enables/disables omz/omp if zsh is set as the active shell.
+			# can improve init times by a good margin
 			zshEnableExtraCustomization = false;
 		};
 
+		# "swaylock" or "hyprlock"
 		lock-app = "hyprlock";
+		# "kitty" or "ghostty"
 		terminal = "kitty";
 	};
 
 	home-manager = {
 		useGlobalPkgs = true;
 		useUserPackages = true;
-		extraSpecialArgs = { inherit inputs theme self; };
-	};
+		extraSpecialArgs = { inherit inputs theme self username; };
 
-	home-manager.users.${username} = { pkgs, ... }: {
-		/*
-		to avoid clutter in the main file all program specific configuration is
-		performed in respective .nix module files.
-		imports are handled with import-tree
-		*/
-		imports = [
-		    (tree "${self}/modules/linux")
-		    (tree "${self}/modules/shared")
-		];
-
-		home.packages = with pkgs; [
-			(pkgs.texlive.combine {
-					inherit
-						(pkgs.texlive)
-						scheme-medium
-						biber
-						biblatex
-						biblatex-bath
-						circuitikz
-						csquotes
-						lastpage
-						mdframed
-						needspace
-						pgfplots
-						svg
-						transparent
-						wrapfig
-						zref
-						;
-				})
-
-			alsa-utils
-			anki
-			aseprite
-			btop
-			(discord.override {
-					withVencord = true;
-				})
-			fd
-			fzf
-			hyprpicker
-			hyprshot
-			jetbrains.clion
-			jetbrains.idea
-			jetbrains.webstorm
-			keepassxc
-			mpdas
-			(pkgs.callPackage "${self}/packages/musicpresence.nix" {})
-			nicotine-plus
-			pavucontrol
-			picard
-			(prismlauncher.override {
-				# lets the game run on native wayland instead of the israeli display server
-				additionalLibs = [ glfw ];
-			})
-			qbittorrent
-			rmpc
-			ripgrep
-			steam
-			telegram-desktop
-			vesktop
-			xlsclients
-			yams
-			xwl-notifier
-			inputs.zen-browser.packages."${stdenv.hostPlatform.system}".default
-		];
-
-		services.mpd = {
-			enable = true;
-			musicDirectory = "/home/${username}/Nextcloud/music";
-
-			extraConfig = ''
-        		auto_update "yes"
-
-        		audio_output {
-        			type "pulse"
-        			name "pulseout"
-        		}
-			'';
-		};
-
-		services.nextcloud-client = {
-			enable = true;
-			startInBackground = true;
-		};
-
-		# todo: move out of hm
-		gtk = {
-			enable = true;
-			gtk3.extraConfig.gtk-application-prefer-dark-theme = true;
-			gtk4.extraConfig.gtk-application-prefer-dark-theme = true;
-			iconTheme = {
-				package = pkgs.whitesur-icon-theme;
-				name = "WhiteSur-dark";
-			};
-		};
-
-		# todo: move out of hm
-		qt = {
-			enable = true;
-			platformTheme.name = "gtk";
-			style.name = "adwaita-dark";
-		};
-
-		dconf.settings = {
-			"org/gnome/desktop/interface".color-scheme = "prefer-dark";
-		};
-
-		xdg.mimeApps = {
-			enable = true;
-			defaultApplications = {
-				"x-scheme-handler/http" = "zen-beta.desktop";
-				"x-scheme-handler/https" = "zen-beta.desktop";
-				"x-scheme-handler/chrome" = "zen-beta.desktop";
-				"text/html" = "zen-beta.desktop";
-				"x-scheme-handler/discord" = "vesktop.desktop";
-				"x-scheme-handler/tg" = "org.telegram.desktop.desktop";
-				"inode/directory" = "thunar.desktop";
-
-				"image/png" = "qimgv.desktop";
-				"image/jpeg" = "qimgv.desktop";
-				"image/gif" = "qimgv.desktop";
-				"image/webp" = "qimgv.desktop";
-				"image/bmp" = "qimgv.desktop";
-				"image/svg+xml" = "qimgv.desktop";
-			};
-		};
-
-		home = {
-			pointerCursor = {
-            	gtk.enable = true;
-            	x11.enable = true;
-            	package = pkgs.whitesur-cursors;
-            	name = "WhiteSur-cursors";
-            	size = 24;
-            };
-
-			sessionVariables = {
-            	XDG_DATA_DIRS = "$HOME/.nix-profile/share:/run/current-system/sw/share:/nix/var/nix/profiles/default/share:$XDG_DATA_DIRS";
-            };
-
-            stateVersion = "25.11";
-		};
+		users.${username} = import ./home.nix;
 	};
 
 	fonts = {
@@ -230,7 +91,7 @@ in {
 	nix.settings.secret-key-files = [ "/etc/nix/signing-key.sec" ];
 
 	networking = {
-		hostName = "nixos";
+		hostName = "juno";
 		wireless.enable = true; # Enables wireless support via wpa_supplicant.
 		networkmanager.enable = true;
 	};
