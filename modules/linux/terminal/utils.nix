@@ -1,11 +1,11 @@
 { osConfig, pkgs, ... }:
 
 let
-	shell = osConfig.itsyunaya-nix.shell;
+	shell = osConfig.itsyunaya-nix.sh.shell;
 in {
 	programs = {
 		eza = {
-        	enable = osConfig.itsyunaya-nix.shell == "zsh";
+        	enable = shell == "zsh";
 
         	enableZshIntegration = shell == "zsh";
         	#enableNushellIntegration = shell == "nushell";

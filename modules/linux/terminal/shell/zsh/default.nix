@@ -1,13 +1,11 @@
-{ osConfig, ... }:
-
-{
+{ lib, osConfig, ... }: let
+	sh = osConfig.itsyunaya-nix.sh;
+in {
 	programs.zsh = {
-		enable = osConfig.itsyunaya-nix.shell == "zsh";
-		enableCompletion = true;
+		enable = sh.shell == "zsh";
 
-		autosuggestion = {
-			enable = true;
-		};
+		enableCompletion = true;
+		autosuggestion.enable = true;
 
 		shellAliases = {
 			explode = "poweroff";
@@ -81,11 +79,30 @@
 		};
 
 		oh-my-zsh = {
-			enable = true;
+			enable = sh.zshEnableExtraCustomization;
 			plugins = [
 				"git"
 				"eza"
 			];
 		};
+	} // lib.optionalAttrs (!sh.zshEnableExtraCustomization) {
+		autocd = true;
+		history = {
+			extended = true;
+			ignoreDups = true;
+			ignoreSpace = true;
+			expireDuplicatesFirst = true;
+			share = true;
+		};
+		setOptions = [
+			"AUTO_PUSHD"
+			"PUSHD_IGNORE_DUPS"
+			"PUSHDMINUS"
+			"ALWAYS_TO_END"
+			"COMPLETE_IN_WORD"
+			"INTERACTIVE_COMMENTS"
+			"LONG_LIST_JOBS"
+			"HIST_VERIFY"
+		];
 	};
 }

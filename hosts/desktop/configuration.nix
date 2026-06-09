@@ -17,7 +17,11 @@ in {
 		*/
 		compositor = "hyprland";
 
-		shell = "zsh";
+		sh = {
+			shell = "zsh";
+			zshEnableExtraCustomization = false;
+		};
+
 		lock-app = "hyprlock";
 		terminal = "kitty";
 	};
@@ -201,7 +205,7 @@ in {
 	# these have to be enabled on a systemwide level
 	# i forgot why, but my old config had it so im keeping it :>
 	programs = {
-		zsh.enable = config.itsyunaya-nix.shell == "zsh";
+		zsh.enable = config.itsyunaya-nix.sh.shell == "zsh";
 
 		appimage.enable = true;
 		appimage.binfmt = true;
@@ -264,7 +268,7 @@ in {
 		extraGroups = [ "networkmanager" "wheel" ];
 		packages = [];
 		shell =
-			if config.itsyunaya-nix.shell == "zsh"
+			if config.itsyunaya-nix.sh.shell == "zsh"
 			then pkgs.zsh
 			else pkgs.nushell;
 	};
@@ -275,6 +279,7 @@ in {
 	# $ nix search wget
 	environment.systemPackages = with pkgs; [
 		alejandra
+		apfs-fuse
 		cifs-utils
 		devenv
 		docker-compose

@@ -3,27 +3,35 @@
 {
 	options.itsyunaya-nix = {
 		compositor = lib.mkOption {
-        	type = lib.types.enum [ "hyprland" /*"niri"*/ "mango" ];
-        	default = "hyprland";
-        	description = "Which compositor to choose (hypr/niri/mango)";
-        };
+			type = lib.types.enum [ "hyprland" "mango" ];
+			default = "hyprland";
+			description = "Which compositor to choose (hypr/niri/mango)";
+		};
 
-        lock-app = lib.mkOption {
-        	type = lib.types.enum [ "swaylock" "hyprlock" ];
-        	default = "swaylock";
-        	description = "Which lockscreen app to use (sway/hypr)";
-        };
+		lock-app = lib.mkOption {
+			type = lib.types.enum [ "swaylock" "hyprlock" ];
+			default = "swaylock";
+			description = "Which lockscreen app to use (sway/hypr)";
+		};
 
-        shell = lib.mkOption {
-        	type = lib.types.enum [ "zsh" "nushell" ];
-        	default =  "zsh";
-        	description = "Which shell to use";
-        };
+		sh = {
+			shell = lib.mkOption {
+				type = lib.types.enum [ "zsh" "nushell" ];
+				default = "zsh";
+				description = "Which shell to use";
+			};
 
-        terminal = lib.mkOption {
-        	type = lib.types.enum [ "kitty" "ghostty" ];
-        	default = "kitty";
-        	description = "Which terminal emulator to use";
-        };
+			zshEnableExtraCustomization = lib.mkOption {
+				type = lib.types.bool;
+				default = false;
+				description = "If omz/omp should be enabled";
+			};
+		};
+
+		terminal = lib.mkOption {
+			type = lib.types.enum [ "kitty" "ghostty" ];
+			default = "kitty";
+			description = "Which terminal emulator to use";
+		};
 	};
 }

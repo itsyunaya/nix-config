@@ -1,14 +1,10 @@
-{ osConfig, lib, ... }:
+{ osConfig, lib, ... }: let
+	sh = osConfig.itsyunaya-nix.sh;
+in {
+	programs.oh-my-posh = lib.mkIf (sh.shell == "zsh" && sh.zshEnableExtraCustomization) {
+		enable = true;
+		enableZshIntegration = true;
 
-{
-	programs.oh-my-posh =
-		lib.mkMerge [
-			{
-				settings = builtins.fromJSON (builtins.readFile ./config.json);
-			}
-			(lib.mkIf (osConfig.itsyunaya-nix.shell == "zsh") {
-					enable = true;
-					enableZshIntegration = true;
-			})
-		];
+		settings = builtins.fromJSON (builtins.readFile ./config.json);
+	};
 }
