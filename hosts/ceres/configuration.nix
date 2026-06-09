@@ -20,8 +20,15 @@
 		settings.trusted-public-keys = [ "builder:xCiGECTBIjYH0BqPn4ihN+e2Iqt25+prQGOt+lXXqkg=" ];
 	};
 
-	networking.hostName = "ceres";
-	networking.networkmanager.enable = true;
+	networking = {
+		hostName = "ceres";
+		networkmanager.enable = true;
+		firewall = {
+			enable = true;
+			allowedTCPPorts = [ 80 22 53 ];
+			allowedUDPPorts = [ 80 53 ];
+		};
+	};
 
 	time.timeZone = "Europe/Berlin";
 	i18n.defaultLocale = "en_US.UTF-8";
@@ -35,6 +42,7 @@
 	};
 
 	environment.systemPackages = with pkgs; [
+		git
 		kitty.terminfo
 		vim
 		wget
