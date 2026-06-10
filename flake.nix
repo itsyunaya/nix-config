@@ -57,7 +57,7 @@
 
 		# https://github.com/Gerg-L/spicetify-nix/
 		spicetify-nix = {
-			url = "github:Gerg-L/spicetify-nix";
+			url = "github:Gerg-L/spicetify-nix/";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
