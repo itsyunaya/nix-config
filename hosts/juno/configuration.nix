@@ -22,7 +22,7 @@ in {
 			shell = "zsh";
 			# this option enables/disables omz/omp if zsh is set as the active shell.
 			# can improve init times by a good margin
-			zshEnableExtraCustomization = false;
+			zshEnableExtraCustomization = true;
 		};
 
 		# "swaylock" or "hyprlock"
@@ -40,17 +40,18 @@ in {
 	};
 
 	fonts = {
-		packages = with pkgs; [
-			nerd-fonts.jetbrains-mono
-
+		packages = builtins.attrValues {
+			inherit (pkgs)
 			noto-fonts
 			noto-fonts-cjk-sans
 			noto-fonts-cjk-serif
 			liberation_ttf
 
 			noto-fonts-color-emoji
-			twemoji-color-font
-		];
+			twemoji-color-font;
+
+			inherit (pkgs.nerd-fonts) jetbrains-mono;
+        };
 
 		fontconfig = {
 			defaultFonts = {
@@ -138,7 +139,8 @@ in {
 
 	# List packages installed in system profile. To search, run:
 	# $ nix search wget
-	environment.systemPackages = with pkgs; [
+	environment.systemPackages = builtins.attrValues {
+		inherit (pkgs)
 		alejandra
 		apfs-fuse
 		cifs-utils
@@ -160,8 +162,6 @@ in {
 		pnpm
 		poppler
 		qimgv
-		qt6.qtwayland
-		qt5.qtwayland
 		rustup
 		samba
 		statix
@@ -173,15 +173,19 @@ in {
 		unzip
 		vim
 		wget
+		whitesur-cursors
+		whitesur-icon-theme
 		wl-clipboard
 		xdg-utils
 		zathura
+		;
 
-		# styling
-		whitesur-cursors
-		whitesur-icon-theme
-		inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
-	];
+		qt6-qtwayland = pkgs.qt6.qtwayland;
+		qt5-qtwayland = pkgs.qt5.qtwayland;
+
+		inherit (inputs.awww.packages.${pkgs.stdenv.hostPlatform.system})
+		awww;
+	};
 
 	environment.sessionVariables = {
 		QT_IM_MODULE = "fcitx";

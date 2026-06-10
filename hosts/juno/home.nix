@@ -7,63 +7,72 @@ in {
 		(tree "${self}/modules/shared")
 	];
 
-	home.packages = with pkgs; [
-		(pkgs.texlive.combine {
-				inherit
-					(pkgs.texlive)
-					scheme-medium
-					biber
-					biblatex
-					biblatex-bath
-					circuitikz
-					csquotes
-					lastpage
-					mdframed
-					needspace
-					pgfplots
-					svg
-					transparent
-					wrapfig
-					zref
-					;
-			})
+	home.packages = builtins.attrValues {
+		tex-custom = pkgs.texlive.combine {
+			inherit
+				(pkgs.texlive)
+				scheme-medium
+				biber
+				biblatex
+				biblatex-bath
+				circuitikz
+				csquotes
+				lastpage
+				mdframed
+				needspace
+				pgfplots
+				svg
+				transparent
+				wrapfig
+				zref
+				;
+		};
 
-		alsa-utils
-		anki
-		aseprite
-		btop
-		(discord.override {
-				withVencord = true;
-			})
-		fd
-		fzf
-		haskell-language-server
-		hyprpicker
-		hyprshot
-		jetbrains.clion
-		jetbrains.idea
-		jetbrains.webstorm
-		keepassxc
-		mpdas
-		(pkgs.callPackage "${self}/packages/musicpresence.nix" {})
-		nicotine-plus
-		pavucontrol
-		picard
-		(prismlauncher.override {
-				# lets the game run on native wayland instead of the israeli display server
-				additionalLibs = [ glfw ];
-			})
-		qbittorrent
-		rmpc
-		ripgrep
-		steam
-		telegram-desktop
-		vesktop
-		xlsclients
-		yams
-		xwl-notifier
-		inputs.zen-browser.packages."${stdenv.hostPlatform.system}".default
-	];
+		discord = pkgs.discord.override {
+			withVencord = true;
+		};
+
+		prism = pkgs.prismlauncher.override {
+			additionalLibs = [ pkgs.glfw ];
+		};
+
+		mp = pkgs.callPackage "${self}/packages/musicpresence.nix" {};
+		zen = inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default;
+
+		inherit
+			(pkgs.jetbrains)
+			clion
+			idea
+			webstorm
+			;
+
+		inherit
+			(pkgs)
+			alsa-utils
+			anki
+			aseprite
+			btop
+			fd
+			fzf
+			haskell-language-server
+			hyprpicker
+			hyprshot
+			keepassxc
+			mpdas
+			nicotine-plus
+			pavucontrol
+			picard
+			qbittorrent
+			rmpc
+			ripgrep
+			steam
+			telegram-desktop
+			vesktop
+			xlsclients
+			yams
+			xwl-notifier
+			;
+	};
 
 	services.mpd = {
 		enable = true;
