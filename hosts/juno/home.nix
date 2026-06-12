@@ -103,12 +103,6 @@ in {
 		};
 	};
 
-	qt = {
-		enable = true;
-		platformTheme.name = "gtk";
-		style.name = "adwaita-dark";
-	};
-
 	dconf.settings = {
 		"org/gnome/desktop/interface".color-scheme = "prefer-dark";
 	};

@@ -77,7 +77,36 @@ in {
 		niri.enable = true;
 
 		anime-game-launcher.enable = true;
+
+		qtengine = {
+			enable = true;
+
+			config = {
+				theme = {
+					colorScheme = "${pkgs.kdePackages.breeze}/share/color-schemes/BreezeDark.colors";
+					style = "darkly";
+
+					font = {
+						family = "Sans Serif";
+						size = 11;
+						weight = -1;
+					};
+				};
+
+				misc = {
+					singleClickActivate = false;
+					menusHaveIcons = false;
+					shortcutsForContextMenus = true;
+				};
+			};
+		};
 	};
+
+	# qtengine iconTheme does not work so i have to use this instead :c
+	environment.etc."xdg/kdeglobals".text = ''
+		[Icons]
+		Theme=WhiteSur-dark
+	'';
 
 	boot = {
 		loader.systemd-boot.enable = true;
@@ -144,31 +173,27 @@ in {
 		alejandra
 		apfs-fuse
 		cifs-utils
+		darkly
 		devenv
 		docker-compose
 		ffmpeg
 		ffmpegthumbnailer
 		gcc
 		glib
-		gvfs
 		libnotify
 		mpd-mpris
 		mpv
+		nh
 		nixd
 		nodejs
 		openssl
 		pinentry-qt
 		playerctl
 		pnpm
-		poppler
 		qimgv
 		rustup
 		samba
 		statix
-		thunar
-		thunar-media-tags-plugin
-		thunar-shares-plugin
-		tumbler
 		unrar
 		unzip
 		vim
@@ -182,6 +207,12 @@ in {
 
 		qt6-qtwayland = pkgs.qt6.qtwayland;
 		qt5-qtwayland = pkgs.qt5.qtwayland;
+
+		qtsvg6 = pkgs.kdePackages.qtsvg;
+		qtsvg5 = pkgs.libsForQt5.qt5.qtsvg;
+
+		inherit (pkgs.kdePackages)
+		dolphin;
 
 		inherit (inputs.awww.packages.${pkgs.stdenv.hostPlatform.system})
 		awww;
@@ -211,9 +242,7 @@ in {
 			videoDrivers = [ "nvidia" ];
 		};
 
-		gvfs.enable = true;
 		samba.enable = true;
-		tumbler.enable = true;
 
 		displayManager.ly.enable = true;
 

@@ -101,7 +101,7 @@
 						"SUPER SHIFT, C, exec, kill -9 $(hyprctl activewindow -j | jq -r '.pid')"
 						# the only time i pressed this was on accident and then i got sad cuz i had to reopen my windows
 						#"SUPER, M, exit,"
-						"SUPER, E, exec, thunar"
+						"SUPER, E, exec, dolphin"
 						"SUPER, V, togglefloating,"
 						"SUPER, R, exec, anyrun"
 						"SUPER, P, pseudo,"

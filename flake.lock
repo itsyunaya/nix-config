@@ -838,6 +838,26 @@
         "type": "github"
       }
     },
+    "qtengine": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1778644540,
+        "narHash": "sha256-D7mzavE5WfLyvEXV0pvO3/gxC+SSmfjw4Lxy7I5qvnI=",
+        "owner": "kossLAN",
+        "repo": "qtengine",
+        "rev": "073987f0120ac77a92fb9f0c0877aa7f1f04d3bf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kossLAN",
+        "repo": "qtengine",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "aagl": "aagl",
@@ -851,6 +871,7 @@
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
         "nixvim": "nixvim",
+        "qtengine": "qtengine",
         "spicetify-nix": "spicetify-nix",
         "xwl-notifier": "xwl-notifier",
         "zen-browser": "zen-browser"

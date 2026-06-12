@@ -55,6 +55,12 @@
 		# https://github.com/nix-community/nixvim
 		nixvim.url = "github:nix-community/nixvim";
 
+		# https://github.com/kossLAN/qtengine
+		qtengine = {
+			url = "github:kossLAN/qtengine";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
+
 		# https://github.com/Gerg-L/spicetify-nix/
 		spicetify-nix = {
 			url = "github:Gerg-L/spicetify-nix/";
@@ -81,6 +87,7 @@
 		alejandra,
 		mangowm,
 		nixvim,
+		qtengine,
 		spicetify-nix,
 		xwl-notifier,
 		...
@@ -109,6 +116,7 @@
 				home-manager.nixosModules.home-manager
 				aagl.nixosModules.default
 				mangowm.nixosModules.mango
+				qtengine.nixosModules.default
 
 				{
 					home-manager.sharedModules = [
