@@ -64,8 +64,6 @@ in {
 		};
 	};
 
-	# these have to be enabled on a systemwide level
-	# i forgot why, but my old config had it so im keeping it :>
 	programs = {
 		zsh.enable = config.itsyunaya-nix.sh.shell == "zsh";
 
@@ -83,10 +81,16 @@ in {
 
 			config = {
 				theme = {
-					colorScheme = "${pkgs.kdePackages.breeze}/share/color-schemes/BreezeDark.colors";
+					colorScheme = "${self}/hosts/juno/purple.colors";
 					style = "darkly";
 
 					font = {
+						family = "Sans Serif";
+						size = 11;
+						weight = -1;
+					};
+
+					fontFixed = {
 						family = "Sans Serif";
 						size = 11;
 						weight = -1;
@@ -108,21 +112,25 @@ in {
 		Theme=WhiteSur-dark
 	'';
 
+	#environment.etc."xdg/kwalletrc".text = ''
+	#	[Wallet]
+	#	Enabled=false
+    #'';
+
 	boot = {
 		loader.systemd-boot.enable = true;
 		loader.efi.canTouchEfiVariables = true;
 		kernelPackages = pkgs.linuxPackages_latest;
 
-		# needed so i can crosscompile rebuilds for ceres since
-		# otherwise it will be awfully slow
-		binfmt.emulatedSystems = [ "aarch64-linux" ];
+		# agony
+		kernel.sysctl = { "fs.inotify.max_user_watches" = 1048576; };
 	};
 
 	nix.settings.secret-key-files = [ "/etc/nix/signing-key.sec" ];
 
 	networking = {
 		hostName = "juno";
-		wireless.enable = true; # Enables wireless support via wpa_supplicant.
+		wireless.enable = true;
 		networkmanager.enable = true;
 	};
 
@@ -185,7 +193,7 @@ in {
 		mpv
 		nh
 		nixd
-		nodejs
+		nodejs-slim
 		openssl
 		pinentry-qt
 		playerctl
@@ -212,7 +220,10 @@ in {
 		qtsvg5 = pkgs.libsForQt5.qt5.qtsvg;
 
 		inherit (pkgs.kdePackages)
-		dolphin;
+		dolphin
+		kio
+		kio-extras
+		kio-fuse;
 
 		inherit (inputs.awww.packages.${pkgs.stdenv.hostPlatform.system})
 		awww;
@@ -243,8 +254,9 @@ in {
 		};
 
 		samba.enable = true;
-
 		displayManager.ly.enable = true;
+		gnome.gnome-keyring.enable = true;
+		udisks2.enable = true;
 
 		mullvad-vpn = {
         	enable = true;
@@ -270,16 +282,21 @@ in {
 		pinentryPackage = pkgs.pinentry-qt;
 	};
 
-	# enable the little stars when typing my password (useful because im bad at typing :p)
-	security.sudo.extraConfig = ''
-    	Defaults env_reset,pwfeedback
-	'';
+	security = {
+		# enable the little stars when typing my password (useful because im bad at typing :p)
+		sudo.extraConfig = ''
+			Defaults env_reset,pwfeedback
+		'';
 
-	# needed so the screen lockers can actually validate my password
-	# modular setup depending on which lock is in use
-	security.pam.services =
-		lib.optionalAttrs hm.programs.swaylock.enable { swaylock = {}; }
-		// lib.optionalAttrs hm.programs.hyprlock.enable { hyprlock = {}; };
+		# needed so the screen lockers can actually validate my password
+		# modular setup depending on which lock is in use
+		pam.services =
+			(lib.optionalAttrs hm.programs.swaylock.enable { swaylock = {}; })
+			// (lib.optionalAttrs hm.programs.hyprlock.enable { hyprlock = {}; })
+			// {
+				ly.enableGnomeKeyring = true;
+			};
+	};
 
 	hardware = {
 		graphics = {

@@ -76,7 +76,7 @@ in {
 
 	services.mpd = {
 		enable = true;
-		musicDirectory = "/home/${username}/Nextcloud/music";
+		musicDirectory = "/home/${username}/Nextcloud/";
 
 		extraConfig = ''
       		auto_update "yes"
