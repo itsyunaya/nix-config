@@ -94,7 +94,7 @@ in {
 		qt5-qtwayland = pkgs.qt5.qtwayland;
 
 		qtsvg6 = pkgs.kdePackages.qtsvg;
-		qtsvg5 = pkgs.libsForQt5.qt5.qtsvg;
+		qtsvg5 = pkgs.qt5.qtsvg;
 
 		inherit
 			(pkgs.kdePackages)

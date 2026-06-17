@@ -12,7 +12,7 @@
 		plugins = {
 			lualine.enable = true;
 			telescope.enable = true;
-			cmp-luasnip.enable = true;
+			cmp_luasnip.enable = true;
 
 			web-devicons.enable = true;
 
