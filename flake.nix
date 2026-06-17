@@ -40,9 +40,6 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-		# https://github.com/denful/import-tree
-		import-tree.url = "github:vic/import-tree";
-
 		# https://github.com/hyprwm/Hyprland
 		hyprland.url = "github:hyprwm/Hyprland";
 
@@ -92,7 +89,7 @@
 		xwl-notifier,
 		...
 	}: {
-		nixosConfigurations.juno = nixpkgs.lib.nixosSystem {
+		nixosConfigurations."juno" = nixpkgs.lib.nixosSystem {
 			system = "x86_64-linux";
 			specialArgs = {
 				inherit inputs self;
@@ -127,7 +124,7 @@
 			];
 		};
 
-		darwinConfigurations.ashleys-macbook-pro = nix-darwin.lib.darwinSystem {
+		darwinConfigurations."ashleys-macbook-pro" = nix-darwin.lib.darwinSystem {
 			system = "aarch64-darwin";
 			specialArgs = { inherit inputs self; };
 
@@ -146,7 +143,7 @@
 			];
 		};
 
-		nixosConfigurations.callisto = nixpkgs.lib.nixosSystem {
+		nixosConfigurations."callisto" = nixpkgs.lib.nixosSystem {
 			system = "x86_64-linux";
 			specialArgs = { inherit inputs self; };
 
@@ -156,7 +153,7 @@
 			];
 		};
 
-		nixosConfigurations.ceres = nixpkgs.lib.nixosSystem {
+		nixosConfigurations."ceres" = nixpkgs.lib.nixosSystem {
 			system = "aarch64-linux";
 			specialArgs = { inherit inputs self; };
 
@@ -168,7 +165,7 @@
 			];
 		};
 
-		nixosConfiguration.io = nixpkgs.lib.nixosSystem {
+		nixosConfiguration."io" = nixpkgs.lib.nixosSystem {
 			system = "x86_64-linux";
 			specialArgs = { inherit inputs self; };
 

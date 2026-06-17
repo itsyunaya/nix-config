@@ -1,10 +1,9 @@
-{ inputs, self, pkgs, username, ... }: let
-	tree = inputs.import-tree;
+{ inputs, self, pkgs, username, lib, ... }: let
+	recImport = import "${self}/functions/recursiveImport.nix";
 in {
-	# imports managed through import-tree
 	imports = [
-		(tree "${self}/modules/juno")
-		(tree "${self}/modules/shared")
+		(recImport { inherit lib; } "${self}/modules/juno")
+		(recImport { inherit lib; } "${self}/modules/shared")
 	];
 
 	home.packages = builtins.attrValues {
