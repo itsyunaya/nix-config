@@ -1,7 +1,7 @@
 { osConfig, ... }:
 
 let
-	shell = osConfig.itsyunaya-nix.sh.shell;
+	shell = osConfig.juno-cfg.sh.shell;
 in {
 	programs = {
 		eza = {

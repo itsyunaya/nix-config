@@ -6,7 +6,7 @@
 	...
 }: {
 	config =
-		lib.mkIf (osConfig.itsyunaya-nix.compositor == "niri") {
+		lib.mkIf (osConfig.juno-cfg.compositor == "niri") {
 			programs.niri = {
 				package = pkgs.niri-unstable;
 

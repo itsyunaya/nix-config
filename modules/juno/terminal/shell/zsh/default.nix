@@ -1,5 +1,5 @@
 { lib, osConfig, ... }: let
-	sh = osConfig.itsyunaya-nix.sh;
+	sh = osConfig.juno-cfg.sh;
 in {
 	programs.zsh = {
 		enable = sh.shell == "zsh";

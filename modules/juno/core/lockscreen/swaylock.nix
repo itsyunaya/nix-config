@@ -1,7 +1,7 @@
 { osConfig, lib, theme, ... }:
 
 {
-	config = lib.mkIf (osConfig.itsyunaya-nix.lock-app == "swaylock") {
+	config = lib.mkIf (osConfig.juno-cfg.lock-app == "swaylock") {
 		programs.swaylock = {
     		enable = true;
     	};

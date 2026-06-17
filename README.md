@@ -24,7 +24,7 @@ getting acquainted with Nix, but now actually stable and usable as a daily drive
 
 This configuration features a dual compositor setup with MangoWM and Hyprland, 
 wherein it is possible to switch between the two just by setting one config option
-in `configuration.nix`, under the `itsyunaya-nix` attrset. Further options like
+in `configuration.nix`, under the `juno-cfg` attrset. Further options like
 the active lockscreen app or terminal can also be set.
 
 Other than that, this is a fairly regular config including Waybar, Anyrun, Dunst, etc.

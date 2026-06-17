@@ -17,8 +17,8 @@
 				modules-left = [
 					"custom/launcher"
 				] ++ (
-					if (osConfig.itsyunaya-nix.compositor == "hyprland") then ["hyprland/workspaces"]
-					else if (osConfig.itsyunaya-nix.compositor == "mango") then ["ext/workspaces"]
+					if (osConfig.juno-cfg.compositor == "hyprland") then ["hyprland/workspaces"]
+					else if (osConfig.juno-cfg.compositor == "mango") then ["ext/workspaces"]
 					else []
 				)
 				++ [
@@ -27,8 +27,8 @@
 				];
 
 				modules-center =
-					if (osConfig.itsyunaya-nix.compositor == "hyprland") then ["hyprland/window"]
-					else if (osConfig.itsyunaya-nix.compositor == "mango") then ["dwl/window"]
+					if (osConfig.juno-cfg.compositor == "hyprland") then ["hyprland/window"]
+					else if (osConfig.juno-cfg.compositor == "mango") then ["dwl/window"]
 					else [];
 
 				modules-right = [

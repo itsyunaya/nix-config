@@ -1,12 +1,12 @@
 { osConfig, lib, ... }: let
-	shell = osConfig.itsyunaya-nix.sh.shell;
+	shell = osConfig.juno-cfg.sh.shell;
 	shellBinaries = {
 		zsh = "/run/current-system/sw/bin/zsh";
 		nushell = "/run/current-system/sw/bin/nu";
 	};
 in {
 	config = lib.mkMerge [
-		(lib.mkIf (osConfig.itsyunaya-nix.terminal == "kitty") {
+		(lib.mkIf (osConfig.juno-cfg.terminal == "kitty") {
 				programs.kitty = {
 					enable = true;
 					font.name = "JetBrainsMono Nerd Font";
@@ -45,7 +45,7 @@ in {
 				};
 			})
 
-		(lib.mkIf (osConfig.itsyunaya-nix.terminal == "ghostty") {
+		(lib.mkIf (osConfig.juno-cfg.terminal == "ghostty") {
 				programs.ghostty = {
 					enable = true;
 

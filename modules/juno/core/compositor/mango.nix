@@ -11,7 +11,7 @@
 	*/
 
 	config =
-		lib.mkIf (osConfig.itsyunaya-nix.compositor == "mango") {
+		lib.mkIf (osConfig.juno-cfg.compositor == "mango") {
 			wayland.windowManager.mango = {
 				enable = true;
 				systemd.enable = true;
@@ -144,8 +144,8 @@
 						"NONE,XF86MonBrightnessUp,spawn,brightnessctl -e4 -n2 set 5%+"
 						"NONE,XF86MonBrightnessDown,spawn,brightnessctl -e4 -n2 set 5%-"
 					] ++ (
-						if (osConfig.itsyunaya-nix.terminal == "kitty") then ["SUPER,Q,spawn,kitty"]
-						else if (osConfig.itsyunaya-nix.terminal == "ghostty") then ["SUPER,Q,spawn,ghostty"]
+						if (osConfig.juno-cfg.terminal == "kitty") then ["SUPER,Q,spawn,kitty"]
+						else if (osConfig.juno-cfg.terminal == "ghostty") then ["SUPER,Q,spawn,ghostty"]
 						else []
 					);
 
@@ -174,8 +174,8 @@
 
 						#"isnoanimation:1,appid:hyprpicker"
 					] ++ (
-						if (osConfig.itsyunaya-nix.terminal == "kitty") then ["isfloating:1,width:1000,height:510,appid:kitty"]
-						else if (osConfig.itsyunaya-nix.terminal == "ghostty") then ["isfloating:1,width:1000,height:550,appid:ghostty"]
+						if (osConfig.juno-cfg.terminal == "kitty") then ["isfloating:1,width:1000,height:510,appid:kitty"]
+						else if (osConfig.juno-cfg.terminal == "ghostty") then ["isfloating:1,width:1000,height:550,appid:ghostty"]
 						else []
 					);
 				};

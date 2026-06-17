@@ -7,7 +7,7 @@ in {
 		"flakes"
 	];
 
-	itsyunaya-nix = {
+	juno-cfg = {
 		/*
 		CAUTION: changing this always requires a reboot, and should only be performed
 		from tty. If the compositor is running while its file gets removed by home-manager,
@@ -65,7 +65,7 @@ in {
 	};
 
 	programs = {
-		zsh.enable = config.itsyunaya-nix.sh.shell == "zsh";
+		zsh.enable = config.juno-cfg.sh.shell == "zsh";
 
 		appimage.enable = true;
 		appimage.binfmt = true;
@@ -167,7 +167,7 @@ in {
 		extraGroups = [ "networkmanager" "wheel" ];
 		packages = [];
 		shell =
-			if config.itsyunaya-nix.sh.shell == "zsh"
+			if config.juno-cfg.sh.shell == "zsh"
 			then pkgs.zsh
 			else pkgs.nushell;
 	};

@@ -1,7 +1,7 @@
 { lib, ... }:
 
 {
-	options.itsyunaya-nix = {
+	options.juno-cfg = {
 		compositor = lib.mkOption {
 			type = lib.types.enum [ "hyprland" "mango" ];
 			default = "hyprland";

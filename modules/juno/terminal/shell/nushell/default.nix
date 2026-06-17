@@ -2,7 +2,7 @@
 
 {
 	programs.nushell = {
-		enable = osConfig.itsyunaya-nix.sh.shell == "nushell";
+		enable = osConfig.juno-cfg.sh.shell == "nushell";
 
 		shellAliases = {
 			explode = "poweroff";

@@ -102,7 +102,7 @@
 			modules = [
 				./hosts/juno/configuration.nix
 				./hosts/juno/hardware-configuration.nix
-				./options.nix
+				./hosts/juno/options.nix
 
 				{
 					nixpkgs.overlays = [
