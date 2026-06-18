@@ -33,10 +33,10 @@
 
 				modules-right = [
 					"tray"
-					"custom/colourpicker"
+					#"custom/colourpicker"
 					"bluetooth"
 					"cpu"
-					"memory"
+					#"memory"
 					"pulseaudio#input"
 					"pulseaudio"
 					"clock"
@@ -61,10 +61,7 @@
 					active-only = false;
 					all-outputs = true;
 					disable-scroll = false;
-					on-scroll-up = "hyprctl dispatch workspace -1";
-					on-scroll-down = "hyprctl dispatch workspace +1";
 					format = "{icon}";
-					on-click = "activate";
 					format-icons = {
 						urgent = "";
 						active = "";
@@ -130,7 +127,7 @@
 						"󰖀"
 						"󰕾"
 					];
-					on-click = "hyprctl dispatch exec '[float; size 1000 500]' pavucontrol";
+					on-click = "hyprctl dispatch 'hl.dsp.exec_cmd(\"pavucontrol\", { float = true, size = {1000, 500}})'";
 					scroll-step = 5;
 					on-click-right = "pavucontrol";
 				};
@@ -160,8 +157,8 @@
 
 				"custom/launcher" = {
 					format = "󱄅";
-					on-click = "bash $HOME/.config/waybar/run.sh wofi";
-					on-click-right = "bash $HOME/.config/waybar/run.sh kitty";
+					on-click = "anyrun";
+					on-click-right = "kitty";
 				};
 
 				"custom/colourpicker" = {

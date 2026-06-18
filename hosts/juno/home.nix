@@ -54,7 +54,6 @@ in {
 			fd
 			fzf
 			haskell-language-server
-			hyprpicker
 			hyprshot
 			keepassxc
 			mpdas
