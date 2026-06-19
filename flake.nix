@@ -140,6 +140,12 @@
 				}
 
 				home-manager.darwinModules.home-manager
+
+        {
+          home-manager.sharedModules = [
+            inputs.spicetify-nix.homeManagerModules.default
+          ];
+        }
 			];
 		};
 

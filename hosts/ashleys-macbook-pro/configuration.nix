@@ -1,4 +1,4 @@
-{ lib, self, ... }: let
+{ inputs, lib, self, ... }: let
 	username = "ashley";
 	recImport = import "${self}/functions/recursiveImport.nix";
 in {
@@ -6,10 +6,13 @@ in {
 		home = /Users/${username};
 	};
 
+  nixpkgs.config.allowUnfree = true;
+
 	home-manager = {
 		useGlobalPkgs = true;
 		useUserPackages = true;
 		backupFileExtension = "bak";
+    extraSpecialArgs = { inherit inputs; };
 	};
 
 	home-manager.users.${username} = { pkgs, ... }: {
@@ -47,7 +50,6 @@ in {
 
 			sessionPath = [
 				"$HOME/.cargo/bin"
-				"$HOME/.spicetify"
 			];
 
 			stateVersion = "25.11";
