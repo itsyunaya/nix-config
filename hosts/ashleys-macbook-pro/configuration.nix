@@ -18,20 +18,23 @@ in {
 			(recImport { inherit lib; } "${self}/modules/shared")
 		];
 
-		home.packages = with pkgs; [
-			alejandra
-			gnupg
-			localsend
-			neovim
-			nixd
-			nodejs
-			pinentry_mac
-			pnpm
-			ripgrep
-			statix
-			skimpdf
-			vesktop
-		];
+		home.packages = builtins.attrValues {
+			inherit
+				(pkgs)
+				alejandra
+				gnupg
+				localsend
+				neovim
+				nixd
+				nodejs-slim
+				pinentry_mac
+				pnpm
+				ripgrep
+				statix
+				skimpdf
+				vesktop
+				;
+		};
 
 		services.gpg-agent = {
 			enable = true;
@@ -43,11 +46,11 @@ in {
 			homeDirectory = /Users/${username};
 
 			sessionPath = [
-            	"$HOME/.cargo/bin"
-            	"$HOME/.spicetify"
-            ];
+				"$HOME/.cargo/bin"
+				"$HOME/.spicetify"
+			];
 
-            stateVersion = "25.11";
+			stateVersion = "25.11";
 		};
 	};
 
