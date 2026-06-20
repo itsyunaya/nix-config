@@ -125,6 +125,11 @@ in {
 	};
 
 	home = {
+		file."wallpapers" = {
+			source = "${self}/assets/wallpapers/";
+			target = "/home/${username}/.wallpapers";
+		};
+
 		pointerCursor = {
 			gtk.enable = true;
 			x11.enable = true;

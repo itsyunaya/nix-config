@@ -7,11 +7,7 @@
 		autocd = true;
 
 		autosuggestion.enable = true;
-		syntaxHighlighting = {
-			enable = true;
-
-			# todo: move normal cfg here
-		};
+		syntaxHighlighting.enable = true;
 
 		shellAliases = {
 			rb = "sudo darwin-rebuild switch --flake ~/.config/nix";
