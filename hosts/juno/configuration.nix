@@ -55,36 +55,11 @@ in {
 	environment.systemPackages = builtins.attrValues {
 		inherit
 			(pkgs)
-			alejandra
 			apfs-fuse
 			cifs-utils
-			darkly
-			devenv
-			ffmpeg
-			ffmpegthumbnailer
-			gcc
-			glib
-			libnotify
-			mpd-mpris
-			mpv
-			nh
-			nixd
-			nodejs-slim
-			openssl
-			pinentry-qt
-			playerctl
-			pnpm
-			qimgv
-			rustup
-			statix
-			unrar
-			unzip
 			wget
 			whitesur-cursors
 			whitesur-icon-theme
-			wl-clipboard
-			xdg-utils
-			zathura
 			;
 
 		qt6-qtwayland = pkgs.qt6.qtwayland;
@@ -92,19 +67,6 @@ in {
 
 		qtsvg6 = pkgs.kdePackages.qtsvg;
 		qtsvg5 = pkgs.qt5.qtsvg;
-
-		inherit
-			(pkgs.kdePackages)
-			dolphin
-			kio
-			kio-extras
-			kio-fuse
-			;
-
-		inherit
-			(inputs.awww.packages.${pkgs.stdenv.hostPlatform.system})
-			awww
-			;
 	};
 
 	environment.sessionVariables = {

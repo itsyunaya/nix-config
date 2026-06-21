@@ -1,76 +1,10 @@
-{ inputs, self, pkgs, username, lib, ... }: let
+{ self, pkgs, username, lib, ... }: let
 	recImport = import "${self}/functions/recursiveImport.nix";
 in {
 	imports = [
 		(recImport { inherit lib; } "${self}/modules/juno")
 		(recImport { inherit lib; } "${self}/modules/shared")
 	];
-
-	home.packages = builtins.attrValues {
-		tex-custom = pkgs.texlive.combine {
-			inherit
-				(pkgs.texlive)
-				scheme-medium
-				biber
-				biblatex
-				biblatex-bath
-				circuitikz
-				csquotes
-				lastpage
-				mdframed
-				needspace
-				pgfplots
-				svg
-				transparent
-				wrapfig
-				zref
-				;
-		};
-
-		discord = pkgs.discord.override {
-			withVencord = true;
-		};
-
-		prism = pkgs.prismlauncher.override {
-			additionalLibs = [ pkgs.glfw ];
-		};
-
-		mp = pkgs.callPackage "${self}/packages/musicpresence.nix" {};
-		zen = inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default;
-
-		inherit
-			(pkgs.jetbrains)
-			clion
-			idea
-			webstorm
-			;
-
-		inherit
-			(pkgs)
-			alsa-utils
-			anki
-			aseprite
-			btop
-			fd
-			fzf
-			haskell-language-server
-			hyprshot
-			keepassxc
-			mpdas
-			nicotine-plus
-			obsidian
-			pavucontrol
-			picard
-			qbittorrent
-			rmpc
-			ripgrep
-			telegram-desktop
-			vesktop
-			xlsclients
-			yams
-			xwl-notifier
-			;
-	};
 
 	services.mpd = {
 		enable = true;
