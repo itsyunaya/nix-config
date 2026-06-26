@@ -1,6 +1,10 @@
 { config, ... }: {
 	services.nginx = {
 		enable = true;
+
+		# for prometheus/grafana scraping
+		statusPage = true;
+
 		virtualHosts = {
 			"itsyunaya.app" = {
 				forceSSL = true;

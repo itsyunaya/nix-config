@@ -23,7 +23,12 @@
 		networkmanager.enable = true;
 
 		firewall = {
-			allowedTCPPorts = [ 80 443 81 ];
+			allowedTCPPorts = [
+				80 
+				443 
+				81 # nextcloud local
+				9090 # prometheus web dashboard
+			];
 		};
 	};
 
