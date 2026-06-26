@@ -705,6 +705,26 @@
         "type": "github"
       }
     },
+    "musicpresence": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1782488328,
+        "narHash": "sha256-xqJu7PqbI7XX+jVyb6LPiWzpl6V5d50M7eQ1qs+jwH4=",
+        "owner": "itsyunaya",
+        "repo": "musicpresence-flake",
+        "rev": "1a20099e0820edd7283567187f73c8ef0a813359",
+        "type": "github"
+      },
+      "original": {
+        "owner": "itsyunaya",
+        "repo": "musicpresence-flake",
+        "type": "github"
+      }
+    },
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
@@ -896,6 +916,7 @@
         "home-manager": "home-manager_2",
         "hyprland": "hyprland",
         "mangowm": "mangowm",
+        "musicpresence": "musicpresence",
         "nix-darwin": "nix-darwin",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",

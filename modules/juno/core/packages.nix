@@ -1,4 +1,4 @@
-{ inputs, pkgs, self, ... }: {
+{ inputs, pkgs, ... }: {
 	home.packages = builtins.attrValues {
 		tex-custom = pkgs.texlive.combine {
 			inherit
@@ -31,7 +31,6 @@
 		};
 
 		awww = inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww;
-		mp = pkgs.callPackage "${self}/packages/musicpresence.nix" {};
 		zen = inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default;
 
 		inherit
@@ -71,6 +70,7 @@
 			mpdas
 			mpd-mpris
 			mpv
+			musicpresence
 			nh
 			nicotine-plus
 			nixd

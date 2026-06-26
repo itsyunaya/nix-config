@@ -56,6 +56,12 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
+		# https://github.com/itsyunaya/musicpresence-flake
+        musicpresence = {
+        	url = "github:itsyunaya/musicpresence-flake";
+        	inputs.nixpkgs.follows = "nixpkgs";
+        };
+
 		# https://github.com/nix-community/nixvim
 		nixvim.url = "github:nix-community/nixvim";
 
@@ -90,6 +96,7 @@
 		aagl,
 		alejandra,
 		mangowm,
+		musicpresence,
 		nixvim,
 		qtengine,
 		spicetify-nix,
@@ -112,6 +119,7 @@
 						(final: prev: {
 								alejandra = alejandra.packages.${prev.stdenv.hostPlatform.system}.default;
 							})
+						musicpresence.overlays.default
 						xwl-notifier.overlays.default
 					];
 				}
