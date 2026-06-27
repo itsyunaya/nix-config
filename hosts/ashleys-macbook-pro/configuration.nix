@@ -63,7 +63,8 @@ in {
 	# ill keep using it for now...
 	nix.enable = false;
 
-	# similar to nixos state version, do not edit without proper
-	# care and so on
+	# this value is similar to nixOS state version, and should be treated
+	# accordingly. do not edit unless it is strictly necessary and you
+	# know what you are doing
 	system.stateVersion = 7;
 }

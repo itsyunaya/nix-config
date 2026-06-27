@@ -1,4 +1,4 @@
-{ theme, inputs, config, pkgs, self, lib, ... }: let
+{ theme, inputs, pkgs, self, lib, ... }: let
 	username = "ashley";
 	recImport = import "${self}/functions/recursiveImport.nix";
 in {
@@ -34,7 +34,7 @@ in {
 		useUserPackages = true;
 		extraSpecialArgs = { inherit inputs theme self username; };
 
-		users.${username} = import ./home.nix;
+		users.${username} = ./home.nix;
 	};
 
 	users.users.${username} = {
