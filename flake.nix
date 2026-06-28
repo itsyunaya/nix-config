@@ -97,6 +97,7 @@
 		nix-darwin,
 		nixos-hardware,
 		aagl,
+		agenix,
 		alejandra,
 		mangowm,
 		musicpresence,
@@ -175,6 +176,8 @@
 
 			modules = [
 				./hosts/callisto/configuration.nix
+
+				agenix.nixosModules.default
 			];
 		};
 

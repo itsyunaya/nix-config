@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }: {
+{ config, lib, pkgs, ... }: {
 	services.factorio = {
 		enable = true;
 		openFirewall = true;
@@ -10,8 +10,7 @@
 		requireUserVerification = false;
 
 		game-name = "ashley factorio server";
-		# TODO: secrets management
-		game-password = "meow";
+		extraSettingsFile = config.age.secrets.factorio.path;
 
 		/*mods = let
 			modDir = /home/callisto/factorio-mods;

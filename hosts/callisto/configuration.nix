@@ -1,4 +1,4 @@
-{ lib, pkgs, self, ... }: let
+{ inputs, lib, pkgs, self, ... }: let
 	recImport = import "${self}/functions/recursiveImport.nix";
 in {
 	nix.settings.experimental-features = [
@@ -8,6 +8,7 @@ in {
 
     imports = [
     	(recImport { inherit lib; } "${self}/hosts/callisto/modules")
+		./secrets
     ];
 
 	time.timeZone = "Europe/Berlin";
@@ -39,6 +40,8 @@ in {
 		kitty.terminfo
 		vim
 		wget
+
+		inputs.agenix.packages.${pkgs.stdenv.hostPlatform.system}.default
 	];
 
 	security = {
