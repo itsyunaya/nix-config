@@ -56,13 +56,9 @@
 			aseprite
 			btop
 			darkly
-			devenv
-			fd
 			ffmpeg
 			ffmpegthumbnailer
 			fzf
-			gcc
-			glib
 			haskell-language-server
 			hyprshot
 			keepassxc
@@ -89,7 +85,6 @@
 			rustup
 			statix
 			telegram-desktop
-			unrar
 			unzip
 			vesktop
 			wl-clipboard
