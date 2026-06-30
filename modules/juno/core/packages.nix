@@ -82,7 +82,6 @@
 			qimgv
 			ripgrep
 			rmpc
-			rustup
 			statix
 			telegram-desktop
 			unzip
