@@ -66,7 +66,6 @@ in {
 			ffmpeg
 			ffmpegthumbnailer
 			fzf
-			haskell-language-server
 			hyprshot
 			keepassxc
 			libnotify

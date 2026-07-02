@@ -6,7 +6,7 @@
 		# https://github.com/xiyaowong/transparent.nvim/issues/87
 		nixpkgs.config.allowUnfree = true;
 
-		enable = true;
+		enable = false;
 		defaultEditor = true;
 
 		plugins = {

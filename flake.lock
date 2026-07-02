@@ -705,6 +705,21 @@
         "type": "github"
       }
     },
+    "mnw": {
+      "locked": {
+        "lastModified": 1780772958,
+        "narHash": "sha256-VKKe8r4pwCGWZ3Yr9CPN129R4S3CKLSrlYqdYz3vKpM=",
+        "owner": "Gerg-L",
+        "repo": "mnw",
+        "rev": "0871dbf63a53610c95db04439ed8ea4d6ec9c160",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Gerg-L",
+        "repo": "mnw",
+        "type": "github"
+      }
+    },
     "musicpresence": {
       "inputs": {
         "nixpkgs": [
@@ -902,6 +917,7 @@
         "home-manager": "home-manager_2",
         "hyprland": "hyprland",
         "mangowm": "mangowm",
+        "mnw": "mnw",
         "musicpresence": "musicpresence",
         "nix-darwin": "nix-darwin",
         "nixos-hardware": "nixos-hardware",

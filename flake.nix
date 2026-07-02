@@ -56,6 +56,8 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
+		mnw.url = "github:Gerg-L/mnw";
+
 		# https://github.com/itsyunaya/musicpresence-flake
 		musicpresence = {
 			url = "github:itsyunaya/musicpresence-flake";
@@ -100,6 +102,7 @@
 		agenix,
 		alejandra,
 		mangowm,
+		mnw,
 		musicpresence,
 		nixvim,
 		qtengine,
@@ -138,6 +141,7 @@
 					home-manager.sharedModules = [
 						spicetify-nix.homeManagerModules.spicetify
 						mangowm.hmModules.mango
+						mnw.homeManagerModules.mnw
 						nixvim.homeModules.nixvim
 					];
 				}
