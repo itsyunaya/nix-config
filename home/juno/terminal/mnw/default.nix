@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, theme, ... }: {
 	programs.mnw = {
 		enable = true;
 
@@ -6,7 +6,13 @@
 		aliases = [ "vi" "nvm" ];
 		desktopEntry = false;
 
-		initLua = ''require("init")'';
+		initLua = ''
+			_G.theme = {
+				pink="${theme.colours.accent-pink}"
+			}
+
+			require("init")
+		'';
 
 		plugins = {
 			dev.conf = {

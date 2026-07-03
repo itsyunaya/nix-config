@@ -2,7 +2,11 @@ return {
 	"transparent.nvim",
 	lazy = false,
 	after = function()
-		vim.api.nvim_create_autocmd("VimEnter", {
+		require("transparent").setup({
+			extra_groups = { "Startupheader" }
+		})
+
+		vim.api.nvim_create_autocmd("UIEnter", {
 			callback = function()
 				vim.cmd("TransparentEnable")
 			end,

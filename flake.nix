@@ -64,12 +64,6 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-		# https://github.com/nix-community/nixvim
-		nixvim = {
-			url = "github:nix-community/nixvim";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
-
 		# https://github.com/kossLAN/qtengine
 		qtengine = {
 			url = "github:kossLAN/qtengine";
@@ -104,7 +98,6 @@
 		mangowm,
 		mnw,
 		musicpresence,
-		nixvim,
 		qtengine,
 		spicetify-nix,
 		xwl-notifier,
@@ -142,7 +135,6 @@
 						spicetify-nix.homeManagerModules.spicetify
 						mangowm.hmModules.mango
 						mnw.homeManagerModules.mnw
-						nixvim.homeModules.nixvim
 					];
 				}
 			];

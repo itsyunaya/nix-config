@@ -1,7 +1,6 @@
 return {
 	"startup.nvim",
-	-- todo: find actual event name for this
-	--event = "VimEnter",
+	event = "VimEnter",
 	lazy = false,
 	after = function()
 		require("startup").setup({
@@ -22,8 +21,7 @@ return {
 				highlight = "";
 				oldfiles_amount = 0,
 
-				-- todo: find a way to populate required constants from nix
-				default_color = "",
+				default_color = "#" .. _G.theme["pink"],
 
 				content = {
 					"    ___         __    __                 _         ",
@@ -51,7 +49,6 @@ return {
 					{ "  New File", "lua require'startup'.new_file()", "<leader>nf" }
 				},
 
-				-- todo: see above
 				default_color = "";
 			},
 
