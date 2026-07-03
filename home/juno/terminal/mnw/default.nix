@@ -10,7 +10,7 @@
 
 		plugins = {
 			dev.conf = {
-				pure = ./.;
+				pure = ./ashleyvim;
 				impure = "/home/ashley/Documents/Development/nvim";
 			};
 
