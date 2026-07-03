@@ -3,6 +3,7 @@
 	lib,
 	inputs,
 	pkgs,
+	theme,
 	...
 }: {
 	config =
@@ -16,6 +17,10 @@
 			};
 
 			xdg.configFile = {
+				"hypr/theme.lua" = lib.mkForce {
+					text = theme.luaTheme;
+				};
+
 				"hypr/animations.lua" = lib.mkForce { source = ./lua/animations.lua; };
 				"hypr/binds.lua" = lib.mkForce { source = ./lua/binds.lua; };
 				"hypr/config.lua" = lib.mkForce { source = ./lua/config.lua; };

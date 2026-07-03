@@ -8,6 +8,7 @@ function import(module)
 	return 0
 end
 
+import("theme")
 import("animations")
 import("binds")
 import("config")

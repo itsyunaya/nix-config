@@ -7,9 +7,7 @@
 		desktopEntry = false;
 
 		initLua = ''
-			_G.theme = {
-				pink="${theme.colours.accent-pink}"
-			}
+			${theme.luaTheme}
 
 			require("init")
 		'';
