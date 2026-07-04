@@ -2,7 +2,10 @@ return {
 	"lualine.nvim",
 	lazy = false,
 	after = function()
-		-- todo: actually configure lualine
-		require("lualine").setup()
+		require("lualine").setup({
+			options = {
+				theme = "modus-vivendi"
+			}
+		})
 	end
 }

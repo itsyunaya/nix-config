@@ -3,7 +3,8 @@ return {
 	lazy = false,
 	after = function()
 		require("transparent").setup({
-			extra_groups = { "Startupheader" }
+			-- the groups are named according to the scheme "Startup[section name]"
+			extra_groups = { "Startupheader", "Startupsubheader", "Startupbody" }
 		})
 
 		vim.api.nvim_create_autocmd("UIEnter", {

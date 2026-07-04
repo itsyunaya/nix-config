@@ -1,9 +1,9 @@
 vim.opt.encoding = "utf-8"
 
-vim.tabstop = 4;
-vim.softtabstop = 4;
-vim.shiftwidth = 4;
-vim.smartindent = true;
+vim.opt.tabstop = 4;
+vim.opt.softtabstop = 4;
+vim.opt.shiftwidth = 4;
+vim.opt.smartindent = true;
 
 vim.opt.number = true
 vim.opt.relativenumber = true

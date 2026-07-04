@@ -41,6 +41,7 @@
 
 					# etc
 					lz-n
+					telescope-nvim
 					;
 			};
 		};
