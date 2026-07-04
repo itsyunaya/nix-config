@@ -9,3 +9,19 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 vim.g.mapleader = " "
+
+vim.diagnostic.config({
+	virtual_text = true,
+	virtual_text = { prefix = '' },
+	signs = true,
+	underline = true,
+	update_in_insert = false,
+	severity_sort = true,
+
+	float = {
+		border = "solid",
+		source = true,
+	},
+})
+
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#" .. _G.theme["bg"] })

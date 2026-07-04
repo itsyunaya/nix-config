@@ -31,6 +31,7 @@
 
 					# langs
 					nvim-lspconfig
+					nvim-lint
 					luasnip
 					vimtex
 
