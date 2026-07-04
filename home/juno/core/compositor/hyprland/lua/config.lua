@@ -17,6 +17,10 @@ hl.config({
 		},
 	},
 
+	dwindle = {
+		preserve_split = true,
+	},
+
 	decoration = {
 		active_opacity = 1.0,
 		inactive_opacity = 1.0,

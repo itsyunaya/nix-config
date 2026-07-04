@@ -16,6 +16,7 @@ hl.bind("SUPER + C", hl.dsp.window.close())
 hl.bind("SUPER + SHIFT + C", hl.dsp.window.kill())
 hl.bind("SUPER + V", hl.dsp.window.float())
 hl.bind("SUPER + F", hl.dsp.window.fullscreen())
+hl.bind("SUPER + J", hl.dsp.layout("togglesplit"))
 
 hl.bind("SUPER + LEFT", hl.dsp.focus({ direction = "l" }))
 hl.bind("SUPER + RIGHT", hl.dsp.focus({ direction = "r" }))
