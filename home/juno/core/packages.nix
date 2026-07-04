@@ -7,6 +7,9 @@
 		# system glfw for running mc natively on wayland
 		# only works for some versions up to 26.x
 		additionalLibs = [ pkgs.glfw ];
+		# "PRESS ENTER TO ENABLE THE NARRATOR !!!"
+		# no shut up i dont care :sob:
+		textToSpeechSupport = false;
 	};
 
 	awww = inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww;
