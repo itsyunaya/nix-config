@@ -1,6 +1,12 @@
 { pkgs, ... }: {
 	services = {
-		displayManager.ly.enable = true;
+		displayManager.ly = {
+			enable = true;
+			settings = {
+				session_log = ".cache/ly-session.log";
+			};
+		};
+
 		gnome.gnome-keyring.enable = true;
 		samba.enable = true;
 		udisks2.enable = true;
