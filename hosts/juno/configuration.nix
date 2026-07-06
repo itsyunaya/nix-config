@@ -63,6 +63,8 @@ in {
 			qtsvg5 = pkgs.qt5.qtsvg;
 		};
 
+		defaultPackages = [ ];
+
 		sessionVariables = {
 			QT_IM_MODULE = "fcitx";
 			XMODIFIERS = "@im=fcitx";
