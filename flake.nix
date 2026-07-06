@@ -35,6 +35,12 @@
 			inputs.darwin.follows = "";
 		};
 
+		# https://github.com/itsyunaya/ags-bar
+		ags-bar = {
+			url = "github:itsyunaya/ags-bar";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
+
 		# https://github.com/itsyunaya/alejandra-opinionated
 		alejandra = {
 			url = "github:itsyunaya/alejandra-opinionated";
@@ -94,6 +100,7 @@
 		nixos-hardware,
 		aagl,
 		agenix,
+		ags-bar,
 		alejandra,
 		mangowm,
 		mnw,

@@ -13,6 +13,7 @@
 	};
 
 	awww = inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww;
+	ags-bar = inputs.ags-bar.packages.${pkgs.stdenv.hostPlatform.system}.default;
 	zen = inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default;
 in {
 	home.packages = builtins.attrValues {
@@ -40,6 +41,7 @@ in {
 			discord
 			prism
 			awww
+			ags-bar
 			zen
 			;
 
