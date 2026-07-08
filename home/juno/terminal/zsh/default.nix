@@ -9,7 +9,7 @@ in {
 
 		shellAliases = {
 			explode = "poweroff";
-			nr = "sudo nixos-rebuild switch --flake /home/ashley/sysflake\\#juno";
+			nr = "nh os switch /home/ashley/sysflake -H juno";
 		};
 
 		syntaxHighlighting = {

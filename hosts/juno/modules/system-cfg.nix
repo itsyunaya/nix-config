@@ -40,9 +40,6 @@
 			nvidiaSettings = true;
 		};
 
-		# makes my bluetooth not explode hopefully
-		firmware = [ pkgs.linux-firmware ];
-
 		bluetooth = {
 			enable = true;
 			powerOnBoot = false;
