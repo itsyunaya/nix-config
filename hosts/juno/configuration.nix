@@ -23,10 +23,6 @@ in {
 
 		# "swaylock" or "hyprlock"
 		lock-app = "hyprlock";
-
-		# although i will probably retire waybar in favour of my custom
-		# bar i made with ags/astal, ill keep it around for now
-		waybar = false;
 	};
 
 	imports = [

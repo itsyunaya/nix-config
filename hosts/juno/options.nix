@@ -21,11 +21,5 @@
 				description = "If omz/omp should be enabled";
 			};
 		};
-
-		waybar = lib.mkOption {
-			type = lib.types.bool;
-			default = false;
-			description = "Wether to enable Waybar";
-		};
 	};
 }
