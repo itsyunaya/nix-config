@@ -62,6 +62,7 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
+		# https://github.com/Gerg-L/mnw
 		mnw.url = "github:Gerg-L/mnw";
 
 		# https://github.com/itsyunaya/musicpresence-flake
@@ -83,7 +84,10 @@
 		};
 
 		# https://github.com/itsyunaya/xwl-notifier-rs
-		xwl-notifier.url = "github:itsyunaya/xwl-notifier-rs";
+		xwl-notifier = {
+			url = "github:itsyunaya/xwl-notifier-rs";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 
 		# https://github.com/0xc000022070/zen-browser-flake
 		zen-browser = {
