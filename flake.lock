@@ -75,11 +75,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1783461735,
-        "narHash": "sha256-XTlFs5/ljV36D1R0WFH+SVXM7EF4UbVjn260jlfhsZs=",
+        "lastModified": 1783621382,
+        "narHash": "sha256-Tq/xON+ossqWG2xJ5RPcbnAaO9k+H7SZRLbTOQrb9h8=",
         "owner": "itsyunaya",
         "repo": "ags-bar",
-        "rev": "fffc6c7a4e3f39b2b7318de8d99f079690c84d15",
+        "rev": "4ba944b6575d950e5b16b821cfc6bee1da769967",
         "type": "github"
       },
       "original": {
@@ -716,11 +716,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1782489852,
-        "narHash": "sha256-HZN0gA+wfQ+10zsm/JQ1cuOPe8a8+/KlG3wLGzXquww=",
+        "lastModified": 1783627329,
+        "narHash": "sha256-HmdmedMvFce3Y+75S1ShzmaZBdu+XKy2T0UQs3aU9Xk=",
         "owner": "itsyunaya",
         "repo": "musicpresence-flake",
-        "rev": "2d5b531cbe01b200af6b550a0ad1216b13b1f985",
+        "rev": "4ee0215bf2669d4f6b6c30fe007141af1744b545",
         "type": "github"
       },
       "original": {
