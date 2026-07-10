@@ -716,11 +716,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1783627329,
-        "narHash": "sha256-HmdmedMvFce3Y+75S1ShzmaZBdu+XKy2T0UQs3aU9Xk=",
+        "lastModified": 1783699845,
+        "narHash": "sha256-JXwO8oyWNLRWH/njOf/Byz0656pTAA2TvGBRZZvq+pA=",
         "owner": "itsyunaya",
         "repo": "musicpresence-flake",
-        "rev": "4ee0215bf2669d4f6b6c30fe007141af1744b545",
+        "rev": "f150d1ef9db54e77c82736115650c623de7f9b09",
         "type": "github"
       },
       "original": {
