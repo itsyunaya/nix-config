@@ -12,6 +12,11 @@
 		textToSpeechSupport = false;
 	};
 
+	vesktop = pkgs.vesktop.override {
+		withTTS = false;
+		withMiddleClickScroll = true;
+	};
+
 	awww = inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww;
 	ags-bar = inputs.ags-bar.packages.${pkgs.stdenv.hostPlatform.system}.default;
 	zen = inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default;
@@ -38,10 +43,11 @@ in {
 		};
 
 		inherit
+			ags-bar
+			awww
 			discord
 			prism
-			awww
-			ags-bar
+			vesktop
 			zen
 			;
 
@@ -96,7 +102,6 @@ in {
 			statix
 			telegram-desktop
 			unzip
-			vesktop
 			wl-clipboard
 			xdg-utils
 			xlsclients
