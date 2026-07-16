@@ -12,19 +12,9 @@
 		textToSpeechSupport = false;
 	};
 
-	vesktop = pkgs.vesktop.override {
-		withTTS = false;
-		withMiddleClickScroll = true;
-	};
-
-	awww = inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww;
-	ags-bar = inputs.ags-bar.packages.${pkgs.stdenv.hostPlatform.system}.default;
-	zen = inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default;
-in {
-	home.packages = builtins.attrValues {
-		tex-custom = pkgs.texlive.combine {
+	tex-custom = pkgs.texliveSmall.withPackages (ps: builtins.attrValues {
 			inherit
-				(pkgs.texlive)
+				(ps)
 				scheme-medium
 				biber
 				biblatex
@@ -40,13 +30,24 @@ in {
 				wrapfig
 				zref
 				;
-		};
+		});
 
+	vesktop = pkgs.vesktop.override {
+		withTTS = false;
+		withMiddleClickScroll = true;
+	};
+
+	awww = inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww;
+	ags-bar = inputs.ags-bar.packages.${pkgs.stdenv.hostPlatform.system}.default;
+	zen = inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default;
+in {
+	home.packages = builtins.attrValues {
 		inherit
 			ags-bar
 			awww
 			discord
 			prism
+			tex-custom
 			vesktop
 			zen
 			;

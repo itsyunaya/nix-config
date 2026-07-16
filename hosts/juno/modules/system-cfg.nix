@@ -18,6 +18,12 @@
 	nixpkgs = {
 		hostPlatform = lib.mkDefault "x86_64-linux";
 		config.allowUnfree = true;
+
+		# vesktop is relying on an eol electron
+		# https://github.com/NixOS/nixpkgs/pull/542528
+		config.permittedInsecurePackages = [
+			"electron-40.10.5"
+		];
 	};
 
 	networking = {
