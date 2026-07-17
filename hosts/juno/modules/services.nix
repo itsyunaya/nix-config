@@ -28,6 +28,9 @@
 			wireplumber.enable = true;
 		};
 
+		# replacement for update-users-groups.pl because perl is evil
+		userborn.enable = true;
+
 		xserver = {
 			xkb = {
 				layout = "us";
