@@ -71,10 +71,6 @@ in {
 			QT_QPA_PLATFORM = "wayland";
 			NIXOS_OZONE_WL = "1";
 		};
-
-		# needed so dolphin works nicely with mime types
-		# kde software is so evil sometimes :(
-		etc."xdg/menus/applications.menu".source = "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
 	};
 
 	# state version should only be changed when it is really necessary,

@@ -60,14 +60,6 @@ in {
 			;
 
 		inherit
-			(pkgs.kdePackages)
-			dolphin
-			kio
-			kio-extras
-			kio-fuse
-			;
-
-		inherit
 			(pkgs)
 			alejandra
 			alsa-utils
