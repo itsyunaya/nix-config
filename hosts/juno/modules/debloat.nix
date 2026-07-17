@@ -7,8 +7,6 @@
 		man.enable = false;
 	};
 
-	programs.nano.enable = false;
-
 	environment = {
 		# perl, rsync, strace
 		defaultPackages = [ ];
@@ -16,4 +14,8 @@
 		# error message when trying to run dynamically linked exes
 		stub-ld.enable = false;
 	};
+
+	programs.nano.enable = false;
+
+	services.speechd.enable = false;
 }
