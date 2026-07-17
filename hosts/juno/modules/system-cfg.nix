@@ -23,15 +23,24 @@
 	*/
 	# system.etc.overlay.enable = true;
 
-	nixpkgs = {
-		hostPlatform = lib.mkDefault "x86_64-linux";
-		config.allowUnfree = true;
-
-		# vesktop is relying on an eol electron
-		# https://github.com/NixOS/nixpkgs/pull/542528
-		config.permittedInsecurePackages = [
+	nixpkgs = let
+		insecurePkgs = [
+			# vesktop is relying on an eol electron
+			# https://nixpk.gs/pr-tracker.html?pr=542528
 			"electron-40.10.5"
 		];
+
+		hasItems = builtins.length insecurePkgs > 0;
+		warningMsg =
+			"Currently the following insecure packages are permitted to be installed: "
+			+ builtins.concatStringsSep ", " insecurePkgs;
+	in {
+		hostPlatform = lib.mkDefault "x86_64-linux";
+
+		config = {
+			allowUnfree = true;
+			permittedInsecurePackages = lib.warnIf hasItems warningMsg insecurePkgs;
+		};
 	};
 
 	networking = {
@@ -67,7 +76,7 @@
 		# enable the little stars when typing my password (useful because im bad at typing :p)
 		sudo.extraConfig = ''
       		Defaults env_reset,pwfeedback
-    	'';
+    '';
 
 		# needed so the screen lockers can actually validate my password
 		# modular setup depending on which lock is in use
