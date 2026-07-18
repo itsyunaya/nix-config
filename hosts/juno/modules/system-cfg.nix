@@ -15,13 +15,14 @@
 		kernel.sysctl = { "fs.inotify.max_user_watches" = 1048576; };
 	};
 
-	/*
-	experimental option to replace old perl script used for /etc/ population.
-	sadly doesn't work on either mutable (see below issue) or immutable (some apps need /etc/ to be writable) mode.
-
-	https://github.com/nixos/nixpkgs/issues/480020
-	*/
-	# system.etc.overlay.enable = true;
+	system = {
+		etc.overlay.enable = true;
+		tools = {
+			nixos-enter.enable = false;
+			nixos-generate-config.enable = false;
+			nixos-install.enable = false;
+		};
+	};
 
 	nixpkgs = let
 		insecurePkgs = [

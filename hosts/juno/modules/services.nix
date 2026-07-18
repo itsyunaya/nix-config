@@ -28,8 +28,15 @@
 			wireplumber.enable = true;
 		};
 
-		# replacement for update-users-groups.pl because perl is evil
-		userborn.enable = true;
+		userborn = {
+			enable = true;
+			# this absolutely needs to be set when the etc overlay is enabled
+			# else authentication completely breaks
+			passwordFilesLocation =
+				if (config.system.etc.overlay.enable == true)
+				then lib.mkForce "/var/lib/nixos"
+				else "/etc";
+		};
 
 		xserver = {
 			xkb = {
