@@ -1,8 +1,4 @@
 { inputs, pkgs, ... }: let
-	discord = pkgs.discord.override {
-		withVencord = true;
-	};
-
 	prism = pkgs.prismlauncher.override {
 		# system glfw for running mc natively on wayland
 		# only works for some versions up to 26.x
@@ -45,7 +41,6 @@ in {
 		inherit
 			ags-bar
 			awww
-			discord
 			prism
 			tex-custom
 			vesktop

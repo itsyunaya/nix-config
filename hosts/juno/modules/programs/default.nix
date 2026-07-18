@@ -8,7 +8,6 @@
 		hyprland.enable = config.juno-cfg.compositor == "hyprland";
 		mango.enable = config.juno-cfg.compositor == "mango";
 
-		anime-game-launcher.enable = true;
 		steam.enable = true;
 
 		gnupg.agent = {

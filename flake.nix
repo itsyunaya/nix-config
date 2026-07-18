@@ -22,12 +22,6 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-		# https://github.com/an-anime-team/an-anime-game-launcher
-		aagl = {
-			url = "github:ezKEa/aagl-gtk-on-nix";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
-
 		# https://github.com/ryantm/agenix
 		agenix = {
 			url = "github:ryantm/agenix";
@@ -102,7 +96,6 @@
 		home-manager,
 		nix-darwin,
 		nixos-hardware,
-		aagl,
 		agenix,
 		ags-bar,
 		alejandra,
@@ -135,7 +128,6 @@
 					];
 				}
 
-				aagl.nixosModules.default
 				home-manager.nixosModules.home-manager
 				mangowm.nixosModules.mango
 				nixos-hardware.nixosModules.msi-b550-a-pro

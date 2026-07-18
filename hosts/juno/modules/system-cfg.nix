@@ -52,10 +52,7 @@
 	hardware = {
 		cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
-		graphics = {
-			enable = true;
-			enable32Bit = true;
-		};
+		graphics.enable = true;
 
 		nvidia = {
 			modesetting.enable = true;
