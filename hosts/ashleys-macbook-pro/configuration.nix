@@ -1,6 +1,6 @@
 { inputs, lib, self, ... }: let
 	username = "ashley";
-	recImport = import "${self}/functions/recursiveImport.nix" { inherit lib; };
+	recImport = import "${self}/lib/recursiveImport.nix" { inherit lib; };
 in {
 	users.users.${username} = {
 		home = /Users/${username};

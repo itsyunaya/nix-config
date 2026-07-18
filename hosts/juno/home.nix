@@ -1,5 +1,5 @@
 { self, pkgs, username, lib, ... }: let
-	recImport = import "${self}/functions/recursiveImport.nix" { inherit lib; };
+	recImport = import "${self}/lib/recursiveImport.nix" { inherit lib; };
 in {
 	imports = [
 		(recImport "${self}/home/juno")

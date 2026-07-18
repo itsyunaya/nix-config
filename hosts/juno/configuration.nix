@@ -1,6 +1,6 @@
 { theme, inputs, pkgs, self, lib, ... }: let
 	username = "ashley";
-	recImport = import "${self}/functions/recursiveImport.nix" { inherit lib; };
+	recImport = import "${self}/lib/recursiveImport.nix" { inherit lib; };
 in {
 	nix.settings.experimental-features = [
 		"nix-command"
