@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ config, lib, ... }: {
 	services = {
 		displayManager.ly = {
 			enable = true;
@@ -10,14 +10,6 @@
 		gnome.gnome-keyring.enable = true;
 		samba.enable = true;
 		udisks2.enable = true;
-
-		# needed for mullvad
-		resolved.enable = true;
-
-		mullvad-vpn = {
-			enable = true;
-			package = pkgs.mullvad-vpn;
-		};
 
 		pipewire = {
 			enable = true;

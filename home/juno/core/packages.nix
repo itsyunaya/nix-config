@@ -83,7 +83,6 @@ in {
 			picard
 			playerctl
 			pnpm
-			qbittorrent
 			qimgv
 			ripgrep
 			rmpc

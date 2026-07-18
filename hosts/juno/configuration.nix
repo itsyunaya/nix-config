@@ -23,6 +23,8 @@ in {
 
 		# "swaylock" or "hyprlock"
 		lock-app = "hyprlock";
+
+		torrenting = false;
 	};
 
 	imports = [

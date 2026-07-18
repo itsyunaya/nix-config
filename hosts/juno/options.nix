@@ -21,5 +21,11 @@
 				description = "If omz/omp should be enabled";
 			};
 		};
+
+		torrenting = lib.mkOption {
+			type = lib.types.bool;
+			default = false;
+			description = "Whether to enable torrenting-related services and apps";
+		};
 	};
 }
