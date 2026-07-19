@@ -97,4 +97,7 @@ in {
 			zathura
 			;
 	};
+
+	manual.manpages.enable = false;
+    programs.man.enable = false;
 }

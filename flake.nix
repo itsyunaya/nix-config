@@ -51,10 +51,10 @@
 		hyprland.url = "github:hyprwm/Hyprland";
 
 		# https://github.com/mangowm/mango
-		mangowm = {
-			url = "github:mangowm/mango";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
+		#mangowm = {
+		#	url = "github:mangowm/mango";
+		#	inputs.nixpkgs.follows = "nixpkgs";
+		#};
 
 		# https://github.com/Gerg-L/mnw
 		mnw.url = "github:Gerg-L/mnw";
@@ -99,7 +99,7 @@
 		agenix,
 		ags-bar,
 		alejandra,
-		mangowm,
+		#mangowm,
 		mnw,
 		musicpresence,
 		qtengine,
@@ -129,15 +129,15 @@
 				}
 
 				home-manager.nixosModules.home-manager
-				mangowm.nixosModules.mango
+				#mangowm.nixosModules.mango
+				mnw.nixosModules.mnw
 				nixos-hardware.nixosModules.msi-b550-a-pro
 				qtengine.nixosModules.default
 
 				{
 					home-manager.sharedModules = [
 						spicetify-nix.homeManagerModules.spicetify
-						mangowm.hmModules.mango
-						mnw.homeManagerModules.mnw
+						#mangowm.hmModules.mango
 					];
 				}
 			];
