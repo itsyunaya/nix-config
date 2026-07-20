@@ -6,6 +6,9 @@ in {
 		(recImport "${self}/home/shared")
 	];
 
+	manual.manpages.enable = false;
+	programs.man.enable = false;
+
 	gtk = {
 		enable = true;
 		gtk3.extraConfig.gtk-application-prefer-dark-theme = true;

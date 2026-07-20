@@ -48,22 +48,117 @@ in {
 	};
 
 	environment = {
-		systemPackages = builtins.attrValues {
-			inherit
-				(pkgs)
-				apfs-fuse
-				cifs-utils
-				wget
-				whitesur-cursors
-				whitesur-icon-theme
-				;
+		systemPackages = let
+			prism = pkgs.prismlauncher.override {
+				# system glfw for running mc natively on wayland
+				# only works for some versions up to 26.x
+				additionalLibs = [ pkgs.glfw ];
+				# "PRESS ENTER TO ENABLE THE NARRATOR !!!"
+				# no shut up i dont care :sob:
+				textToSpeechSupport = false;
+			};
 
-			qt6-qtwayland = pkgs.qt6.qtwayland;
-			qt5-qtwayland = pkgs.qt5.qtwayland;
+			tex-custom = pkgs.texliveSmall.withPackages (ps:
+					builtins.attrValues {
+						inherit
+							(ps)
+							scheme-medium
+							biber
+							biblatex
+							biblatex-bath
+							circuitikz
+							csquotes
+							lastpage
+							mdframed
+							needspace
+							pgfplots
+							svg
+							transparent
+							wrapfig
+							zref
+							;
+					});
 
-			qtsvg6 = pkgs.kdePackages.qtsvg;
-			qtsvg5 = pkgs.qt5.qtsvg;
-		};
+			vesktop = pkgs.vesktop.override {
+				withTTS = false;
+				withMiddleClickScroll = true;
+			};
+
+			awww = inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww;
+			ags-bar = inputs.ags-bar.packages.${pkgs.stdenv.hostPlatform.system}.default;
+			zen = inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default;
+		in
+			builtins.attrValues {
+				inherit
+					ags-bar
+					awww
+					prism
+					tex-custom
+					vesktop
+					zen
+					;
+
+				inherit
+					(pkgs.jetbrains)
+					clion
+					idea
+					webstorm
+					;
+
+				inherit
+					(pkgs)
+					alejandra
+					alsa-utils
+					anki
+					apfs-fuse
+					aseprite
+					btop
+					cifs-utils
+					darkly
+					ffmpeg
+					ffmpegthumbnailer
+					fzf
+					hyprshot
+					keepassxc
+					libnotify
+					mpdas
+					mpd-mpris
+					mpv
+					musicpresence
+					nh
+					nicotine-plus
+					nil
+					nodejs-slim
+					obsidian
+					openssl
+					pavucontrol
+					pinentry-qt
+					picard
+					playerctl
+					pnpm
+					qimgv
+					ripgrep
+					rmpc
+					statix
+					telegram-desktop
+					unzip
+					wget
+					whitesur-cursors
+					whitesur-icon-theme
+					wl-clipboard
+					xdg-utils
+					xlsclients
+					xwl-notifier
+					yams
+					zathura
+					;
+
+				qt6-qtwayland = pkgs.qt6.qtwayland;
+				qt5-qtwayland = pkgs.qt5.qtwayland;
+
+				qtsvg6 = pkgs.kdePackages.qtsvg;
+				qtsvg5 = pkgs.qt5.qtsvg;
+			};
 
 		sessionVariables = {
 			QT_IM_MODULE = "fcitx";
