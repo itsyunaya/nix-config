@@ -1,4 +1,4 @@
-{ self, pkgs, username, lib, ... }: let
+{ self, pkgs, lib, ... }: let
 	recImport = import "${self}/lib/recursiveImport.nix" { inherit lib; };
 in {
 	imports = [
@@ -20,11 +20,6 @@ in {
 	};
 
 	home = {
-		file."wallpapers" = {
-			source = "${self}/assets/wallpapers/";
-			target = "/home/${username}/.wallpapers";
-		};
-
 		pointerCursor = {
 			enable = true;
 			gtk.enable = true;

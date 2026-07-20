@@ -47,6 +47,12 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
+		# https://github.com/feel-co/hjem
+		hjem = {
+			url = "github:feel-co/hjem";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
+
 		# https://github.com/hyprwm/Hyprland
 		hyprland.url = "github:hyprwm/Hyprland";
 
@@ -72,10 +78,10 @@
 		};
 
 		# https://github.com/Gerg-L/spicetify-nix/
-		spicetify-nix = {
-			url = "github:Gerg-L/spicetify-nix/";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
+		#spicetify-nix = {
+		#	url = "github:Gerg-L/spicetify-nix/";
+		#	inputs.nixpkgs.follows = "nixpkgs";
+		#};
 
 		# https://github.com/itsyunaya/xwl-notifier-rs
 		xwl-notifier = {
@@ -99,11 +105,12 @@
 		agenix,
 		ags-bar,
 		alejandra,
+		hjem,
 		#mangowm,
 		mnw,
 		musicpresence,
 		qtengine,
-		spicetify-nix,
+		#spicetify-nix,
 		xwl-notifier,
 		...
 	}: {
@@ -128,18 +135,19 @@
 					];
 				}
 
+				hjem.nixosModules.default
 				home-manager.nixosModules.home-manager
 				#mangowm.nixosModules.mango
 				mnw.nixosModules.mnw
 				nixos-hardware.nixosModules.msi-b550-a-pro
 				qtengine.nixosModules.default
 
-				{
-					home-manager.sharedModules = [
-						spicetify-nix.homeManagerModules.spicetify
+				#{
+				#	home-manager.sharedModules = [
+						#spicetify-nix.homeManagerModules.spicetify
 						#mangowm.hmModules.mango
-					];
-				}
+				#	];
+				#}
 			];
 		};
 

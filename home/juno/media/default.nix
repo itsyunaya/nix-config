@@ -1,9 +1,4 @@
 { username, ... }: {
-	services.nextcloud-client = {
-		enable = true;
-		startInBackground = true;
-	};
-
 	services.mpd = {
 		enable = true;
 		musicDirectory = "/home/${username}/Nextcloud/";

@@ -28,7 +28,7 @@ in {
 	};
 
 	imports = [
-		(recImport "${self}/hosts/juno/modules")
+		(recImport "${self}/hosts/juno/modules" { inherit username; })
 	];
 
 	home-manager = {
@@ -37,6 +37,32 @@ in {
 		extraSpecialArgs = { inherit inputs theme self username; };
 
 		users.${username} = ./home.nix;
+	};
+
+	hjem = {
+		specialArgs = { inherit theme; };
+		extraModules = [ (recImport "${self}/home/juno-hjem/modules") ];
+		users.${username} = {
+			services.nextcloud-client.enable = true;
+			programs.rmpc.enable = true;
+			programs.anyrun.enable = true;
+			programs.vscode = {
+				enable = true;
+				extensions = with pkgs.vscode-extensions; [ mvllow.rose-pine jnoortheen.nix-ide ];
+				settings = {
+					"chat.disableAIFeatures" = true;
+					"workbench.colorTheme" = "Rosé Pine";
+					"editor.tabSize" = 4;
+				};
+			};
+			programs.hyprlock.enable = true;
+			programs.kitty.enable = true;
+
+			files."wallpapers" = {
+				source = "${self}/assets/wallpapers/";
+				target = ".wallpapers";
+			};
+		};
 	};
 
 	users.users.${username} = {
@@ -115,6 +141,7 @@ in {
 					btop
 					cifs-utils
 					darkly
+					eza
 					ffmpeg
 					ffmpegthumbnailer
 					fzf
@@ -138,7 +165,6 @@ in {
 					pnpm
 					qimgv
 					ripgrep
-					rmpc
 					statix
 					telegram-desktop
 					unzip

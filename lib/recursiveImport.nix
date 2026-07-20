@@ -1,6 +1,6 @@
 # recreation of import-tree's basic functionality
 # since i dont need most of what it offers
-{ lib, ... }: dir: let
+{ lib, ... }: dir: extraArgs: let
 	dirPath =
 		if builtins.isAttrs dir && dir ? outPath
 		then dir.outPath
@@ -14,4 +14,5 @@
 	(lib.filesystem.listFilesRecursive dirPath);
 in {
 	imports = files;
+	_module.args = extraArgs;
 }
