@@ -18,4 +18,10 @@
 	programs.nano.enable = false;
 
 	services.speechd.enable = false;
+
+	system.tools = {
+		nixos-enter.enable = false;
+		nixos-generate-config.enable = false;
+		nixos-install.enable = false;
+	};
 }

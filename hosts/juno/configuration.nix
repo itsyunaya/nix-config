@@ -8,19 +8,6 @@ in {
 	];
 
 	juno-cfg = {
-		/*
-		CAUTION: changing this always requires a reboot, and should only be performed
-		from tty. If the compositor is running while its file gets removed by home-manager,
-		it might fall back to a default one which needs to be removed manually
-		since hm can't overwrite it anymore at that point
-		*/
-		# "mango" or "hyprland"
-		compositor = "hyprland";
-
-		# this option enables/disables omz/omp,
-		# can improve init times by a good margin
-		sh.zshEnableExtraCustomization = true;
-
 		# "swaylock" or "hyprlock"
 		lock-app = "hyprlock";
 
@@ -33,29 +20,14 @@ in {
 
 	hjem = {
 		specialArgs = { inherit theme; };
-		extraModules = [ (recImport "${self}/home/juno-hjem/modules") ];
+		extraModules = [ (recImport "${self}/home/juno/modules") ];
 		users.${username} = {
-			services.nextcloud-client.enable = true;
-			programs.rmpc.enable = true;
-			programs.anyrun.enable = true;
-			programs.vscode = {
-				enable = true;
-				extensions = with pkgs.vscode-extensions; [ mvllow.rose-pine jnoortheen.nix-ide ];
-				settings = {
-					"chat.disableAIFeatures" = true;
-					"workbench.colorTheme" = "Rosé Pine";
-					"editor.tabSize" = 4;
-				};
-			};
-			programs.hyprlock.enable = true;
-			programs.kitty.enable = true;
-
 			files."wallpapers" = {
 				source = "${self}/assets/wallpapers/";
 				target = ".wallpapers";
 			};
 
-			imports = [ "${self}/home/juno-hjem/hyprland/default.nix" ];
+			imports = [ (recImport "${self}/home/juno/config") ];
 		};
 	};
 

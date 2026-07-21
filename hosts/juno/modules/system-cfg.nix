@@ -15,14 +15,7 @@
 		kernel.sysctl = { "fs.inotify.max_user_watches" = 1048576; };
 	};
 
-	system = {
-		etc.overlay.enable = true;
-		tools = {
-			nixos-enter.enable = false;
-			nixos-generate-config.enable = false;
-			nixos-install.enable = false;
-		};
-	};
+	system.etc.overlay.enable = true;
 
 	nixpkgs = let
 		insecurePkgs = [
@@ -73,8 +66,8 @@
 	security = {
 		# enable the little stars when typing my password (useful because im bad at typing :p)
 		sudo.extraConfig = ''
-      		Defaults env_reset,pwfeedback
-    '';
+			Defaults env_reset,pwfeedback
+		'';
 
 		# needed so the screen lockers can actually validate my password
 		# modular setup depending on which lock is in use
