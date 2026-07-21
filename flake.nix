@@ -136,18 +136,9 @@
 				}
 
 				hjem.nixosModules.default
-				home-manager.nixosModules.home-manager
-				#mangowm.nixosModules.mango
 				mnw.nixosModules.mnw
 				nixos-hardware.nixosModules.msi-b550-a-pro
 				qtengine.nixosModules.default
-
-				#{
-				#	home-manager.sharedModules = [
-						#spicetify-nix.homeManagerModules.spicetify
-						#mangowm.hmModules.mango
-				#	];
-				#}
 			];
 		};
 

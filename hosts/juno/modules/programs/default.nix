@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ inputs, pkgs, ... }: {
 	programs = {
 		git = {
 			enable = true;
@@ -15,7 +15,13 @@
 			};
 		};
 
-		hyprland.enable = config.juno-cfg.compositor == "hyprland";
+		hyprland = {
+			enable = true;
+			package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+			portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+
+			xwayland.enable = true;
+		};
 		#mango.enable = config.juno-cfg.compositor == "mango";
 
 		steam.enable = true;

@@ -1,6 +1,11 @@
 :root {
     --selected-bg-colour: #ffc8dd;
     --theme-bg-colour: #191A1C;
+    --text-colour: #ffffff;
+}
+
+* {
+    color: var(--text-colour);
 }
 
 window {

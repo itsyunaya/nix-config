@@ -14,7 +14,7 @@ in {
 
 		xdg.config.files."kitty/kitty.conf".text = ''
 			font_family JetBrainsMono Nerd Font
-			background_opacity 0.7
+			background_opacity 0.8
 			color0 #494d64
 			color1 #ed8796
 			color10 #a6da95

@@ -31,14 +31,6 @@ in {
 		(recImport "${self}/hosts/juno/modules" { inherit username; })
 	];
 
-	home-manager = {
-		useGlobalPkgs = true;
-		useUserPackages = true;
-		extraSpecialArgs = { inherit inputs theme self username; };
-
-		users.${username} = ./home.nix;
-	};
-
 	hjem = {
 		specialArgs = { inherit theme; };
 		extraModules = [ (recImport "${self}/home/juno-hjem/modules") ];
@@ -62,6 +54,8 @@ in {
 				source = "${self}/assets/wallpapers/";
 				target = ".wallpapers";
 			};
+
+			imports = [ "${self}/home/juno-hjem/hyprland/default.nix" ];
 		};
 	};
 
@@ -71,6 +65,9 @@ in {
 		extraGroups = [ "networkmanager" "wheel" ];
 		packages = [];
 		shell = pkgs.zsh;
+
+		# needs to be explicitly set for mpd
+		uid = 1000;
 	};
 
 	environment = {
