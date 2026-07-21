@@ -18,11 +18,7 @@
 	system.etc.overlay.enable = true;
 
 	nixpkgs = let
-		insecurePkgs = [
-			# vesktop is relying on an eol electron
-			# https://nixpk.gs/pr-tracker.html?pr=542528
-			"electron-40.10.5"
-		];
+		insecurePkgs = [ ];
 
 		hasItems = builtins.length insecurePkgs > 0;
 		warningMsg =
