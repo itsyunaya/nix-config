@@ -16,18 +16,22 @@ in {
 
 	imports = [
 		(recImport "${self}/hosts/juno/modules" { inherit username; })
+
+		# since shared/ can contain everything ranging from nixos modules to darwin modules, imports are cherry-picked
+		# instead of relying on recImport
+		"${self}/shared/mnw"
 	];
 
 	hjem = {
 		specialArgs = { inherit theme; };
-		extraModules = [ (recImport "${self}/home/juno/modules") ];
+		extraModules = [ (recImport ./hjem) ];
 		users.${username} = {
 			files."wallpapers" = {
 				source = "${self}/assets/wallpapers/";
 				target = ".wallpapers";
 			};
 
-			imports = [ (recImport "${self}/home/juno/config") ];
+			imports = [ (recImport ./hjem) ];
 		};
 	};
 
