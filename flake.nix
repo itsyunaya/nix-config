@@ -50,12 +50,6 @@
 		# https://github.com/hyprwm/Hyprland
 		hyprland.url = "github:hyprwm/Hyprland";
 
-		# https://github.com/mangowm/mango
-		#mangowm = {
-		#	url = "github:mangowm/mango";
-		#	inputs.nixpkgs.follows = "nixpkgs";
-		#};
-
 		# https://github.com/Gerg-L/mnw
 		mnw.url = "github:Gerg-L/mnw";
 
@@ -99,7 +93,6 @@
 		ags-bar,
 		alejandra,
 		hjem,
-		#mangowm,
 		mnw,
 		musicpresence,
 		qtengine,

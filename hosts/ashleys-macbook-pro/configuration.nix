@@ -6,6 +6,7 @@ in {
 	};
 
 	imports = [
+		"${self}/shared/git.nix"
 		"${self}/shared/mnw"
 		"${self}/shared/spicetify.nix"
 	];
