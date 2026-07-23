@@ -28,8 +28,8 @@ hl.bind("SUPER + SHIFT + UP", hl.dsp.window.swap({ direction = "u" }))
 hl.bind("SUPER + SHIFT + DOWN", hl.dsp.window.swap({ direction = "d" }))
 
 hl.bind("SUPER + Z", hl.dsp.exec_cmd("amixer set Capture toggle"))
-hl.bind("SUPER + SHIFT + mouse_down", hl.dsp.exec_cmd("rmpc volume +5"))
-hl.bind("SUPER + SHIFT + mouse_up", hl.dsp.exec_cmd("rmpc volume -5"))
+hl.bind("SUPER + SHIFT + mouse_down", hl.dsp.exec_cmd("rmpc volume -5"))
+hl.bind("SUPER + SHIFT + mouse_up", hl.dsp.exec_cmd("rmpc volume +5"))
 hl.bind("code:164", hl.dsp.exec_cmd("rmpc togglepause"))
 
 hl.bind("SUPER + X", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
