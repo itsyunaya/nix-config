@@ -72,10 +72,10 @@
 		};
 
 		# https://github.com/Gerg-L/spicetify-nix/
-		#spicetify-nix = {
-		#	url = "github:Gerg-L/spicetify-nix/";
-		#	inputs.nixpkgs.follows = "nixpkgs";
-		#};
+		spicetify-nix = {
+			url = "github:Gerg-L/spicetify-nix/";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 
 		# https://github.com/itsyunaya/xwl-notifier-rs
 		xwl-notifier = {
@@ -103,7 +103,7 @@
 		mnw,
 		musicpresence,
 		qtengine,
-		#spicetify-nix,
+		spicetify-nix,
 		xwl-notifier,
 		...
 	}: {
@@ -137,7 +137,10 @@
 
 		darwinConfigurations."ashleys-macbook-pro" = nix-darwin.lib.darwinSystem {
 			system = "aarch64-darwin";
-			specialArgs = { inherit inputs self; };
+			specialArgs = {
+				inherit inputs self;
+				theme = import ./theme.nix { inherit self; };
+			};
 
 			modules = [
 				./hosts/ashleys-macbook-pro/configuration.nix
@@ -150,6 +153,9 @@
 						musicpresence.overlays.default
 					];
 				}
+
+				mnw.darwinModules.mnw
+				spicetify-nix.darwinModules.spicetify
 			];
 		};
 

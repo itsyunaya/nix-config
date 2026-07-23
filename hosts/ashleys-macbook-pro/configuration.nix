@@ -1,10 +1,14 @@
-{ inputs, lib, pkgs, self, ... }: let
+{ pkgs, self, ... }: let
 	username = "ashley";
-	recImport = import "${self}/lib/recursiveImport.nix" { inherit lib; };
 in {
 	users.users.${username} = {
 		home = /Users/${username};
 	};
+
+	imports = [
+		"${self}/shared/mnw"
+		"${self}/shared/spicetify.nix"
+	];
 
 	nixpkgs.config.allowUnfree = true;
 
@@ -36,6 +40,9 @@ in {
 
 		enableAutosuggestions = true;
 		enableSyntaxHighlighting = true;
+
+		# this module is stupid and autoloads a theme so it needs to be manually disabled
+		promptInit = "";
 
         interactiveShellInit = ''
 			eval "$(/opt/homebrew/bin/brew shellenv)"

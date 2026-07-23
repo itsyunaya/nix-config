@@ -17,8 +17,7 @@ in {
 	imports = [
 		(recImport "${self}/hosts/juno/modules" { inherit username; })
 
-		# since shared/ can contain everything ranging from nixos modules to darwin modules, imports are cherry-picked
-		# instead of relying on recImport
+		# see shared/README.md
 		"${self}/shared/mnw"
 	];
 
