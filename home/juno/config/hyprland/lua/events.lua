@@ -1,6 +1,6 @@
 
 hl.on("hyprland.start", function()
-	hl.exec_cmd("ags-bar")
+	hl.exec_cmd("ags-bar --hide-water-widget")
 	hl.exec_cmd("awww-daemon")
 	hl.exec_cmd("awww img ~/.wallpapers/clouds.jpg")
 	hl.exec_cmd("mpd-mpris")
