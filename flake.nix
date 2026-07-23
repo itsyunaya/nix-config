@@ -132,6 +132,7 @@
 				mnw.nixosModules.mnw
 				nixos-hardware.nixosModules.msi-b550-a-pro
 				qtengine.nixosModules.default
+				spicetify-nix.nixosModules.spicetify
 			];
 		};
 

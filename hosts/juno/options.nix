@@ -1,6 +1,7 @@
 { lib, ... }:
 
 {
+	# todo: remove/overhaul this
 	options.juno-cfg = {
 		lock-app = lib.mkOption {
 			type = lib.types.enum [ "swaylock" "hyprlock" ];

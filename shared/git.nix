@@ -1,0 +1,32 @@
+{ config, pkgs, ... }: let
+	keys = {
+		juno = "198EA594738FED19";
+		callisto = "C3BC6629CF0FC433";
+		macbook = "2E7FD19FA57EEAA4";
+	};
+
+	signKey =
+		if pkgs.stdenv.isDarwin
+		then keys.macbook
+		else keys.${config.networking.hostName} or (throw ''
+			Unrecognized machine '${config.networking.hostName}' imported git module.
+			Please explicitly add a signing key for it to the module config.
+		'');
+in {
+	environment.systemPackages = [ pkgs.git ];
+	environment.etc."gitconfig".text = ''
+		[commit]
+			gpgsign = true
+
+		[init]
+			defaultBranch = "main"
+
+		[tag]
+			gpgSign = true
+
+		[user]
+			email = "40719746+itsyunaya@users.noreply.github.com"
+			name = "itsyunaya"
+			signingKey = "${signKey}"
+	'';
+}

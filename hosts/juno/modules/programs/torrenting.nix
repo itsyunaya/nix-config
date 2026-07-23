@@ -1,5 +1,5 @@
 { config, lib, pkgs, ... }: {
-	config = lib.mkIf (config.juno-cfg.torrenting) {
+	config = lib.mkIf config.juno-cfg.torrenting {
 		environment.systemPackages = builtins.attrValues {
 			inherit
 				(pkgs)

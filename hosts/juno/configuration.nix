@@ -19,6 +19,8 @@ in {
 
 		# see shared/README.md
 		"${self}/shared/mnw"
+		"${self}/shared/spicetify.nix"
+		"${self}/shared/git.nix"
 	];
 
 	hjem = {
