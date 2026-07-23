@@ -51,6 +51,8 @@ in {
 	};
 
 	programs = {
+		bash.shellAliases = { nr = "nixos-rebuild switch --sudo --flake /home/callisto/sysflake/.#callisto"; };
+
 		gnupg.agent = {
 			enable = true;
 			pinentryPackage = pkgs.pinentry-tty;
