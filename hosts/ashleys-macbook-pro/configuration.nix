@@ -1,4 +1,4 @@
-{ inputs, lib, self, ... }: let
+{ inputs, lib, pkgs, self, ... }: let
 	username = "ashley";
 	recImport = import "${self}/lib/recursiveImport.nix" { inherit lib; };
 in {
@@ -8,63 +8,40 @@ in {
 
 	nixpkgs.config.allowUnfree = true;
 
-	home-manager = {
-		useGlobalPkgs = true;
-		useUserPackages = true;
-		backupFileExtension = "bak";
-		extraSpecialArgs = { inherit inputs; };
+	environment.systemPackages = builtins.attrValues {
+		inherit
+			(pkgs)
+			alejandra
+			gnupg
+			localsend
+			musicpresence
+			neovim
+			nil
+			nodejs-slim
+			pinentry_mac
+			pnpm
+			ripgrep
+			statix
+			skimpdf
+			vesktop
+			;
 	};
 
-	home-manager.users.${username} = { pkgs, ... }: {
-		imports = [
-			(recImport "${self}/home/ashleys-macbook-pro")
-			(recImport "${self}/home/shared")
-		];
-
-		home.packages = builtins.attrValues {
-			inherit
-				(pkgs)
-				alejandra
-				gnupg
-				localsend
-				musicpresence
-				neovim
-				nixd
-				nodejs-slim
-				pinentry_mac
-				pnpm
-				ripgrep
-				statix
-				skimpdf
-				vesktop
-				;
-		};
-
-		services.gpg-agent = {
-			enable = true;
-			pinentry.package = pkgs.pinentry_mac;
-		};
-
-		home = {
-			inherit username;
-			homeDirectory = /Users/${username};
-
-			sessionPath = [
-				"$HOME/.cargo/bin"
-			];
-
-			stateVersion = "25.11";
-		};
+	environment.shellAliases = {
+		rb = "sudo darwin-rebuild switch --flake ~/.config/nix";
 	};
 
-	# "Determinate uses its own daemon to manage the Nix installation that
-	# conflicts with nix-darwin’s native Nix management."
-	# Unfortunately Determinate seems to be objectively better on macOS so
-	# ill keep using it for now...
-	nix.enable = false;
+	programs.zsh = {
+		enable = true;
 
-	# this value is similar to nixOS state version, and should be treated
-	# accordingly. do not edit unless it is strictly necessary and you
-	# know what you are doing
+		enableAutosuggestions = true;
+		enableSyntaxHighlighting = true;
+
+        interactiveShellInit = ''
+			eval "$(/opt/homebrew/bin/brew shellenv)"
+			PROMPT="%{%F{#c6a0f6}%}[%{%F{#fefefe}%}%n%{%F{#c6a0f6}%}@%{%F{#fefefe}%}%m%{%F{#c6a0f6}%}] (%{%F{#fefefe}%}%1~%{%F{#c6a0f6}%}) %{%f%}$ "
+		'';
+	};
+	
 	system.stateVersion = 7;
 }
