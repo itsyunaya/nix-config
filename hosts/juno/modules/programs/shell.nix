@@ -114,5 +114,36 @@ in {
 				};
 			};
 		};
+
+		starship = {
+			enable = true;
+			settings = {
+				format = "[$username]($style)@[$hostname]($style): [$directory]($style)$line_break$character";
+				add_newline = false;
+
+				username = {
+					show_always = true;
+					format = "[$user]($style)";
+					style_user = "bold green";
+				};
+
+				hostname = {
+					ssh_only = false;
+					format = "[$hostname]($style)";
+					style = "bold blue";
+				};
+
+				directory = {
+					truncate_to_repo = false;
+					format = "[$path]($style) ";
+					style = "bold cyan";
+				};
+
+				character = {
+					success_symbol = "[>](bold green)";
+					error_symbol = "[>](bold red)";
+				};
+			};
+		};
 	};
 }
