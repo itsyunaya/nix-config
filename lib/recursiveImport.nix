@@ -1,6 +1,6 @@
 # recreation of import-tree's basic functionality
 # since i dont need most of what it offers
-{ lib, ... }: dir: extraArgs: let
+{ lib }: dir: extraArgs: let
 	dirPath =
 		if builtins.isAttrs dir && dir ? outPath
 		then dir.outPath

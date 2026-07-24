@@ -1,7 +1,5 @@
-{ theme, inputs, pkgs, self, lib, ... }: let
+{ fnLib, theme, inputs, pkgs, self, ... }: let
 	username = "ashley";
-	recImport = import "${self}/lib/recursiveImport.nix" { inherit lib; };
-	fromShared = import "${self}/lib/importFromShared.nix" { inherit self; };
 in {
 	nix.settings.experimental-features = [
 		"nix-command"
@@ -17,9 +15,9 @@ in {
 
 	imports =
 		[
-			(recImport "${self}/hosts/juno/modules" { inherit username; })
+			(fnLib.recImport "${self}/hosts/juno/modules" { inherit username; })
 		]
-		++ (fromShared [
+		++ (fnLib.fromShared [
 				# see shared/README.md
 				"common-packages.nix"
 				"git.nix"
@@ -29,14 +27,14 @@ in {
 
 	hjem = {
 		specialArgs = { inherit theme; };
-		extraModules = [ (recImport ./hjem) ];
+		extraModules = [ (fnLib.recImport ./hjem/modules) ];
 		users.${username} = {
 			files."wallpapers" = {
 				source = "${self}/assets/wallpapers/";
 				target = ".wallpapers";
 			};
 
-			imports = [ (recImport ./hjem) ];
+			imports = [ (fnLib.recImport ./hjem/config) ];
 		};
 	};
 

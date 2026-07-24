@@ -99,27 +99,45 @@
 		spicetify-nix,
 		xwl-notifier,
 		...
-	}: {
-		nixosConfigurations."juno" = nixpkgs.lib.nixosSystem {
-			system = "x86_64-linux";
-			specialArgs = {
-				inherit inputs self;
-				theme = import ./theme.nix { inherit self; };
+	}: let
+		alejandra-overlay = final: prev: {
+			alejandra = alejandra.packages.${prev.stdenv.hostPlatform.system}.default;
+		};
+
+		mkHost = { system, modules, overlays ? [], workstation ? false }: let
+			sysFn =
+				if system == "aarch64-darwin"
+				then nix-darwin.lib.darwinSystem
+				else nixpkgs.lib.nixosSystem;
+			pkgs = import nixpkgs { inherit system overlays; };
+		in
+			sysFn {
+				inherit system;
+				modules = modules ++ [ { nixpkgs.overlays = overlays; } ];
+
+				specialArgs = {
+					inherit inputs self;
+					theme =
+						if workstation
+						then import ./theme.nix { inherit self; }
+						else null;
+					fnLib = import ./lib/default.nix { inherit self pkgs; };
+				};
 			};
+	in {
+		nixosConfigurations."juno" = mkHost {
+			system = "x86_64-linux";
+			workstation = true;
+
+			overlays = [
+				alejandra-overlay
+				musicpresence.overlays.default
+				xwl-notifier.overlays.default
+			];
 
 			modules = [
 				./hosts/juno/configuration.nix
 				./hosts/juno/options.nix
-
-				{
-					nixpkgs.overlays = [
-						(final: prev: {
-								alejandra = alejandra.packages.${prev.stdenv.hostPlatform.system}.default;
-							})
-						musicpresence.overlays.default
-						xwl-notifier.overlays.default
-					];
-				}
 
 				hjem.nixosModules.default
 				mnw.nixosModules.mnw
@@ -129,33 +147,25 @@
 			];
 		};
 
-		darwinConfigurations."ashleys-macbook-pro" = nix-darwin.lib.darwinSystem {
+		darwinConfigurations."ashleys-macbook-pro" = mkHost {
 			system = "aarch64-darwin";
-			specialArgs = {
-				inherit inputs self;
-				theme = import ./theme.nix { inherit self; };
-			};
+			workstation = true;
+
+			overlays = [
+				alejandra-overlay
+				musicpresence.overlays.default
+			];
 
 			modules = [
 				./hosts/ashleys-macbook-pro/configuration.nix
-
-				{
-					nixpkgs.overlays = [
-						(final: prev: {
-								alejandra = alejandra.packages.${prev.stdenv.hostPlatform.system}.default;
-							})
-						musicpresence.overlays.default
-					];
-				}
 
 				mnw.darwinModules.mnw
 				spicetify-nix.darwinModules.spicetify
 			];
 		};
 
-		nixosConfigurations."callisto" = nixpkgs.lib.nixosSystem {
+		nixosConfigurations."callisto" = mkHost {
 			system = "x86_64-linux";
-			specialArgs = { inherit inputs self; };
 
 			modules = [
 				./hosts/callisto/configuration.nix
@@ -164,16 +174,14 @@
 			];
 		};
 
-		nixosConfigurations."ceres" = nixpkgs.lib.nixosSystem {
+		nixosConfigurations."ceres" = mkHost {
 			system = "aarch64-linux";
-			specialArgs = { inherit inputs self; };
 
 			modules = [
 				./hosts/ceres/configuration.nix
 				./hosts/ceres/hardware-configuration.nix
 
-				# makes it so i have to recompile the kernel from source,
-				# reenabling once this is fixed
+				# makes it so i have to recompile the kernel from source, reenabling once this is fixed
 				#nixos-hardware.nixosModules.raspberry-pi-4
 			];
 		};
