@@ -1,6 +1,5 @@
-{ pkgs, self, ... }: let
+{ fnLib, pkgs, ... }: let
 	username = "ashley";
-	fromShared = import "${self}/lib/importFromShared.nix" { inherit self; };
 in {
 	nix.settings.experimental-features = [
 		"nix-command"
@@ -11,7 +10,7 @@ in {
 		home = /Users/${username};
 	};
 
-	imports = fromShared [
+	imports = fnLib.fromShared [
 		"common-packages.nix"
 		"git.nix"
 		"mnw"
