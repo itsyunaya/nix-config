@@ -1,13 +1,11 @@
-{ inputs, lib, pkgs, self, ... }: let
-	recImport = import "${self}/lib/recursiveImport.nix" { inherit lib; };
-in {
+{ fnLib, inputs, lib, pkgs, self, ... }: {
 	nix.settings.experimental-features = [
     	"nix-command"
     	"flakes"
     ];
 
     imports = [
-    	(recImport "${self}/hosts/callisto/modules")
+    	(fnLib.recImport "${self}/hosts/callisto/modules")
 		./secrets
     ];
 
