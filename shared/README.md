@@ -6,8 +6,9 @@ therefore not be imported via `lib/recursiveImport.nix`.
 
 ## Overview
 
-| Module    | Consumable as      |
-|-----------|--------------------|
-| mnw       | all (Flake input)  |
-| spicetify | all (Flake input)  |
-| git       | all (local import) |
+| Module          | Consumable as       |
+|-----------------|---------------------|
+| mnw             | all (Flake input)   |
+| spicetify       | all (Flake input)   |
+| git             | all (local import)  |
+| common-packages | workstation systems |

@@ -15,7 +15,7 @@ in {
 			};
 
 			settings = lib.mkOption {
-				type = (pkgs.formats.json { }).type;
+				inherit ((pkgs.formats.json { })) type;
 				default = {};
 			};
 		};

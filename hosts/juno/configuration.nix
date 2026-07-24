@@ -1,6 +1,7 @@
 { theme, inputs, pkgs, self, lib, ... }: let
 	username = "ashley";
 	recImport = import "${self}/lib/recursiveImport.nix" { inherit lib; };
+	fromShared = import "${self}/lib/importFromShared.nix" { inherit self; };
 in {
 	nix.settings.experimental-features = [
 		"nix-command"
@@ -14,14 +15,17 @@ in {
 		torrenting = false;
 	};
 
-	imports = [
-		(recImport "${self}/hosts/juno/modules" { inherit username; })
-
-		# see shared/README.md
-		"${self}/shared/mnw"
-		"${self}/shared/spicetify.nix"
-		"${self}/shared/git.nix"
-	];
+	imports =
+		[
+			(recImport "${self}/hosts/juno/modules" { inherit username; })
+		]
+		++ (fromShared [
+				# see shared/README.md
+				"common-packages.nix"
+				"git.nix"
+				"mnw"
+				"spicetify.nix"
+			]);
 
 	hjem = {
 		specialArgs = { inherit theme; };
@@ -79,11 +83,6 @@ in {
 							;
 					});
 
-			vesktop = pkgs.vesktop.override {
-				withTTS = false;
-				withMiddleClickScroll = true;
-			};
-
 			awww = inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww;
 			ags-bar = inputs.ags-bar.packages.${pkgs.stdenv.hostPlatform.system}.default;
 			zen = inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default;
@@ -94,7 +93,6 @@ in {
 					awww
 					prism
 					tex-custom
-					vesktop
 					zen
 					;
 
@@ -107,7 +105,6 @@ in {
 
 				inherit
 					(pkgs)
-					alejandra
 					alsa-utils
 					anki
 					apfs-fuse
@@ -125,11 +122,7 @@ in {
 					mpdas
 					mpd-mpris
 					mpv
-					musicpresence
-					nh
 					nicotine-plus
-					nil
-					nodejs-slim
 					obsidian
 					openssl
 					pavucontrol
@@ -138,8 +131,6 @@ in {
 					playerctl
 					pnpm
 					qimgv
-					ripgrep
-					statix
 					telegram-desktop
 					unzip
 					wget
