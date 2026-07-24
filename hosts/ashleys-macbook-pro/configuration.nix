@@ -1,14 +1,21 @@
 { pkgs, self, ... }: let
 	username = "ashley";
+	fromShared = import "${self}/lib/importFromShared.nix" { inherit self; };
 in {
+	nix.settings.experimental-features = [
+		"nix-command"
+		"flakes"
+	];
+
 	users.users.${username} = {
 		home = /Users/${username};
 	};
 
-	imports = [
-		"${self}/shared/git.nix"
-		"${self}/shared/mnw"
-		"${self}/shared/spicetify.nix"
+	imports = fromShared [
+		"common-packages.nix"
+		"git.nix"
+		"mnw"
+		"spicetify.nix"
 	];
 
 	nixpkgs.config.allowUnfree = true;
@@ -16,24 +23,15 @@ in {
 	environment.systemPackages = builtins.attrValues {
 		inherit
 			(pkgs)
-			alejandra
 			gnupg
 			localsend
-			musicpresence
-			neovim
-			nil
-			nodejs-slim
 			pinentry_mac
-			pnpm
-			ripgrep
-			statix
 			skimpdf
-			vesktop
 			;
 	};
 
 	environment.shellAliases = {
-		rb = "sudo darwin-rebuild switch --flake ~/.config/nix";
+		rb = "nh darwin switch /Users/ashley/.config/nix";
 	};
 
 	programs.zsh = {

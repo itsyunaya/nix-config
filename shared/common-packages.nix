@@ -16,6 +16,7 @@ in {
 			nh
 			nil
 			nodejs-slim
+			pnpm
 			ripgrep
 			statix
 			;
