@@ -19,10 +19,10 @@ in {
 		]
 		++ (fnLib.fromShared [
 				# see shared/README.md
-				"common-packages.nix"
-				"git.nix"
+				"common-pkgs"
+				"git"
 				"mnw"
-				"spicetify.nix"
+				"spicetify"
 			]);
 
 	hjem = {

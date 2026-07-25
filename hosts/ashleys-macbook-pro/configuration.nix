@@ -11,10 +11,10 @@ in {
 	};
 
 	imports = fnLib.fromShared [
-		"common-packages.nix"
-		"git.nix"
+		"common-pkgs"
+		"git"
 		"mnw"
-		"spicetify.nix"
+		"spicetify"
 	];
 
 	nixpkgs.config.allowUnfree = true;
