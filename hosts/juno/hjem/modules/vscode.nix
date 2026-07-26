@@ -2,6 +2,7 @@
 	cfg = config.programs.vscode;
 
 	vscodePackage = pkgs.vscode-with-extensions.override {
+		vscode = pkgs.vscodium;
 		vscodeExtensions = cfg.extensions;
 	};
 in {
@@ -15,7 +16,7 @@ in {
 			};
 
 			settings = lib.mkOption {
-				inherit ((pkgs.formats.json { })) type;
+				inherit ((pkgs.formats.json {})) type;
 				default = {};
 			};
 		};
@@ -25,7 +26,7 @@ in {
 		packages = [ vscodePackage ];
 
 		xdg.config.files."Code/User/settings.json" = {
-			generator = (pkgs.formats.json { }).generate "settings.json";
+			generator = (pkgs.formats.json {}).generate "settings.json";
 			value = cfg.settings;
 		};
 	};

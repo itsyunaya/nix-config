@@ -1,0 +1,4 @@
+# keeps flagging the nixosConfigurations in my flake, which i'd rather not group
+# i wish statix had a rust style macro to disable lints for a specific attrset
+disabled = ["repeated_keys"]
+ignore = [".direnv"]
