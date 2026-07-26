@@ -65,12 +65,12 @@
 			Defaults env_reset,pwfeedback
 		'';
 
-		# needed so the screen lockers can actually validate my password
-		# modular setup depending on which lock is in use
-		pam.services = lib.mkMerge [
-			{ ly.enableGnomeKeyring = true; }
-			(lib.mkIf (config.juno-cfg.lock-app == "hyprlock") { hyprlock = {}; })
-			(lib.mkIf (config.juno-cfg.lock-app == "swaylock") { swaylock = {}; })
-		];
+		pam.services = {
+			ly.enableGnomeKeyring = true;
+
+			# needed so the screen lockers can actually validate my password
+			# modular setup depending on which lock is in use
+			hyprlock = { };
+		};
 	};
 }

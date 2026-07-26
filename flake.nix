@@ -137,7 +137,6 @@
 
 			modules = [
 				./hosts/juno/configuration.nix
-				./hosts/juno/options.nix
 
 				hjem.nixosModules.default
 				mnw.nixosModules.mnw

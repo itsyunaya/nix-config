@@ -6,13 +6,6 @@ in {
 		"flakes"
 	];
 
-	juno-cfg = {
-		# "swaylock" or "hyprlock"
-		lock-app = "hyprlock";
-
-		torrenting = false;
-	};
-
 	imports =
 		[
 			(fnLib.recImport "${self}/hosts/juno/modules" { inherit username; })
