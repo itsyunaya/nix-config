@@ -34,6 +34,14 @@ in {
 				target = ".wallpapers";
 			};
 
+			xdg.config.files."mpDris2/mpDris2.conf".text = ''
+				[Connection]
+				music_dir = /home/${username}/Nextcloud
+
+				[Bling]
+                notify = False
+			'';
+
 			imports = [ (fnLib.recImport ./hjem/config) ];
 		};
 	};
@@ -117,17 +125,15 @@ in {
 					hyprshot
 					keepassxc
 					libnotify
-					mpdas
-					mpd-mpris
 					mpv
 					nicotine-plus
 					obsidian
 					openssl
-					pavucontrol
 					pinentry-qt
 					picard
 					playerctl
 					pnpm
+					pwvucontrol
 					qimgv
 					telegram-desktop
 					unzip

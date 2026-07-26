@@ -53,11 +53,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784811170,
-        "narHash": "sha256-rcaW1RZ+7YbxpU9RmkbyfF4kRac+tTeohY5S6MiuEJQ=",
+        "lastModified": 1785065828,
+        "narHash": "sha256-KZNVy2i63hC43eGigCHqavavXTMvzCDZp4vxn+zd8Bc=",
         "owner": "itsyunaya",
         "repo": "ags-bar",
-        "rev": "b7d94d631510f17efa9a1898b0d0aab9a66fe3fd",
+        "rev": "46d390742725dd4612c18fa7dad4ad7c8de66494",
         "type": "github"
       },
       "original": {
