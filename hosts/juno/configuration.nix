@@ -115,6 +115,7 @@ in {
 					ffmpeg
 					ffmpegthumbnailer
 					fzf
+					gnome-themes-extra
 					hyprshot
 					keepassxc
 					libnotify
