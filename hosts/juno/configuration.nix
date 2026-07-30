@@ -1,10 +1,16 @@
 { fnLib, theme, pkgs, self, ... }: let
 	username = "ashley";
 in {
-	nix.settings.experimental-features = [
-		"nix-command"
-		"flakes"
-	];
+	nix.settings = {
+		experimental-features = [
+			"nix-command"
+			"flakes"
+		];
+
+		# so i don't have to build the entirety of hyprland on my pathetic little pc
+		substituters = [ "https://hyprland.cachix.org" ];
+		trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
+	};
 
 	imports =
 		[
