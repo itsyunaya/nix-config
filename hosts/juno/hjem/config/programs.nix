@@ -9,7 +9,7 @@
 
 		vscode = {
 			enable = true;
-			extensions = with pkgs.vscode-extensions; [ mvllow.rose-pine jnoortheen.nix-ide ];
+			extensions = with pkgs.vscode-extensions; [ mvllow.rose-pine james-yu.latex-workshop jnoortheen.nix-ide ];
 			settings = {
 				"chat.disableAIFeatures" = true;
 				"workbench.colorTheme" = "Rosé Pine";

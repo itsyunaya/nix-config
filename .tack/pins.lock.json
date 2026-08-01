@@ -1,0 +1,26 @@
+{
+  "nixpkgs": {
+    "type": "github",
+    "owner": "NixOS",
+    "repo": "nixpkgs",
+    "rev": "f8e81fc7eb063db454f563cdd596fb96a5ad1497",
+    "narHash": "sha256-sjfvXMbG5pCFgpvw2OZAFcZiTvrppCWvnB6cuGrSY08=",
+    "lastModified": 1785542685
+  },
+  "xwl-notifier": {
+    "type": "github",
+    "owner": "itsyunaya",
+    "repo": "xwl-notifier-rs",
+    "rev": "599848c78014000139e9826ffea458e844a6998c",
+    "narHash": "sha256-r01JRwOJTgUmNXTh0/J8zZ0c4lmuwe44Y5zQAwii7u8=",
+    "lastModified": 1783518494
+  },
+  "zen-browser": {
+    "type": "github",
+    "owner": "0xc000022070",
+    "repo": "zen-browser-flake",
+    "rev": "945e834a12a97a5e3b08869960e35c7ccfde6f69",
+    "narHash": "sha256-ux2+60xcjl4LloKPevqrkP+uY4DNZXhzVd+TYrfE2+w=",
+    "lastModified": 1785569296
+  }
+}

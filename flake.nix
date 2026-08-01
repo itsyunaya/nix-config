@@ -72,10 +72,10 @@
 		};
 
 		# https://github.com/itsyunaya/xwl-notifier-rs
-		xwl-notifier = {
-			url = "github:itsyunaya/xwl-notifier-rs";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
+		#xwl-notifier = {
+		#	url = "github:itsyunaya/xwl-notifier-rs";
+		#	inputs.nixpkgs.follows = "nixpkgs";
+		#};
 
 		# https://github.com/0xc000022070/zen-browser-flake
 		zen-browser = {
@@ -97,12 +97,13 @@
 		musicpresence,
 		qtengine,
 		spicetify-nix,
-		xwl-notifier,
 		...
 	}: let
 		alejandra-overlay = final: prev: {
 			alejandra = alejandra.packages.${prev.stdenv.hostPlatform.system}.default;
 		};
+
+		tackInputs = import ./.tack;
 
 		mkHost = { system, modules, overlays ? [], workstation ? false }: let
 			sysFn =
@@ -116,7 +117,7 @@
 				modules = modules ++ [ { nixpkgs.overlays = overlays; } ];
 
 				specialArgs = {
-					inherit inputs self;
+					inherit inputs self tackInputs;
 					theme =
 						if workstation
 						then import ./theme.nix { inherit self; }
@@ -132,7 +133,7 @@
 			overlays = [
 				alejandra-overlay
 				musicpresence.overlays.default
-				xwl-notifier.overlays.default
+				tackInputs.xwl-notifier.overlays.default
 			];
 
 			modules = [
