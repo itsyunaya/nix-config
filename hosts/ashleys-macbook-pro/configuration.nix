@@ -18,6 +18,7 @@ in {
 	];
 
 	nixpkgs.config.allowUnfree = true;
+	documentation.enable = false;
 
 	environment.systemPackages = builtins.attrValues {
 		inherit

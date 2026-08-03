@@ -5,10 +5,10 @@
 		nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
 		# https://github.com/nix-darwin/nix-darwin
-		nix-darwin = {
-			url = "github:LnL7/nix-darwin";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
+		#nix-darwin = {
+		#	url = "github:LnL7/nix-darwin";
+		#	inputs.nixpkgs.follows = "nixpkgs";
+		#};
 
 		# https://github.com/nixos/nixos-hardware
 		nixos-hardware = {
@@ -30,10 +30,10 @@
 		};
 
 		# https://github.com/itsyunaya/alejandra-opinionated
-		alejandra = {
-			url = "github:itsyunaya/alejandra-opinionated";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
+		#alejandra = {
+		#	url = "github:itsyunaya/alejandra-opinionated";
+		#	inputs.nixpkgs.follows = "nixpkgs";
+		#};
 
 		# https://codeberg.org/LGFae/awww
 		awww = {
@@ -51,13 +51,13 @@
 		hyprland.url = "github:hyprwm/Hyprland";
 
 		# https://github.com/Gerg-L/mnw
-		mnw.url = "github:Gerg-L/mnw";
+		#mnw.url = "github:Gerg-L/mnw";
 
 		# https://github.com/itsyunaya/musicpresence-flake
-		musicpresence = {
-			url = "github:itsyunaya/musicpresence-flake";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
+		#musicpresence = {
+		#	url = "github:itsyunaya/musicpresence-flake";
+		#	inputs.nixpkgs.follows = "nixpkgs";
+		#};
 
 		# https://github.com/kossLAN/qtengine
 		qtengine = {
@@ -66,10 +66,10 @@
 		};
 
 		# https://github.com/Gerg-L/spicetify-nix/
-		spicetify-nix = {
-			url = "github:Gerg-L/spicetify-nix/";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
+		#spicetify-nix = {
+		#	url = "github:Gerg-L/spicetify-nix/";
+		#	inputs.nixpkgs.follows = "nixpkgs";
+		#};
 
 		# https://github.com/itsyunaya/xwl-notifier-rs
 		#xwl-notifier = {
@@ -81,26 +81,27 @@
 		zen-browser = {
 			url = "github:0xc000022070/zen-browser-flake";
 			inputs.nixpkgs.follows = "nixpkgs";
+			inputs.home-manager.follows = "";
 		};
 	};
 
 	outputs = inputs @ {
 		self,
 		nixpkgs,
-		nix-darwin,
+		#nix-darwin,
 		nixos-hardware,
 		agenix,
 		ags-bar,
-		alejandra,
+		#alejandra,
 		hjem,
-		mnw,
-		musicpresence,
+		#mnw,
+		#musicpresence,
 		qtengine,
-		spicetify-nix,
+		#spicetify-nix,
 		...
 	}: let
 		alejandra-overlay = final: prev: {
-			alejandra = alejandra.packages.${prev.stdenv.hostPlatform.system}.default;
+			alejandra = tackInputs.alejandra.packages.${prev.stdenv.hostPlatform.system}.default;
 		};
 
 		tackInputs = import ./.tack;
@@ -108,7 +109,7 @@
 		mkHost = { system, modules, overlays ? [], workstation ? false }: let
 			sysFn =
 				if system == "aarch64-darwin"
-				then nix-darwin.lib.darwinSystem
+				then tackInputs.nix-darwin.lib.darwinSystem
 				else nixpkgs.lib.nixosSystem;
 			pkgs = import nixpkgs { inherit system overlays; };
 		in
@@ -132,7 +133,7 @@
 
 			overlays = [
 				alejandra-overlay
-				musicpresence.overlays.default
+				tackInputs.musicpresence.overlays.default
 				tackInputs.xwl-notifier.overlays.default
 			];
 
@@ -140,10 +141,10 @@
 				./hosts/juno/configuration.nix
 
 				hjem.nixosModules.default
-				mnw.nixosModules.mnw
+				tackInputs.mnw.nixosModules.mnw
 				nixos-hardware.nixosModules.msi-b550-a-pro
 				qtengine.nixosModules.default
-				spicetify-nix.nixosModules.spicetify
+				tackInputs.spicetify-nix.nixosModules.spicetify
 			];
 		};
 
@@ -153,14 +154,14 @@
 
 			overlays = [
 				alejandra-overlay
-				musicpresence.overlays.default
+				tackInputs.musicpresence.overlays.default
 			];
 
 			modules = [
 				./hosts/ashleys-macbook-pro/configuration.nix
 
-				mnw.darwinModules.mnw
-				spicetify-nix.darwinModules.spicetify
+				tackInputs.mnw.darwinModules.mnw
+				tackInputs.spicetify-nix.darwinModules.spicetify
 			];
 		};
 

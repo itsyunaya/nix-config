@@ -26,6 +26,21 @@ nixpkgs = "nixpkgs"
 [inputs.nixpkgs]
 url = "github:NixOS/nixpkgs/nixpkgs-unstable"
 
+[inputs.nix-darwin]
+url = "gh:LnL7/nix-darwin"
+
+[inputs.alejandra]
+url = "gh:itsyunaya/alejandra-opinionated"
+
+[inputs.mnw]
+url = "gh:Gerg-L/mnw"
+
+[inputs.musicpresence]
+url = "gh:itsyunaya/musicpresence-flake"
+
+[inputs.spicetify-nix]
+url = "gh:Gerg-L/spicetify-nix"
+
 [inputs.xwl-notifier]
 url = "gh:itsyunaya/xwl-notifier-rs"
 
