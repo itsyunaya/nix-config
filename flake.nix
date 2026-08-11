@@ -21,6 +21,7 @@
 			url = "github:ryantm/agenix";
 			inputs.nixpkgs.follows = "nixpkgs";
 			inputs.darwin.follows = "";
+			inputs.home-manager.follows = "";
 		};
 
 		# https://github.com/itsyunaya/ags-bar
@@ -111,14 +112,16 @@
 				if system == "aarch64-darwin"
 				then tackInputs.nix-darwin.lib.darwinSystem
 				else nixpkgs.lib.nixosSystem;
+
 			pkgs = import nixpkgs { inherit system overlays; };
+			wrappers = import ./shared/wrappers { inherit pkgs tackInputs; };
 		in
 			sysFn {
 				inherit system;
 				modules = modules ++ [ { nixpkgs.overlays = overlays; } ];
 
 				specialArgs = {
-					inherit inputs self tackInputs;
+					inherit inputs self tackInputs wrappers;
 					theme =
 						if workstation
 						then import ./theme.nix { inherit self; }

@@ -1,4 +1,4 @@
-{ fnLib, pkgs, ... }: let
+{ fnLib, pkgs, wrappers, ... }: let
 	username = "ashley";
 
 	pixel-berry-theme = pkgs.vscode-utils.buildVscodeMarketplaceExtension {
@@ -51,7 +51,9 @@ in {
 			pinentry_mac
 			skimpdf
 			;
-	};
+	} ++ [
+		wrappers.ripgrep
+	];
 
 	environment.shellAliases = {
 		rb = "nh darwin switch /Users/ashley/.config/nix";
