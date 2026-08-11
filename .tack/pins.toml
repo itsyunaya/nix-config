@@ -7,6 +7,7 @@
 # scheme rest expands rest into {path}
 [shorturls]
 gh = "github:{path}"
+cb = "git+https://codeberg.org/{path}"
 
 # all_follow maps input names to the top-level pin they follow
 # opt out per-input with exclude_follow
@@ -23,26 +24,64 @@ nixpkgs = "nixpkgs"
 #   dir             subdir holding flake.nix
 #   submodules      fetch git submodules
 #   unpack          fixed-only tarball or file
-[inputs.nixpkgs]
-url = "github:NixOS/nixpkgs/nixpkgs-unstable"
+[inputs]
+nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable"
 
-[inputs.nix-darwin]
-url = "gh:LnL7/nix-darwin"
+# https://github.com/nix-darwin/nix-darwin
+nix-darwin.url = "gh:LnL7/nix-darwin"
 
-[inputs.alejandra]
-url = "gh:itsyunaya/alejandra-opinionated"
+# https://github.com/llakala/lladios
+adios.url = "gh:llakala/lladios"
 
-[inputs.mnw]
-url = "gh:Gerg-L/mnw"
+# https://github.com/llakala/adios-wrappers
+adios-wrappers.url = "gh:llakala/adios-wrappers"
+adios-wrappers.follows = { adios = "adios" }
 
-[inputs.musicpresence]
-url = "gh:itsyunaya/musicpresence-flake"
+# not yet used
+# https://github.com/ryantm/agenix
+agenix.url = "gh:ryantm/agenix"
+agenix.follows = { darwin = "", home-manager = "" }
 
-[inputs.spicetify-nix]
-url = "gh:Gerg-L/spicetify-nix"
+# https://github.com/itsyunaya/ags-bar
+ags-bar.url = "gh:itsyunaya/ags-bar"
 
-[inputs.xwl-notifier]
-url = "gh:itsyunaya/xwl-notifier-rs"
+# https://github.com/itsyunaya/alejandra-opinionated
+alejandra.url = "gh:itsyunaya/alejandra-opinionated"
 
-[inputs.zen-browser]
-url = "gh:0xc000022070/zen-browser-flake"
+# not yet used
+# https://codeberg.org/LGFae/awww
+awww.url = "cb:LGFae/awww"
+
+# not yet used
+# https://github.com/feel-co/hjem
+hjem.url = "gh:feel-co/hjem"
+
+# not yet used
+# https://github.com/hyprwm/Hyprland
+hyprland.url = "gh:hyprwm/Hyprland"
+hyprland.exclude-follow = ["nixpkgs"]
+
+# https://github.com/Gerg-L/mnw
+mnw.url = "gh:Gerg-L/mnw"
+
+# https://github.com/itsyunaya/musicpresence-flake
+musicpresence.url = "gh:itsyunaya/musicpresence-flake"
+
+# not yet used
+# https://github.com/kossLAN/qtengine
+qtengine.url = "gh:kossLAN/qtengine"
+
+# not yet used
+# https://github.com/nixos/nixos-hardware
+nixos-hardware.url = "gh:NixOS/nixos-hardware"
+
+# https://github.com/Gerg-L/spicetify-nix/
+spicetify-nix.url = "gh:Gerg-L/spicetify-nix"
+
+# https://github.com/itsyunaya/xwl-notifier-rs
+xwl-notifier.url = "gh:itsyunaya/xwl-notifier-rs"
+
+# not yet used
+# https://github.com/0xc000022070/zen-browser-flake
+zen-browser.url = "gh:0xc000022070/zen-browser-flake"
+zen-browser.follows = { home-manager = "" }
