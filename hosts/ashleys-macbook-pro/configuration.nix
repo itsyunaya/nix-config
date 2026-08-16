@@ -62,9 +62,15 @@ in {
 		# this module is stupid and autoloads a theme so it needs to be manually disabled
 		promptInit = "";
 
+		# this needs to be off since we are initializing it manually with the correct dir for the compdumps
+		enableCompletion = false;
+
 		histFile = "$XDG_STATE_HOME/.zsh_history";
 
         interactiveShellInit = ''
+        	autoload -Uz compinit
+            compinit -d "$XDG_CACHE_HOME/zcompdump-$ZSH_VERSION"
+
 			eval "$(/opt/homebrew/bin/brew shellenv)"
 			PROMPT="%{%F{#c6a0f6}%}[%{%F{#fefefe}%}%n%{%F{#c6a0f6}%}@%{%F{#fefefe}%}%m%{%F{#c6a0f6}%}] (%{%F{#fefefe}%}%1~%{%F{#c6a0f6}%}) %{%f%}$ "
 		'';
