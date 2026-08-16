@@ -34,6 +34,7 @@ in {
 		"git"
 		"mnw"
 		"spicetify"
+		"xdg"
 	];
 
 	nixpkgs.config.allowUnfree = true;
