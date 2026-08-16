@@ -13,7 +13,12 @@
 			Please explicitly add a signing key for it to the module config.
 		'');
 in {
-	environment.systemPackages = [ pkgs.git ];
+	environment = {
+		systemPackages = [ pkgs.git ];
+		# if this is unset git will not find the file because it is stupid
+		variables."GIT_CONFIG_SYSTEM" = "/etc/gitconfig";
+	};
+
 	environment.etc."gitconfig".text = ''
 		[commit]
 			gpgsign = true
