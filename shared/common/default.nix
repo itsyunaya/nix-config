@@ -1,4 +1,4 @@
-{ pkgs, ... }: let
+{ pkgs, wrappers, ... }: let
 	# tests explode on macos for some reason
 	tack = pkgs.tack.overrideAttrs (old: {
 			doCheck =
@@ -27,10 +27,12 @@ in {
 				nil
 				nodejs-slim
 				pnpm
-				ripgrep
 				statix
 				;
-		};
+
+		} ++ ( with wrappers; [
+			ripgrep.drv
+		]);
 
 		variables = {
 			XDG_CACHE_HOME = "$HOME/.cache";

@@ -1,4 +1,4 @@
-{ pkgs, tackInputs, ... }: let
+{ pkgs, tackInputs }: let
 	adios = tackInputs.adios.adios;
 	adios-wrappers = import tackInputs.adios-wrappers { inherit adios; };
 
@@ -17,4 +17,6 @@
 		};
 	};
 in
-	builtins.mapAttrs (_: module: module {}) tree.modules
+	# add drv for every wrapper which lets you shorthand call it,
+	# useful for when no extra values need to be passed to the module
+	builtins.mapAttrs (_: wrapper: wrapper // { drv = wrapper {}; }) tree.modules
