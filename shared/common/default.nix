@@ -34,16 +34,19 @@ in {
 			ripgrep.drv
 		]);
 
-		variables = {
+		variables = let
+			# because env vars are evaluated alphabetically, this is needed for cargo and rustup home to resolve correctly
+			xdgDataHome = "$HOME/.local/share";
+		in {
 			XDG_CACHE_HOME = "$HOME/.cache";
 			XDG_CONFIG_HOME = "$HOME/.config";
-			XDG_DATA_HOME = "$HOME/.local/share";
+			XDG_DATA_HOME = xdgDataHome;
 			XDG_STATE_HOME = "$HOME/.local/state";
 			XDG_BIN_HOME = "$HOME/.local/bin";
 
 			# rust slop
-			CARGO_HOME = "$XDG_DATA_HOME/cargo";
-			RUSTUP_HOME = "$XDG_DATA_HOME/rustup";
+			CARGO_HOME = "${xdgDataHome}/cargo";
+			RUSTUP_HOME = "${xdgDataHome}/rustup";
 		};
 	};
 
