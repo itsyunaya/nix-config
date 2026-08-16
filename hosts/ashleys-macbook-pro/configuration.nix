@@ -20,24 +20,17 @@
 		];
 	};
 in {
-	nix.settings.experimental-features = [
-		"nix-command"
-		"flakes"
-	];
-
 	users.users.${username} = {
 		home = /Users/${username};
 	};
 
 	imports = fnLib.fromShared [
-		"common-pkgs"
+		"common"
 		"git"
 		"mnw"
 		"spicetify"
-		"xdg"
 	];
 
-	nixpkgs.config.allowUnfree = true;
 	documentation.enable = false;
 
 	environment.systemPackages = builtins.attrValues {
@@ -68,6 +61,8 @@ in {
 
 		# this module is stupid and autoloads a theme so it needs to be manually disabled
 		promptInit = "";
+
+		histFile = "$XDG_STATE_HOME/.zsh_history";
 
         interactiveShellInit = ''
 			eval "$(/opt/homebrew/bin/brew shellenv)"

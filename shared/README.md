@@ -6,9 +6,9 @@ therefore not be imported via `fnLib.recImport`.
 
 ## Overview
 
-| Module          | Consumable as       |
-|-----------------|---------------------|
-| mnw             | all (Flake input)   |
-| spicetify       | all (Flake input)   |
-| git             | all (local import)  |
-| common-packages | workstation systems |
+| Module    | Consumable as       |
+|-----------|---------------------|
+| mnw       | all (Flake input)   |
+| spicetify | all (Flake input)   |
+| git       | all (local import)  |
+| common    | workstation systems |

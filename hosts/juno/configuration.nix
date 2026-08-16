@@ -18,7 +18,7 @@ in {
 		]
 		++ (fnLib.fromShared [
 				# see shared/README.md
-				"common-pkgs"
+				"common"
 				"git"
 				"mnw"
 				"spicetify"
