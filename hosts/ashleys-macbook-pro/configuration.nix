@@ -1,4 +1,4 @@
-{ fnLib, pkgs, wrappers, ... }: let
+{ fnLib, pkgs, ... }: let
 	username = "ashley";
 
 	pixel-berry-theme = pkgs.vscode-utils.buildVscodeMarketplaceExtension {
@@ -17,6 +17,8 @@
 		vscodeExtensions = with pkgs.vscode-extensions; [
 			jnoortheen.nix-ide
 			pixel-berry-theme
+			haskell.haskell
+			justusadam.language-haskell
 		];
 	};
 in {
@@ -33,24 +35,26 @@ in {
 
 	documentation.enable = false;
 
-	environment.systemPackages = builtins.attrValues {
-		inherit
-			vscode
-			;
+	environment = {
+		systemPackages = builtins.attrValues {
+			inherit
+				vscode
+				;
 
-		inherit
-			(pkgs)
-			gnupg
-			localsend
-			pinentry_mac
-			skimpdf
-			;
-	} ++ [
-		wrappers.ripgrep
-	];
+			inherit
+				(pkgs)
+				gnupg
+				localsend
+				pinentry_mac
+				skimpdf
+				;
+		};
 
-	environment.shellAliases = {
-		rb = "nh darwin switch /Users/ashley/.config/nix";
+		# i might need this on linux too, unsure
+		# todo: check if .local/bin is on PATH on linux
+		variables."PATH" = "$PATH:$HOME/.local/bin";
+
+		shellAliases.rb = "nh darwin switch /Users/ashley/.config/nix";
 	};
 
 	programs.zsh = {

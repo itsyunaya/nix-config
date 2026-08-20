@@ -47,6 +47,9 @@ in {
 			# rust slop
 			CARGO_HOME = "${xdgDataHome}/cargo";
 			RUSTUP_HOME = "${xdgDataHome}/rustup";
+
+			# i don't use ghcup on any system besides my macbook, but if i ever do it's good to have this kept in sync
+			GHCUP_USE_XDG_DIRS = "1";
 		};
 	};
 
