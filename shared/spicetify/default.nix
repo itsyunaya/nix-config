@@ -1,6 +1,6 @@
 # https://gerg-l.github.io/spicetify-nix/
-{ tackInputs, pkgs, ... }: let
-	spicePkgs = tackInputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
+{ inputs, pkgs, ... }: let
+	spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
 in {
 	programs.spicetify = {
 		enable = true;

@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }: {
+{ pkgs, inputs, ... }: {
 	programs = {
 		gnupg.agent = {
 			enable = true;
@@ -12,6 +12,7 @@
 			portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
 
 			xwayland.enable = true;
+			withUWSM = true;
 		};
 
 		steam.enable = true;

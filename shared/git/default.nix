@@ -1,4 +1,6 @@
 { config, pkgs, ... }: let
+	inherit (pkgs.stdenv.hostPlatform) isDarwin;
+
 	keys = {
 		juno = "198EA594738FED19";
 		callisto = "C3BC6629CF0FC433";
@@ -6,7 +8,7 @@
 	};
 
 	signKey =
-		if pkgs.stdenv.isDarwin
+		if isDarwin
 		then keys.macbook
 		else keys.${config.networking.hostName} or (throw ''
 			Unrecognized machine '${config.networking.hostName}' imported git module.

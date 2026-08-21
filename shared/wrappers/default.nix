@@ -1,6 +1,6 @@
-{ pkgs, tackInputs }: let
-	adios = tackInputs.adios.adios;
-	adios-wrappers = import tackInputs.adios-wrappers { inherit adios; };
+{ pkgs, inputs }: let
+	adios = inputs.adios.adios;
+	adios-wrappers = import inputs.adios-wrappers { inherit adios; };
 
 	root = {
 		modules = adios.lib.inject [

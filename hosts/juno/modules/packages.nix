@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }: {
+{ pkgs, inputs, ... }: {
 	environment.systemPackages = let
 		prism = pkgs.prismlauncher.override {
 			# system glfw for running mc natively on wayland
