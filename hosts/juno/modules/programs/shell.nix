@@ -1,5 +1,13 @@
 { config, lib, pkgs, username, ... }: let
-	extraFlags = [ "--quiet" "--noask" ];
+	extraFlags = [
+		"--quiet"
+		"--noask"
+		# xdg compliance
+		"--absolute"
+		"--dir"
+		"$XDG_RUNTIME_DIR/keychain"
+	];
+
 	keys = [
 		"id_ed25519"
 		"id_ed25519_cl"
@@ -31,6 +39,17 @@ in {
 					"eza"
 				];
 			};
+
+			# needed to get rid of compdumps and other stupid stuff zsh creates by default
+			enableGlobalCompInit = false;
+			shellInit = ''
+				export ZSH_COMPDUMP="''${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump-$HOST-$ZSH_VERSION"
+				mkdir -p "$(dirname "$ZSH_COMPDUMP")"
+
+				zsh-newuser-install() { :; }
+			'';
+
+			histFile = "$XDG_STATE_HOME/.zsh_history";
 
 			interactiveShellInit = lib.mkMerge [
 				# kitty shell integration

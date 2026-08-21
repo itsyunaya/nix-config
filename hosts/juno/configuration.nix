@@ -2,11 +2,6 @@
 	username = "ashley";
 in {
 	nix.settings = {
-		experimental-features = [
-			"nix-command"
-			"flakes"
-		];
-
 		# so i don't have to build the entirety of hyprland on my pathetic little pc
 		substituters = [ "https://hyprland.cachix.org" ];
 		trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
@@ -30,7 +25,7 @@ in {
 		users.${username} = {
 			files."wallpapers" = {
 				source = "${self}/assets/wallpapers/";
-				target = ".wallpapers";
+				target = ".local/share/wallpapers";
 			};
 
 			xdg.config.files."mpDris2/mpDris2.conf".text = ''

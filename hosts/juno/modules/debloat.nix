@@ -14,7 +14,10 @@
 		stub-ld.enable = false;
 	};
 
-	programs.nano.enable = false;
+	programs = {
+		command-not-found.enable = false;
+		nano.enable = false;
+	};
 
 	services.speechd.enable = false;
 
