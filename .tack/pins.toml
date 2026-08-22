@@ -58,6 +58,9 @@ hjem.url = "gh:feel-co/hjem"
 hyprland.url = "gh:hyprwm/Hyprland"
 hyprland.exclude-follow = ["nixpkgs"]
 
+# https://github.com/mangowm/mango
+mango.url = "path:./packages/mango/"
+
 # https://github.com/Gerg-L/mnw
 mnw.url = "gh:Gerg-L/mnw"
 
