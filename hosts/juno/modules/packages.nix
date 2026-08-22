@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, inputs, wrappers, ... }: {
 	environment.systemPackages = let
 		prism = pkgs.prismlauncher.override {
 			# system glfw for running mc natively on wayland
@@ -95,5 +95,7 @@
 
 			qtsvg6 = pkgs.kdePackages.qtsvg;
 			qtsvg5 = pkgs.qt5.qtsvg;
-		};
+		} ++ [
+			(wrappers.git { hostName = "juno"; })
+		];
 }

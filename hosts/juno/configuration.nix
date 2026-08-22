@@ -14,7 +14,6 @@ in {
 		++ (fnLib.fromShared [
 				# see shared/README.md
 				"common"
-				"git"
 				"mnw"
 				"spicetify"
 			]);

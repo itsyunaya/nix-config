@@ -23,7 +23,7 @@ in {
 
 			shellAliases = {
 				explode = "poweroff";
-				nr = "nh os switch /home/ashley/sysflake -H juno";
+				nr = "nh os switch /home/ashley/Documents/sysflake -H juno";
 
 				ls = "eza";
 				ll = "eza -l";
