@@ -16,6 +16,9 @@
 		};
 
 		steam.enable = true;
+
+		# custom modules
 		torrenting.enable = false;
+		latex.enable = false;
 	};
 }

@@ -9,27 +9,6 @@
 			textToSpeechSupport = false;
 		};
 
-		tex-custom = pkgs.texliveSmall.withPackages (ps:
-				builtins.attrValues {
-					inherit
-						(ps)
-						scheme-medium
-						biber
-						biblatex
-						biblatex-bath
-						circuitikz
-						csquotes
-						lastpage
-						mdframed
-						needspace
-						pgfplots
-						svg
-						transparent
-						wrapfig
-						zref
-						;
-				});
-
 		awww = inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww;
 		ags-bar = inputs.ags-bar.packages.${pkgs.stdenv.hostPlatform.system}.default;
 		zen = inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default;
@@ -39,7 +18,6 @@
 				ags-bar
 				awww
 				prism
-				tex-custom
 				zen
 				;
 
