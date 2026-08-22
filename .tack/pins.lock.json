@@ -3,9 +3,9 @@
     "type": "github",
     "owner": "llakala",
     "repo": "lladios",
-    "rev": "816487bcca946ae584970065ee3fc3f9849e5e6f",
-    "narHash": "sha256-Kal9nY+uya5xsU1gGZkUQlQrX3BKWTbBGl9BcjoH29s=",
-    "lastModified": 1786595437
+    "rev": "a5ea29f1212cc6b710979a072720f9036be80003",
+    "narHash": "sha256-NW/LfJpS6MqPgY00U+ee9zGgBheZeJ97KNGeUs65Q7o=",
+    "lastModified": 1787314529
   },
   "adios-wrappers": {
     "type": "github",

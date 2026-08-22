@@ -32,13 +32,12 @@ nixpkgs.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst"
 nix-darwin.url = "gh:nix-darwin/nix-darwin"
 
 # https://github.com/llakala/lladios
-adios.url = "gh:llakala/lladios"
+adios.url = "gh:llakala/lladios?ref=fix-cached-args-bug"
 
 # https://github.com/llakala/adios-wrappers
 adios-wrappers.url = "gh:llakala/adios-wrappers"
 adios-wrappers.follows = { adios = "adios" }
 
-# not yet used
 # https://github.com/ryantm/agenix
 agenix.url = "gh:ryantm/agenix"
 agenix.follows = { darwin = "", home-manager = "" }
@@ -49,15 +48,12 @@ ags-bar.url = "gh:itsyunaya/ags-bar"
 # https://github.com/itsyunaya/alejandra-opinionated
 alejandra.url = "gh:itsyunaya/alejandra-opinionated"
 
-# not yet used
 # https://codeberg.org/LGFae/awww
 awww.url = "cb:LGFae/awww"
 
-# not yet used
 # https://github.com/feel-co/hjem
 hjem.url = "gh:feel-co/hjem"
 
-# not yet used
 # https://github.com/hyprwm/Hyprland
 hyprland.url = "gh:hyprwm/Hyprland"
 hyprland.exclude-follow = ["nixpkgs"]
@@ -68,11 +64,9 @@ mnw.url = "gh:Gerg-L/mnw"
 # https://github.com/itsyunaya/musicpresence-flake
 musicpresence.url = "gh:itsyunaya/musicpresence-flake"
 
-# not yet used
 # https://github.com/kossLAN/qtengine
 qtengine.url = "gh:kossLAN/qtengine"
 
-# not yet used
 # https://github.com/nixos/nixos-hardware
 nixos-hardware.url = "gh:NixOS/nixos-hardware"
 
@@ -82,7 +76,6 @@ spicetify-nix.url = "gh:Gerg-L/spicetify-nix"
 # https://github.com/itsyunaya/xwl-notifier-rs
 xwl-notifier.url = "gh:itsyunaya/xwl-notifier-rs"
 
-# not yet used
 # https://github.com/0xc000022070/zen-browser-flake
 zen-browser.url = "gh:0xc000022070/zen-browser-flake"
 zen-browser.follows = { home-manager = "" }

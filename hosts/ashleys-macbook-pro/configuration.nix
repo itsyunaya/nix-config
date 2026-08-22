@@ -1,4 +1,4 @@
-{ fnLib, pkgs, ... }: let
+{ fnLib, pkgs, wrappers, ... }: let
 	username = "ashley";
 
 	pixel-berry-theme = pkgs.vscode-utils.buildVscodeMarketplaceExtension {
@@ -28,7 +28,7 @@ in {
 
 	imports = fnLib.fromShared [
 		"common"
-		"git"
+		#"git"
 		"mnw"
 		"spicetify"
 	];
@@ -48,7 +48,9 @@ in {
 				pinentry_mac
 				skimpdf
 				;
-		};
+		} ++ [
+			(wrappers.git { hostName = "macbook"; })
+		];
 
 		# i might need this on linux too, unsure
 		# todo: check if .local/bin is on PATH on linux
