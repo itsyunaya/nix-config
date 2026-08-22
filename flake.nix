@@ -39,6 +39,11 @@
 			workstation = true;
 
 			overlays = [
+				# nixpkgs gale can't launch steam because of some issue, and the associated pr hasn't been merged yet
+				(_: _: {
+					gale = inputs.nixpkgs.legacyPackages."x86_64-linux".callPackage ./packages/gale.nix { };
+				})
+
 				alejandra-overlay
 				inputs.musicpresence.overlays.default
 				inputs.xwl-notifier.overlays.default

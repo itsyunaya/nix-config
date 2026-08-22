@@ -1,4 +1,4 @@
-{ pkgs, inputs, wrappers, ... }: {
+{ pkgs, inputs, self, wrappers, ... }: {
 	environment.systemPackages = let
 		prism = pkgs.prismlauncher.override {
 			# system glfw for running mc natively on wayland
@@ -9,6 +9,8 @@
 			textToSpeechSupport = false;
 		};
 
+		microshot = pkgs.callPackage "${self}/packages/microshot" {};
+
 		awww = inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww;
 		ags-bar = inputs.ags-bar.packages.${pkgs.stdenv.hostPlatform.system}.default;
 		zen = inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default;
@@ -17,6 +19,7 @@
 			inherit
 				ags-bar
 				awww
+				microshot
 				prism
 				zen
 				;
@@ -41,8 +44,8 @@
 				ffmpeg
 				ffmpegthumbnailer
 				fzf
+				gale
 				gnome-themes-extra
-				hyprshot
 				keepassxc
 				libnotify
 				mpv
