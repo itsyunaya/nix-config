@@ -32,7 +32,7 @@ nixpkgs.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst"
 nix-darwin.url = "gh:nix-darwin/nix-darwin"
 
 # https://github.com/llakala/lladios
-adios.url = "gh:llakala/lladios?ref=fix-cached-args-bug"
+adios.url = "gh:llakala/lladios"
 
 # https://github.com/llakala/adios-wrappers
 adios-wrappers.url = "gh:llakala/adios-wrappers"
