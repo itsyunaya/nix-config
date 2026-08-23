@@ -1,5 +1,11 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, inputs, wrappers, ... }: {
 	programs = {
+		fish = {
+			enable = true;
+			package = wrappers.fish.drv;
+			useBabelfish = true;
+		};
+
 		gnupg.agent = {
 			enable = true;
 			enableSSHSupport = true;

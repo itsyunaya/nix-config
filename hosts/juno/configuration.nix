@@ -44,7 +44,7 @@ in {
 		description = "${username}";
 		extraGroups = [ "networkmanager" "wheel" ];
 		packages = [];
-		shell = pkgs.zsh;
+		shell = pkgs.fish;
 
 		# needs to be explicitly set for mpd
 		uid = 1000;

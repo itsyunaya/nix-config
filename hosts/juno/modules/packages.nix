@@ -40,7 +40,7 @@
 				btop
 				cifs-utils
 				darkly
-				eza
+				#eza
 				ffmpeg
 				ffmpegthumbnailer
 				fzf
@@ -78,5 +78,7 @@
 			qtsvg5 = pkgs.qt5.qtsvg;
 		} ++ [
 			(wrappers.git { hostName = "juno"; })
+			wrappers.kitty.drv
+			wrappers.eza.drv
 		];
 }
