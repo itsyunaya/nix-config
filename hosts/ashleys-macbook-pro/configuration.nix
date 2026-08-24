@@ -22,13 +22,17 @@
 		];
 	};
 in {
-	users.users.${username} = {
-		home = /Users/${username};
+	users = {
+		knownUsers = [ username ];
+		users.${username} = {
+			home = /Users/${username};
+			shell = pkgs.fish;
+			uid = 501;
+		};
 	};
 
 	imports = fnLib.fromShared [
 		"common"
-		#"git"
 		"mnw"
 		"spicetify"
 	];
@@ -50,36 +54,24 @@ in {
 				;
 		} ++ [
 			(wrappers.git { hostName = "macbook"; })
+			wrappers.eza.drv
 		];
 
-		# i might need this on linux too, unsure
-		# todo: check if .local/bin is on PATH on linux
 		variables."PATH" = "$PATH:$HOME/.local/bin";
 
 		shellAliases.rb = "nh darwin switch /Users/ashley/.config/nix";
 	};
 
-	programs.zsh = {
-		enable = true;
+	programs = {
+		fish = {
+			enable = true;
+			package = wrappers.fish.drv;
+			useBabelfish = true;
+		};
 
-		enableAutosuggestions = true;
-		enableSyntaxHighlighting = true;
-
-		# this module is stupid and autoloads a theme so it needs to be manually disabled
-		promptInit = "";
-
-		# this needs to be off since we are initializing it manually with the correct dir for the compdumps
-		enableCompletion = false;
-
-		histFile = "$XDG_STATE_HOME/.zsh_history";
-
-        interactiveShellInit = ''
-        	autoload -Uz compinit
-            compinit -d "$XDG_CACHE_HOME/zcompdump-$ZSH_VERSION"
-
-			eval "$(/opt/homebrew/bin/brew shellenv)"
-			PROMPT="%{%F{#c6a0f6}%}[%{%F{#fefefe}%}%n%{%F{#c6a0f6}%}@%{%F{#fefefe}%}%m%{%F{#c6a0f6}%}] (%{%F{#fefefe}%}%1~%{%F{#c6a0f6}%}) %{%f%}$ "
-		'';
+		# since zsh is the default shell on macos, this is on by default
+		# and needs to be disabled to not add unnecessary files
+		zsh.enable = false;
 	};
 
 	system.stateVersion = 7;
