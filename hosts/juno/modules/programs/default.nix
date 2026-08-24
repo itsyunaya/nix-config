@@ -13,12 +13,17 @@
 		};
 
 		hyprland = {
-			enable = true;
+			enable = false;
 			package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
 			portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
 
 			xwayland.enable = true;
 			withUWSM = true;
+		};
+
+		mango = {
+			enable = true;
+			package = wrappers.mangowc.drv;
 		};
 
 		steam.enable = true;

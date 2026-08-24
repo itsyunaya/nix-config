@@ -11,9 +11,8 @@
 
 	tree = adios root {
 		options = {
-			"/nixpkgs" = {
-				inherit pkgs;
-			};
+			"/nixpkgs" = { inherit pkgs; };
+			"/self" = { sysInputs = inputs; };
 		};
 	};
 in

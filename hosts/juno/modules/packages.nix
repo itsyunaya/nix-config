@@ -26,7 +26,7 @@
 
 			inherit
 				(pkgs.jetbrains)
-				clion
+				#clion
 				idea
 				webstorm
 				;
@@ -40,7 +40,6 @@
 				btop
 				cifs-utils
 				darkly
-				#eza
 				ffmpeg
 				ffmpegthumbnailer
 				fzf
