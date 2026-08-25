@@ -1,6 +1,7 @@
 {
 	explode = "poweroff";
 
-	# nix related
-	nr = "nh os switch /home/ashley/Documents/sysflake -H juno";
+	# git
+	# see https://github.com/sharkdp/bat#git-diff
+	gd = "git diff --name-only --relative --diff-filter=d -z | xargs -0 bat --diff";
 }

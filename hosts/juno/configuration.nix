@@ -50,13 +50,19 @@ in {
 		uid = 1000;
 	};
 
-	environment.sessionVariables = {
-		QT_IM_MODULE = "fcitx";
-		XMODIFIERS = "@im=fcitx";
-		SDL_IM_MODULE = "fcitx";
-		GLFW_IM_MODULE = "ibus";
-		QT_QPA_PLATFORM = "wayland";
-		NIXOS_OZONE_WL = "1";
+	environment = {
+		sessionVariables = {
+			QT_IM_MODULE = "fcitx";
+			XMODIFIERS = "@im=fcitx";
+			SDL_IM_MODULE = "fcitx";
+			GLFW_IM_MODULE = "ibus";
+			QT_QPA_PLATFORM = "wayland";
+			NIXOS_OZONE_WL = "1";
+		};
+
+		shellAliases = {
+			nr = "nh os switch /home/ashley/Documents/sysflake -H juno";
+		};
 	};
 
 	# state version should only be changed when it is really necessary,

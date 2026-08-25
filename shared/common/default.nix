@@ -23,6 +23,8 @@ in {
 				;
 
 		} ++ ( with wrappers; [
+			bat.drv
+			less.drv
 			ripgrep.drv
 		]);
 

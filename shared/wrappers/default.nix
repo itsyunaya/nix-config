@@ -5,6 +5,8 @@
 	root = {
 		modules = adios.lib.inject [
 			adios-wrappers
+
+			# some modules like less, bat and fish partially adapted from https://github.com/llakala/nixos
 			(adios.lib.importModules { directory = ./.; })
 		];
 	};

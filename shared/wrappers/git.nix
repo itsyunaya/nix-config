@@ -6,7 +6,7 @@
 	};
 in {
 	options = {
-		settings.mutators = [ "/git" ];
+		settings.mutators = [ "/git" "/less" ];
 		hostName.type = types.string;
 	};
 
