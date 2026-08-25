@@ -34,7 +34,6 @@ in {
 			;
 	} ++ [
 		(wrappers.git { hostName = "macbook"; })
-		wrappers.eza.drv
 	];
 
 	programs = {

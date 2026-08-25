@@ -24,6 +24,7 @@ in {
 
 		} ++ ( with wrappers; [
 			bat.drv
+			eza.drv
 			less.drv
 			ripgrep.drv
 		]);

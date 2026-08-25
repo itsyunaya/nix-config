@@ -78,6 +78,5 @@
 		} ++ [
 			(wrappers.git { hostName = "juno"; })
 			wrappers.kitty.drv
-			wrappers.eza.drv
 		];
 }
