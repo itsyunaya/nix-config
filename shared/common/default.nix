@@ -63,6 +63,10 @@ in {
 			# does what `nix store --optimise` does but automatically
 			auto-optimise-store = true;
 
+			# for more info see
+			# https://nix.dev/manual/nix/2.35/language/import-from-derivation
+			allow-import-from-derivation = false;
+
 			experimental-features = [
 				"nix-command"
 				"flakes"
