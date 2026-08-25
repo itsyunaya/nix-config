@@ -6,6 +6,12 @@ continuation of my [previous attempt](https://github.com/itsyunaya/nixos-config-
 getting acquainted with Nix, but now actually stable and usable as a daily driver.
 
 ## Specifications
+### Input pinning
+
+Instead of using the `inputs` attrset in `flake.nix`, this configuration uses
+[tack](https://github.com/manic-systems/tack) to manage its' inputs. See the
+`.tack/` directory for more info.
+
 ### Hosts
 
 > [!CAUTION]
@@ -22,9 +28,10 @@ getting acquainted with Nix, but now actually stable and usable as a daily drive
 
 ### juno
 
-This is the configuration I use on my main machine. It includes a 
-Wayland-based compositor setup, a custom Astal/AGS top bar, the Anyrun app 
-runner, and other components needed to assemble a full desktop shell experience.
+This is the configuration I use on my main machine. It uses the 
+[mango wayland compositor](https://github.com/mangowm/mango), a custom Astal/AGS 
+top bar, the Anyrun app runner, and other components needed to assemble a full 
+desktop shell experience.
 
 (Screenshots coming soon)
 
@@ -47,16 +54,14 @@ simple shell setup for now.
 
 ## Other
 
-The `shared/` directory includes modules which are to a degree portable
-between Nix-based platforms. Specifics about the portability of each
-module are described in the README file located within. Notable modules include:
+The `shared/` directory includes common configuration and modules which 
+are to a degree portable between Nix-based platforms. This has been 
+achieved with the use of [adios](https://github.com/llakala/lladios) and 
+[adios-wrappers](https://github.com/llakala/adios-wrappers). It also
+contains modules which are portable through other means like
+[mnw](https://github.com/Gerg-L/mnw).
 
-- Custom Neovim configuration with [mnw](https://gerg-l.github.io/mnw/)
-- Custom Git module
-
-~~The packages directory includes sofware I've packaged myself.~~ 
-The only package I put there has been moved to 
-[its own flake](https://github.com/itsyunaya/musicpresence-flake).
+`packages/` contains self-made or vendored package derivations.
 
 ## Note
 

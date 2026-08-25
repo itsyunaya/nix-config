@@ -12,7 +12,6 @@ in {
 			(fnLib.recImport "${self}/hosts/juno/modules" { inherit username; })
 		]
 		++ (fnLib.fromShared [
-				# see shared/README.md
 				"common"
 				"mnw"
 				"spicetify"
