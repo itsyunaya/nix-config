@@ -21,7 +21,11 @@ in {
 	documentation.enable = false;
 
 	environment = {
-		variables."PATH" = "$PATH:$HOME/.local/bin";
+		variables = {
+			"PATH" = "$PATH:$HOME/.local/bin";
+			"EDITOR" = "nvim";
+		};
+
 		shellAliases.rb = "nh darwin switch /Users/ashley/.config/nix";
 	};
 
