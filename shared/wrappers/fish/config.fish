@@ -2,20 +2,27 @@ set fish_greeting
 
 set fish_transient_prompt 1
 
+# stripped default function with modified prompt
+function prompt_login --description "display user name for the prompt"
+    # If we're running via SSH, change the host color.
+    set -l color_host $fish_color_host
+    if set -q SSH_TTY; and set -q fish_color_host_remote
+        set color_host $fish_color_host_remote
+    end
+
+	set -l normal (set_color --reset)
+    set -l purple (set_color --bold cdb4db)
+
+    echo -n -s $purple '[' $normal "$USER" $purple ']' $normal @ $purple '[' $normal (prompt_hostname) $purple ']' $normal
+end
+
 # default prompt except with transience added
 function fish_prompt --description 'Write out the prompt'
     set -l last_pipestatus $pipestatus
     set -lx __fish_last_status $status
     set -l normal (set_color --reset)
-    set -l color_cwd $fish_color_cwd
+    set -l color_cwd ffc8dd
     set -l suffix '>'
-
-    if functions -q fish_is_root_user; and fish_is_root_user
-        if set -q fish_color_cwd_root
-            set color_cwd $fish_color_cwd_root
-        end
-        set suffix '#'
-    end
 
     if contains -- --final-rendering $argv
         echo -n -s $suffix " "
