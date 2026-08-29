@@ -4,7 +4,6 @@
 	programs = {
 		anyrun.enable = true;
 		hyprlock.enable = true;
-		rmpc.enable = true;
 
 		vscode = {
 			enable = true;
