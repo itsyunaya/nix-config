@@ -1,6 +1,4 @@
 { pkgs, ... }: {
-	services.nextcloud-client.enable = true;
-
 	programs = {
 		anyrun.enable = true;
 		hyprlock.enable = true;
