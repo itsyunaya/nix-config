@@ -3,9 +3,9 @@
     "type": "github",
     "owner": "llakala",
     "repo": "lladios",
-    "rev": "aa2d5ed2055692299c2d82fc59307b8bc5181d75",
-    "narHash": "sha256-smtSkrgxJfeqBxq2ISpx4HUVNYa6HUbr9eVdWzRYwQo=",
-    "lastModified": 1787451089
+    "rev": "398192b3eb1e1fe66ffd64be8c11aee2f4bb5dac",
+    "narHash": "sha256-Onrzbqkt3Fk49NhZKj5JWC2wYdaWi06Nb2H83AKy0M4=",
+    "lastModified": 1787721221
   },
   "adios-wrappers": {
     "type": "github",
@@ -35,9 +35,9 @@
     "type": "github",
     "owner": "itsyunaya",
     "repo": "alejandra-opinionated",
-    "rev": "38280c1bd391dbac33a56cb89dfeed1643c438b5",
-    "narHash": "sha256-HlYGW4TfBPN68+f72Zvj+/z5UOI7G+iH8c1/Pk6kOVw=",
-    "lastModified": 1779297246
+    "rev": "efc664daacfdec8ff3a01cc4f73eb332ba403c62",
+    "narHash": "sha256-ryltH1X1cHqu/QfyiWW8G1+qB8GBmhrzfHmcgimO0Bo=",
+    "lastModified": 1787874678
   },
   "awww": {
     "type": "git",
@@ -59,9 +59,9 @@
     "type": "github",
     "owner": "hyprwm",
     "repo": "Hyprland",
-    "rev": "951ab550e7ea050e4b871f99faf87d99c601c44a",
-    "narHash": "sha256-ds9J1/RBDzgSFtb20+MbXS/v8xA7TLRh7YSnD6cWSgY=",
-    "lastModified": 1787505664
+    "rev": "86c24e2e079aa62214421c76f01b603fc8178125",
+    "narHash": "sha256-21MFGYEl3m5SjN9kZGKb+gELVLlMCF1DkbwHqHzSK1w=",
+    "lastModified": 1788100302
   },
   "mango": {
     "type": "path",
@@ -95,15 +95,15 @@
     "type": "github",
     "owner": "NixOS",
     "repo": "nixos-hardware",
-    "rev": "0471accf8d0a8210b31d947497d179ecc99e0021",
-    "narHash": "sha256-HHfv2/HkNSKbbSyU9iD/g8lbP6r4tl33sSw1W4rXCk0=",
-    "lastModified": 1787144466
+    "rev": "dc3f0cfde2050172abf6c3cdb684f735c15a57c5",
+    "narHash": "sha256-cmOd3iGoE140M2GidgQMQbyxHZ4dT7C0QZq2+CrXQyA=",
+    "lastModified": 1788044418
   },
   "nixpkgs": {
     "type": "tarball",
-    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1060451.56c02bc00adc/nixexprs.tar.zst",
-    "rev": "56c02bc00adcf003215cc4bd996d6efaf4cff188",
-    "narHash": "sha256-FoOSoBG7tEvOlGRTpWnVdY506Ner4y7r7UYO3OGgmE8="
+    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1063296.83199d0d373d/nixexprs.tar.zst",
+    "rev": "83199d0d373dd3ac2b9a1996b1d0263f76ab7a4c",
+    "narHash": "sha256-5GWj0FI2uOwKNpXkmpWrSFDe1rCaNBCUQ8d+HDtFQPI="
   },
   "qtengine": {
     "type": "github",
@@ -117,9 +117,9 @@
     "type": "github",
     "owner": "Gerg-L",
     "repo": "spicetify-nix",
-    "rev": "a8adfd6f9f341dd586d5c06dda3bbfa21c6014e7",
-    "narHash": "sha256-r2FJY01jRVhrZIKPdhQ3QFYsAz3wjilWTMSSH7VMOeo=",
-    "lastModified": 1787460061
+    "rev": "bf4ed54253a61c8324a5b461638c42db77c0b980",
+    "narHash": "sha256-aXMDRUxm/9se+vgKViKdDcClk1k3qA3sUwT0kAYo3Fg=",
+    "lastModified": 1788083617
   },
   "xwl-notifier": {
     "type": "github",
@@ -133,8 +133,8 @@
     "type": "github",
     "owner": "0xc000022070",
     "repo": "zen-browser-flake",
-    "rev": "51df7b8cbb0fcba14a9b159531ef48d0cd69dde9",
-    "narHash": "sha256-c+dIgStaq3qNaQxhAiiXY3upNTIdn7tCcqPnwsmKTmY=",
-    "lastModified": 1787540616
+    "rev": "8d0d0f036b0104699e60ec0d549d36a24d6e8637",
+    "narHash": "sha256-7/xv7BWHPqFZOdJJJkXoNnGDG/lznobSpwLtj2fr73A=",
+    "lastModified": 1788076699
   }
 }
