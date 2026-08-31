@@ -1,24 +1,26 @@
 { pkgs, inputs, self, wrappers, ... }: {
 	environment.systemPackages = let
+		sys = pkgs.stdenv.hostPlatform.system;
+
 		prism = pkgs.prismlauncher.override {
 			# system glfw for running mc natively on wayland
 			# only works for some versions up to 26.x
 			additionalLibs = [ pkgs.glfw ];
-			# "PRESS ENTER TO ENABLE THE NARRATOR !!!"
-			# no shut up i dont care :sob:
 			textToSpeechSupport = false;
 		};
 
 		microshot = pkgs.callPackage "${self}/packages/microshot" {};
 
-		awww = inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww;
-		ags-bar = inputs.ags-bar.packages.${pkgs.stdenv.hostPlatform.system}.default;
-		zen = inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default;
+		awww = inputs.awww.packages.${sys}.awww;
+		ags-bar = inputs.ags-bar.packages.${sys}.default;
+		meowvim = inputs.meowvim.packages.${sys}.default;
+		zen = inputs.zen-browser.packages.${sys}.default;
 	in
 		builtins.attrValues {
 			inherit
 				ags-bar
 				awww
+				meowvim
 				microshot
 				prism
 				zen
