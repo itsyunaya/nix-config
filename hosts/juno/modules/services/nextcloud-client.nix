@@ -1,10 +1,11 @@
 { pkgs, ... }: let
 	pkg = pkgs.nextcloud-client;
 in {
-	systemd.services.nextcloud-client = {
+	systemd.user.services.nextcloud-client = {
 		description = "Nextcloud Client";
 		after = [ "graphical-session.target" ];
 		partOf = [ "graphical-session.target" ];
+		wantedBy = [ "graphical-session.target" ];
 
 		serviceConfig = {
 			ExecStart = "${pkg}/bin/nextcloud --background";
