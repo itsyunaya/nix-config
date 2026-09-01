@@ -78,6 +78,7 @@
 			qtsvg6 = pkgs.kdePackages.qtsvg;
 			qtsvg5 = pkgs.qt5.qtsvg;
 		} ++ [
+			wrappers.anyrun.drv
 			(wrappers.git { hostName = "juno"; })
 			wrappers.kitty.drv
 			wrappers.rmpc.drv

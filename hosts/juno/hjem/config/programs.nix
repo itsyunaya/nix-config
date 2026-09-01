@@ -1,6 +1,5 @@
 { pkgs, ... }: {
 	programs = {
-		anyrun.enable = true;
 		hyprlock.enable = true;
 
 		vscode = {

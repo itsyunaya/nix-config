@@ -11,9 +11,9 @@
     "type": "github",
     "owner": "llakala",
     "repo": "adios-wrappers",
-    "rev": "1bcfcd62d9639c84019e567e9eede1eccf04f5aa",
-    "narHash": "sha256-LBFKi3Hr7VoLEIHqSmB/xAX/1qmUKqVuOYQ27U9BJE4=",
-    "lastModified": 1788028466
+    "rev": "b1427dd77b810c283a9470a14829841cf94c9d05",
+    "narHash": "sha256-R3gQofg6WUobDaTECF+F+ulLrs8XTTXa/gHSS7EKVng=",
+    "lastModified": 1788214233
   },
   "agenix": {
     "type": "github",
@@ -71,9 +71,9 @@
     "type": "github",
     "owner": "itsyunaya",
     "repo": "meowvim",
-    "rev": "29f68d7c0c50cef4fd375a4e599c956b660ebed3",
-    "narHash": "sha256-5EtO/dGtKCFaTIHTU92ZIwI6pjGR/FmR9sbBs83a98o=",
-    "lastModified": 1788189402
+    "rev": "588f5a8e18338a767a9316ef7ba11468a5c32b09",
+    "narHash": "sha256-JiY2wYYycGMKS4dnXyqLoU6TeIdm/cZJZHn2ZJv8+aw=",
+    "lastModified": 1788191199
   },
   "mnw": {
     "type": "github",
