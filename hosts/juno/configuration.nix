@@ -57,6 +57,8 @@ in {
 			GLFW_IM_MODULE = "ibus";
 			QT_QPA_PLATFORM = "wayland";
 			NIXOS_OZONE_WL = "1";
+			# set to nano by default for some reason
+			EDITOR = "nvim";
 		};
 
 		shellAliases = {
