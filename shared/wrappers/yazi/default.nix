@@ -3,11 +3,7 @@ _: {
 		settingsFile.default = ./yazi.toml;
 		initLuaFile.default = ./init.lua;
 
-		plugins.defaultFunc = { inputs }: let
-			inherit (inputs.nixpkgs.pkgs) yaziPlugins;
-		in {
-			"git.yazi" = yaziPlugins.git;
-		};
+		plugins.defaultFunc = { inputs }: import ./plugins.nix { inherit inputs; };
 	};
 
 	mutations."/fish".interactiveShellInit = _: ''
