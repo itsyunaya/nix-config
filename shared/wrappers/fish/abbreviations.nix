@@ -2,8 +2,8 @@
 	explode = "poweroff";
 
 	# git
-	# see https://github.com/sharkdp/bat#git-diff
-	gd = "git diff --name-only --relative --diff-filter=d -z | xargs -0 bat --diff";
 	gs = "git status";
 	gc = "git commit -v";
+	gd = "git diff --name-only --relative --diff-filter=d -z | xargs -0 bat --diff";
+	gp = "git add --patch";
 }

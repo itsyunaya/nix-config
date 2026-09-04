@@ -1,2 +1,2 @@
 #env
-LESS = --ignore-case --wordwrap
+LESS = --ignore-case --wordwrap --RAW-CONTROL-CHARS
