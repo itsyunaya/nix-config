@@ -1,0 +1,13 @@
+# https://yazi-rs.github.io/docs/configuration/overview
+[mgr]
+show_hidden = true
+linemode = "size"
+
+[preview]
+tab_size = 4
+
+[plugin]
+prepend_fetchers = [
+	{ url = "*", group = "git", run = "git" },
+	{ url = "*/", group = "git", run = "git" }
+]

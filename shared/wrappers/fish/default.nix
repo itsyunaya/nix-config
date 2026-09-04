@@ -1,7 +1,7 @@
 _: {
 	options = {
 		abbreviations.mutators = [ "/fish" "/eza" ];
-		interactiveShellInit.mutators = [ "/fish" "/kitty" "/keychain" ];
+		interactiveShellInit.mutators = [ "/fish" "/kitty" "/keychain" "/yazi" ];
 	};
 
 	mutations = {

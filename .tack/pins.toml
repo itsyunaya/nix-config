@@ -36,7 +36,7 @@ adios.url = "gh:llakala/lladios"
 
 # https://github.com/llakala/adios-wrappers
 adios-wrappers.url = "gh:llakala/adios-wrappers"
-#adios-wrappers.url = "path:../Development/IdeaProjects/adios-wrappers"
+#adios-wrappers.url = "path:../projects/adios-wrappers"
 adios-wrappers.follows = { adios = "adios" }
 
 # https://github.com/ryantm/agenix
