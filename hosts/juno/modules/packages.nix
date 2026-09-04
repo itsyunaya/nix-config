@@ -29,7 +29,7 @@
 			inherit
 				(pkgs.jetbrains)
 				#clion
-				idea
+				#idea
 				webstorm
 				;
 
