@@ -1,5 +1,11 @@
 { pkgs, inputs, wrappers, ... }: {
 	programs = {
+		direnv = {
+			enable = true;
+			silent = true;
+			nix-direnv.enable = true;
+		};
+
 		fish = {
 			enable = true;
 			package = wrappers.fish.drv;
