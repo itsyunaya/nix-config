@@ -1,4 +1,4 @@
-{ pkgs, wrappers, ... }: let
+{ inputs, pkgs, wrappers, ... }: let
 	pixel-berry-theme = pkgs.vscode-utils.buildVscodeMarketplaceExtension {
 		mktplcRef = {
 			name = "pixel-berry";
@@ -19,9 +19,12 @@
 			justusadam.language-haskell
 		];
 	};
+
+	meowvim = inputs.meowvim.packages.${pkgs.stdenv.hostPlatform.system}.default;
 in {
 	environment.systemPackages = builtins.attrValues {
 		inherit
+			meowvim
 			vscode
 			;
 

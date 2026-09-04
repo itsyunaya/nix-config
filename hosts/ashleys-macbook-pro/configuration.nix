@@ -14,7 +14,7 @@ in {
 		[ ./programs.nix ]
 		++ fnLib.fromShared [
 			"common"
-			"mnw"
+			#"mnw"
 			"spicetify"
 		];
 
