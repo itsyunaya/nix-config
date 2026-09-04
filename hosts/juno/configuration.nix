@@ -18,7 +18,6 @@ in {
 
 	hjem = {
 		specialArgs = { inherit theme; };
-		extraModules = [ (fnLib.recImport ./hjem/modules) ];
 		users.${username} = {
 			files."wallpapers" = {
 				source = "${self}/assets/wallpapers/";
@@ -33,7 +32,7 @@ in {
                 notify = False
 			'';
 
-			imports = [ (fnLib.recImport ./hjem/config) ];
+			imports = [ (fnLib.recImport ./hjem) ];
 		};
 	};
 
