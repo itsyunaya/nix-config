@@ -6,6 +6,9 @@
 			# system glfw for running mc natively on wayland
 			# only works for some versions up to 26.x
 			additionalLibs = [ pkgs.glfw ];
+			# any version can run with the newest jdk, atleast theoretically
+			# tested on 1.0, 1.7.10 and 1.20
+			jdks = [ pkgs.jdk25 ];
 			textToSpeechSupport = false;
 		};
 
@@ -26,12 +29,12 @@
 				zen
 				;
 
-			inherit
-				(pkgs.jetbrains)
+			#inherit
+				#(pkgs.jetbrains)
 				#clion
 				#idea
-				webstorm
-				;
+				#webstorm
+				#;
 
 			inherit
 				(pkgs)
