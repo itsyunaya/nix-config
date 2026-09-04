@@ -13,7 +13,6 @@ in {
 		]
 		++ (fnLib.fromShared [
 				"common"
-				#"mnw"
 				"spicetify"
 			]);
 

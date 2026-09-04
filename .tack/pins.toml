@@ -65,9 +65,6 @@ mango.url = "path:./packages/mango/"
 # https://github.com/itsyunaya/meowvim
 meowvim.url = "gh:itsyunaya/meowvim"
 
-# https://github.com/Gerg-L/mnw
-mnw.url = "gh:Gerg-L/mnw"
-
 # https://github.com/itsyunaya/musicpresence-flake
 musicpresence.url = "gh:itsyunaya/musicpresence-flake"
 

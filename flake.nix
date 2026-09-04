@@ -55,7 +55,6 @@
 
 					inputs.hjem.nixosModules.default
 					inputs.mango.nixosModules.mango
-					inputs.mnw.nixosModules.mnw
 					inputs.nixos-hardware.nixosModules.msi-b550-a-pro
 					inputs.qtengine.nixosModules.default
 					inputs.spicetify-nix.nixosModules.spicetify
@@ -93,7 +92,6 @@
 			modules = [
 				./hosts/ashleys-macbook-pro/configuration.nix
 
-				inputs.mnw.darwinModules.mnw
 				inputs.spicetify-nix.darwinModules.spicetify
 			];
 		};
