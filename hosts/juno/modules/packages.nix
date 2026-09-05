@@ -40,10 +40,8 @@
 				(pkgs)
 				alsa-utils
 				anki
-				apfs-fuse
 				aseprite
 				btop
-				cifs-utils
 				darkly
 				ffmpeg
 				ffmpegthumbnailer
@@ -59,7 +57,6 @@
 				pinentry-qt
 				picard
 				playerctl
-				pnpm
 				pwvucontrol
 				qimgv
 				telegram-desktop
@@ -69,7 +66,6 @@
 				whitesur-icon-theme
 				wl-clipboard
 				xdg-utils
-				xlsclients
 				xwl-notifier
 				yams
 				zathura
@@ -85,6 +81,5 @@
 			(wrappers.git { hostName = "juno"; })
 			wrappers.kitty.drv
 			wrappers.rmpc.drv
-			wrappers.yazi.drv
 		];
 }

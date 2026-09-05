@@ -16,25 +16,17 @@ in {
 				musicpresence
 				nh
 				nil
-				nodejs-slim
-				pnpm
 				statix
 				tack
 				;
-
-		} ++ ( with wrappers; [
+		}
+		++ (with wrappers; [
 			bat.drv
 			eza.drv
 			less.drv
 			ripgrep.drv
+			yazi.drv
 		]);
-
-		etc."pulse/client.conf" = {
-			enable = pkgs.stdenv.hostPlatform.isLinux;
-			text = ''
-				cookie/file = $XDG_CONFIG_HOME/pulse/cookie
-			'';
-		};
 
 		variables = let
 			# because env vars are evaluated alphabetically, this is needed for cargo and rustup home to resolve correctly
@@ -54,16 +46,18 @@ in {
 			# i don't use ghcup on any system besides my macbook, but if i ever do it's good to have this kept in sync
 			GHCUP_USE_XDG_DIRS = "1";
 
-			CUDA_CACHE_PATH="${xdgCacheHome}/nv";
+			CUDA_CACHE_PATH = "${xdgCacheHome}/nv";
 		};
 	};
 
 	nix = {
 		channel.enable = false;
+		optimise = {
+			automatic = true;
+			dates = [ "daily" ];
+			persistent = true;
+		};
 		settings = {
-			# does what `nix store --optimise` does but automatically
-			auto-optimise-store = true;
-
 			# for more info see
 			# https://nix.dev/manual/nix/2.35/language/import-from-derivation
 			allow-import-from-derivation = false;

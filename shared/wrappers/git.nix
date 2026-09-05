@@ -8,6 +8,8 @@ in {
 	options = {
 		settings.mutators = [ "/git" "/less" ];
 		hostName.type = types.string;
+
+		package.defaultFunc = { inputs }: inputs.nixpkgs.pkgs.git.override { perlSupport = false; };
 	};
 
 	mutations."/git".settings = { options }: {

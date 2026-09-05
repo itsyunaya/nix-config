@@ -4,8 +4,9 @@
 		vscodeExtensions = with pkgs.vscode-extensions; [ mvllow.rose-pine ];
 	};
 in {
-	packages = [ vscodePackage ];
+	#packages = [ vscodePackage ];
 	xdg.config.files."Code/User/settings.json" = {
+		enable = false;
 		generator = (pkgs.formats.json {}).generate "settings.json";
 		value = {
 			"chat.disableAIFeatures" = true;

@@ -11,9 +11,9 @@
     "type": "github",
     "owner": "llakala",
     "repo": "adios-wrappers",
-    "rev": "65501411d4a0141085c63d891cc4c0b3324aa82e",
-    "narHash": "sha256-uOqzF4mRU4sJFydGwSwco572MuvjD3TPUQagxrV+xTI=",
-    "lastModified": 1788528177
+    "rev": "f69a8359a79941bd603f40b8770072583d0db039",
+    "narHash": "sha256-/HIBR7xhw3cakSDO2z+PF8xO5CP2g072qWkrAPiR1OQ=",
+    "lastModified": 1788555683
   },
   "agenix": {
     "type": "github",
@@ -59,9 +59,9 @@
     "type": "github",
     "owner": "hyprwm",
     "repo": "Hyprland",
-    "rev": "59177602ffd75d81e8995e0456057e2d086a01c8",
-    "narHash": "sha256-roADeqTtnH7g2ucddI93kI0aMSuHmLLd7GTwT55a6Xo=",
-    "lastModified": 1788374184
+    "rev": "ee0409623e2d6a683374b39a32e0ac3d087841aa",
+    "narHash": "sha256-dOozE/csX3RzYkXZ8zZv6w6F0hknDZUc/FazWUNHwpY=",
+    "lastModified": 1788560231
   },
   "mango": {
     "type": "path",
@@ -71,9 +71,9 @@
     "type": "github",
     "owner": "itsyunaya",
     "repo": "meowvim",
-    "rev": "86c89697aa058089b95a0d23ae7837790b679a50",
-    "narHash": "sha256-LF4Jrd62s4OXcYHAhQQFiqQf4LO3SMKuxkTsYdyr70w=",
-    "lastModified": 1788527049
+    "rev": "cf6aabb11c21f79099f1e8ac7c892a3a6455ba31",
+    "narHash": "sha256-PU/HmrHS+mbWxs/FdZ1cF0wHrDxmI/Yu60njSExLZFQ=",
+    "lastModified": 1788558073
   },
   "musicpresence": {
     "type": "github",
@@ -101,9 +101,9 @@
   },
   "nixpkgs": {
     "type": "tarball",
-    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1066106.3ed67ec0a4d3/nixexprs.tar.zst",
-    "rev": "3ed67ec0a4d3c7ab4ae1f04f8ee8df07bfa506a2",
-    "narHash": "sha256-7VBL4mi5M72FJtZOQt7SbCGWpGbsuH1ga6Zeu8bjtWk="
+    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1067334.801bef6abd86/nixexprs.tar.zst",
+    "rev": "801bef6abd86b91e51083066b83fb354a11fc640",
+    "narHash": "sha256-/Mz6ovEL+KZ9b0UkWEBd/DtmODXuXW3FhNnuGQYghvg="
   },
   "qtengine": {
     "type": "github",
