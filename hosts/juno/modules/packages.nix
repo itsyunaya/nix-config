@@ -46,14 +46,11 @@
 				ffmpeg
 				ffmpegthumbnailer
 				fzf
-				gale
 				gnome-themes-extra
 				keepassxc
 				libnotify
 				mpv
 				nicotine-plus
-				obsidian
-				openssl
 				pinentry-qt
 				picard
 				playerctl
@@ -61,7 +58,6 @@
 				qimgv
 				telegram-desktop
 				unzip
-				wget
 				whitesur-cursors
 				whitesur-icon-theme
 				wl-clipboard
