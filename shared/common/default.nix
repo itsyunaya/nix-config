@@ -46,7 +46,9 @@ in {
 			# i don't use ghcup on any system besides my macbook, but if i ever do it's good to have this kept in sync
 			GHCUP_USE_XDG_DIRS = "1";
 
+			# idk what these even are but they're in my /home/ so they must go
 			CUDA_CACHE_PATH = "${xdgCacheHome}/nv";
+			XCOMPOSECACHE = "${xdgCacheHome}/X11/xcompose";
 		};
 	};
 
