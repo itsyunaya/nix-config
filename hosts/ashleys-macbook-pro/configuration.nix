@@ -1,4 +1,4 @@
-{ fnLib, pkgs, ... }: let
+{ pkgs, self, ... }: let
 	username = "ashley";
 in {
 	users = {
@@ -10,13 +10,11 @@ in {
 		};
 	};
 
-	imports =
-		[ ./programs.nix ]
-		++ fnLib.fromShared [
-			"common"
-			#"mnw"
-			"spicetify"
-		];
+	imports = [
+		./programs.nix
+		"${self}/shared/common.nix"
+		"${self}/shared/spicetify"
+	];
 
 	documentation.enable = false;
 

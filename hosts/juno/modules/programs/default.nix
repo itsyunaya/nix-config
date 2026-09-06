@@ -19,7 +19,7 @@
 		};
 
 		hyprland = {
-			enable = false;
+			enable = true;
 			package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
 			portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
 
@@ -28,7 +28,7 @@
 		};
 
 		mango = {
-			enable = true;
+			enable = false;
 			package = wrappers.mangowc.drv;
 		};
 

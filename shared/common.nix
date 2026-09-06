@@ -15,7 +15,6 @@ in {
 				alejandra
 				musicpresence
 				nh
-				nil
 				statix
 				tack
 				;

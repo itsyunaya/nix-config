@@ -7,14 +7,11 @@ in {
 		trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
 	};
 
-	imports =
-		[
-			(fnLib.recImport "${self}/hosts/juno/modules" { inherit username; })
-		]
-		++ (fnLib.fromShared [
-				"common"
-				"spicetify"
-			]);
+	imports = [
+		(fnLib.recImport "${self}/hosts/juno/modules" { inherit username; })
+		"${self}/shared/common.nix"
+		"${self}/shared/spicetify"
+	];
 
 	hjem = {
 		specialArgs = { inherit theme; };
@@ -29,7 +26,7 @@ in {
 				music_dir = /home/${username}/Nextcloud
 
 				[Bling]
-                notify = False
+				notify = False
 			'';
 
 			imports = [ (fnLib.recImport ./hjem) ];
