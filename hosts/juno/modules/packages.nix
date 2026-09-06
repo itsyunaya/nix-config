@@ -39,7 +39,6 @@
 			inherit
 				(pkgs)
 				alsa-utils
-				anki
 				aseprite
 				btop
 				darkly
@@ -48,8 +47,6 @@
 				fzf
 				gnome-themes-extra
 				keepassxc
-				libnotify
-				mpv
 				nicotine-plus
 				pinentry-qt
 				picard

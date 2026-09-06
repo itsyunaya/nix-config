@@ -7,6 +7,7 @@ pkgs.writeShellApplication {
 		inherit
 			(pkgs)
 			grim
+			libnotify
 			satty
 			slurp
 			wayfreeze
