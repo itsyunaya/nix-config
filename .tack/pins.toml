@@ -43,14 +43,8 @@ adios-wrappers.follows = { adios = "adios" }
 agenix.url = "gh:ryantm/agenix"
 agenix.follows = { darwin = "", home-manager = "" }
 
-# https://github.com/itsyunaya/ags-bar
-ags-bar.url = "gh:itsyunaya/ags-bar"
-
 # https://github.com/itsyunaya/alejandra-opinionated
 alejandra.url = "gh:itsyunaya/alejandra-opinionated"
-
-# https://codeberg.org/LGFae/awww
-awww.url = "cb:LGFae/awww"
 
 # https://github.com/feel-co/hjem
 hjem.url = "gh:feel-co/hjem"

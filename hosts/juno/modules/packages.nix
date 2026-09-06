@@ -14,15 +14,11 @@
 
 		microshot = pkgs.callPackage "${self}/packages/microshot" {};
 
-		awww = inputs.awww.packages.${sys}.awww;
-		ags-bar = inputs.ags-bar.packages.${sys}.default;
 		meowvim = inputs.meowvim.packages.${sys}.default;
 		zen = inputs.zen-browser.packages.${sys}.default;
 	in
 		builtins.attrValues {
 			inherit
-				ags-bar
-				awww
 				meowvim
 				microshot
 				prism
@@ -30,11 +26,11 @@
 				;
 
 			#inherit
-				#(pkgs.jetbrains)
-				#clion
-				#idea
-				#webstorm
-				#;
+			#(pkgs.jetbrains)
+			#clion
+			#idea
+			#webstorm
+			#;
 
 			inherit
 				(pkgs)
@@ -53,7 +49,6 @@
 				playerctl
 				pwvucontrol
 				qimgv
-				telegram-desktop
 				unzip
 				whitesur-cursors
 				whitesur-icon-theme
@@ -61,7 +56,6 @@
 				xdg-utils
 				xwl-notifier
 				yams
-				zathura
 				;
 
 			qt6-qtwayland = pkgs.qt6.qtwayland;
@@ -69,10 +63,11 @@
 
 			qtsvg6 = pkgs.kdePackages.qtsvg;
 			qtsvg5 = pkgs.qt5.qtsvg;
-		} ++ [
-			wrappers.anyrun.drv
+		}
+		++ [
 			(wrappers.git { hostName = "juno"; })
 			wrappers.kitty.drv
+			wrappers.noctalia.drv
 			wrappers.rmpc.drv
 		];
 }

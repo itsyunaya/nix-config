@@ -23,14 +23,6 @@
     "narHash": "sha256-9VnK6Oqai65puVJ4WYtCTvlJeXxMzAp/69HhQuTdl/I=",
     "lastModified": 1770165109
   },
-  "ags-bar": {
-    "type": "github",
-    "owner": "itsyunaya",
-    "repo": "ags-bar",
-    "rev": "46d390742725dd4612c18fa7dad4ad7c8de66494",
-    "narHash": "sha256-KZNVy2i63hC43eGigCHqavavXTMvzCDZp4vxn+zd8Bc=",
-    "lastModified": 1785065828
-  },
   "alejandra": {
     "type": "github",
     "owner": "itsyunaya",
@@ -38,14 +30,6 @@
     "rev": "65eb678f62fd2f92d72b047efc22478f2d83e1d4",
     "narHash": "sha256-Abn+BP9gnseH2uVHSf6Zbdbn8Q5+7fn50u6vTsC6JQ8=",
     "lastModified": 1788269658
-  },
-  "awww": {
-    "type": "git",
-    "url": "https://codeberg.org/LGFae/awww",
-    "ref": "HEAD",
-    "rev": "25ea4fd7a42359379da9ddadedda1c477caa4ae0",
-    "narHash": "sha256-MPMVSBhSEl+ShSrWVN5qH3FiX2gg8LbYA8L3nuQw5VE=",
-    "lastModified": 1784030954
   },
   "hjem": {
     "type": "github",

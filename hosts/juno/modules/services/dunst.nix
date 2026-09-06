@@ -1,6 +1,6 @@
 { theme, ... }: {
 	services.dunst = {
-		enable = true;
+		enable = false;
 		enableX11 = false;
 
 		settings = {

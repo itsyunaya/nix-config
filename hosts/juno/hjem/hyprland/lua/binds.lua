@@ -9,8 +9,8 @@ end
 
 hl.bind("SUPER + Q", hl.dsp.exec_cmd("kitty", { float = true, size = { 1000, 510 } }))
 hl.bind("SUPER + E", hl.dsp.exec_cmd("dolphin"))
-hl.bind("SUPER + R", hl.dsp.exec_cmd("anyrun"))
-hl.bind("SUPER + L", hl.dsp.exec_cmd("hyprlock"))
+hl.bind("SUPER + R", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher"))
+hl.bind("SUPER + L", hl.dsp.exec_cmd("noctalia msg session lock"))
 
 hl.bind("SUPER + C", hl.dsp.window.close())
 hl.bind("SUPER + SHIFT + C", hl.dsp.window.kill())
