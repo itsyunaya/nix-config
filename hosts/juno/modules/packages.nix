@@ -26,11 +26,11 @@
 				;
 
 			#inherit
-			#(pkgs.jetbrains)
-			#clion
-			#idea
-			#webstorm
-			#;
+				#(pkgs.jetbrains)
+				#clion
+				#idea
+				#webstorm
+				#;
 
 			inherit
 				(pkgs)

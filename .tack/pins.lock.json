@@ -55,9 +55,9 @@
     "type": "github",
     "owner": "itsyunaya",
     "repo": "meowvim",
-    "rev": "01ff1375249c55daa969a7b90ceddddbbed35e34",
-    "narHash": "sha256-DGuygy6tOQIYr3HjHmkewTWulhxWI/LEJsEsryNjuVA=",
-    "lastModified": 1788657564
+    "rev": "8cb57f7992f67f5258503722e9fcbe8240726748",
+    "narHash": "sha256-4lCNR1sjQByO9FVbHKkzK9VUaqu47ELdRF5KAlawL50=",
+    "lastModified": 1788884361
   },
   "musicpresence": {
     "type": "github",

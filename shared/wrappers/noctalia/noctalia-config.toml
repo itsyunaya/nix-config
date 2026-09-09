@@ -111,6 +111,15 @@ filter_order = [ "filter" ]
     save_history = false
     show_toast = true
 
+	[notification.filter.xwlnotifier]
+	allow_permanent = true
+	bypass_dnd = false
+	enabled = true
+	match = "xwl-notifier-rs"
+	play_sound = true
+	save_history = false
+	show_toast = true
+
 [osd]
 background_opacity = 0.89999997988343239
 

@@ -1,12 +1,6 @@
 { fnLib, theme, pkgs, self, ... }: let
 	username = "ashley";
 in {
-	nix.settings = {
-		# so i don't have to build the entirety of hyprland on my pathetic little pc
-		substituters = [ "https://hyprland.cachix.org" ];
-		trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
-	};
-
 	imports = [
 		(fnLib.recImport "${self}/hosts/juno/modules" { inherit username; })
 		"${self}/shared/common.nix"
@@ -37,7 +31,6 @@ in {
 		isNormalUser = true;
 		description = "${username}";
 		extraGroups = [ "networkmanager" "wheel" ];
-		packages = [];
 		shell = pkgs.fish;
 
 		# needs to be explicitly set for mpd
@@ -54,6 +47,9 @@ in {
 			NIXOS_OZONE_WL = "1";
 			# set to nano by default for some reason
 			EDITOR = "nvim";
+
+			# meant to speed up eval speeds, 4GB rn
+			GC_INITIAL_HEAP_SIZE = 1024 * 1024 * 1024 * 4;
 		};
 
 		shellAliases = {
