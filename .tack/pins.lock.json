@@ -11,9 +11,9 @@
     "type": "github",
     "owner": "llakala",
     "repo": "adios-wrappers",
-    "rev": "f69a8359a79941bd603f40b8770072583d0db039",
-    "narHash": "sha256-/HIBR7xhw3cakSDO2z+PF8xO5CP2g072qWkrAPiR1OQ=",
-    "lastModified": 1788555683
+    "rev": "7743746b2887abfdd5f818951509ce196b90f54b",
+    "narHash": "sha256-jjTGkzKi6gA5EYw15cPI9on+gtWEK7ydN8GOYdV7oQ8=",
+    "lastModified": 1788999558
   },
   "agenix": {
     "type": "github",

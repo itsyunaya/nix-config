@@ -22,6 +22,7 @@ in {
 		++ (with wrappers; [
 			bat.drv
 			eza.drv
+			fd.drv
 			less.drv
 			ripgrep.drv
 			yazi.drv
