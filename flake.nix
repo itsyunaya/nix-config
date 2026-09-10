@@ -55,7 +55,6 @@
 
 					inputs.hjem.nixosModules.default
 					inputs.mango.nixosModules.mango
-					inputs.nixos-hardware.nixosModules.msi-b550-a-pro
 					inputs.qtengine.nixosModules.default
 					inputs.spicetify-nix.nixosModules.spicetify
 				];
@@ -77,9 +76,6 @@
 				modules = [
 					./hosts/ceres/configuration.nix
 					./hosts/ceres/hardware-configuration.nix
-
-					# makes it so i have to recompile the kernel from source, reenabling once this is fixed
-					#nixos-hardware.nixosModules.raspberry-pi-4
 				];
 			};
 		};

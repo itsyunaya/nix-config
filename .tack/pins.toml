@@ -65,9 +65,6 @@ musicpresence.url = "gh:itsyunaya/musicpresence-flake"
 # https://github.com/kossLAN/qtengine
 qtengine.url = "gh:kossLAN/qtengine"
 
-# https://github.com/nixos/nixos-hardware
-nixos-hardware.url = "gh:NixOS/nixos-hardware"
-
 # https://github.com/Gerg-L/spicetify-nix/
 spicetify-nix.url = "gh:Gerg-L/spicetify-nix"
 

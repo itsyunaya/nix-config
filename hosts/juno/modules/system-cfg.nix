@@ -7,7 +7,7 @@
 		loader.systemd-boot.enable = true;
 		loader.efi.canTouchEfiVariables = true;
 		kernelPackages = pkgs.linuxPackages_latest;
-		kernelModules = [ "kvm-amd" ];
+		kernelModules = [ "kvm-amd" "nct6683" ];
 
 		initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
 
@@ -16,6 +16,7 @@
 	};
 
 	system.etc.overlay.enable = true;
+	services.fstrim.enable = true;
 
 	nixpkgs = let
 		insecurePkgs = [ ];

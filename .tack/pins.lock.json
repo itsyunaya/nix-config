@@ -43,9 +43,9 @@
     "type": "github",
     "owner": "hyprwm",
     "repo": "Hyprland",
-    "rev": "ee0409623e2d6a683374b39a32e0ac3d087841aa",
-    "narHash": "sha256-dOozE/csX3RzYkXZ8zZv6w6F0hknDZUc/FazWUNHwpY=",
-    "lastModified": 1788560231
+    "rev": "599ff9042c866dcad4bb458979f7be68a6d2ffef",
+    "narHash": "sha256-yCT/nVwI/tj7Nbk0r3vNXOC1BSnZ5yUebE3Ao7Vaw70=",
+    "lastModified": 1788962709
   },
   "mango": {
     "type": "path",
@@ -75,19 +75,11 @@
     "narHash": "sha256-oQFip+v0luP8NIxJzmiW4Wu8bILsbFWom5l0zonl8hQ=",
     "lastModified": 1786845137
   },
-  "nixos-hardware": {
-    "type": "github",
-    "owner": "NixOS",
-    "repo": "nixos-hardware",
-    "rev": "44d95795ee2d475b3d687325e26dcf4ca9104557",
-    "narHash": "sha256-3jBEq8avfzlrsY4UpW4d5TOmm7ocseZfnitEJhqauyc=",
-    "lastModified": 1788335262
-  },
   "nixpkgs": {
     "type": "tarball",
-    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1067334.801bef6abd86/nixexprs.tar.zst",
-    "rev": "801bef6abd86b91e51083066b83fb354a11fc640",
-    "narHash": "sha256-/Mz6ovEL+KZ9b0UkWEBd/DtmODXuXW3FhNnuGQYghvg="
+    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1070770.8ce4ef6cb6f8/nixexprs.tar.zst",
+    "rev": "8ce4ef6cb6f871616146b9fe26d2a5ae594e94fe",
+    "narHash": "sha256-q+GdZ3yq4Y2LXHRK0vKTM32Hwy7RCgUgy+hjwZLI5pY="
   },
   "qtengine": {
     "type": "github",
@@ -101,9 +93,9 @@
     "type": "github",
     "owner": "Gerg-L",
     "repo": "spicetify-nix",
-    "rev": "27ff19b00338052e8a504e1d1a34efad82c4bb26",
-    "narHash": "sha256-Mw163zYcjr59hB2JMC1iKU1Y69SNKZ2r/haXZ07UWQY=",
-    "lastModified": 1788263070
+    "rev": "a4ef43fb13e3615f36e5a0935aabe8cc29363dc9",
+    "narHash": "sha256-bERpuakmPAC2b36zgXy6OXh+SkZUjbaV+vV2sPmm6p8=",
+    "lastModified": 1788683578
   },
   "xwl-notifier": {
     "type": "github",
@@ -117,8 +109,8 @@
     "type": "github",
     "owner": "0xc000022070",
     "repo": "zen-browser-flake",
-    "rev": "fdb83f8fce835213fab7eab52c375926fe1a32dc",
-    "narHash": "sha256-wuGizAVEmY0u15MYrhgy7AoQdHg+4Y2QiC+v/mxA8dc=",
-    "lastModified": 1788405419
+    "rev": "e6a3f69206143e49218fdf7642f1f0ed117337cd",
+    "narHash": "sha256-EZZ47C41RLXQHfxJDW4tF5b769WH0aSZ7JSfmq5M8KE=",
+    "lastModified": 1788994759
   }
 }
