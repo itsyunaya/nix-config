@@ -43,9 +43,9 @@
     "type": "github",
     "owner": "hyprwm",
     "repo": "Hyprland",
-    "rev": "599ff9042c866dcad4bb458979f7be68a6d2ffef",
-    "narHash": "sha256-yCT/nVwI/tj7Nbk0r3vNXOC1BSnZ5yUebE3Ao7Vaw70=",
-    "lastModified": 1788962709
+    "rev": "f05d73f35795ded80d7e1264a37e41b461625f9f",
+    "narHash": "sha256-wWPN/kmzwp4kHBtC6JmVUJHg2Np2VtyfS53mFrI90us=",
+    "lastModified": 1789046904
   },
   "mango": {
     "type": "path",
@@ -55,9 +55,9 @@
     "type": "github",
     "owner": "itsyunaya",
     "repo": "meowvim",
-    "rev": "8cb57f7992f67f5258503722e9fcbe8240726748",
-    "narHash": "sha256-4lCNR1sjQByO9FVbHKkzK9VUaqu47ELdRF5KAlawL50=",
-    "lastModified": 1788884361
+    "rev": "c242e8e1fe457c68806961dda928216034f1b10c",
+    "narHash": "sha256-GxIibYod52BmtsFyFUg/GkJK+1MD5UdxQQo9+oxSH9M=",
+    "lastModified": 1789131966
   },
   "musicpresence": {
     "type": "github",
@@ -109,8 +109,8 @@
     "type": "github",
     "owner": "0xc000022070",
     "repo": "zen-browser-flake",
-    "rev": "e6a3f69206143e49218fdf7642f1f0ed117337cd",
-    "narHash": "sha256-EZZ47C41RLXQHfxJDW4tF5b769WH0aSZ7JSfmq5M8KE=",
-    "lastModified": 1788994759
+    "rev": "975870eb40a0cb6dc1baf6d63a704f9cfd5d4f27",
+    "narHash": "sha256-wJJGLMs78PDdbdXd0f50vq7s+xpKOuAUMZPsyDgXyew=",
+    "lastModified": 1789133576
   }
 }

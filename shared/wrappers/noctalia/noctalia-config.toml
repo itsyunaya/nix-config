@@ -2,7 +2,7 @@
 capsule_radius = 6
 center = [ "active_window" ]
 concave_edge_corners = false
-end = [ "tray", "notifications", "bluetooth", "input_volume", "volume", "clock" ]
+end = [ "tray", "bluetooth", "cpu", "input_volume", "volume", "clock" ]
 font_weight = 700
 margin_edge = 8
 margin_ends = 8
@@ -111,14 +111,14 @@ filter_order = [ "filter" ]
     save_history = false
     show_toast = true
 
-	[notification.filter.xwlnotifier]
-	allow_permanent = true
-	bypass_dnd = false
-	enabled = true
-	match = "xwl-notifier-rs"
-	play_sound = true
-	save_history = false
-	show_toast = true
+    [notification.filter.xwlnotifier]
+    allow_permanent = true
+    bypass_dnd = false
+    enabled = true
+    match = "xwl-notifier-rs"
+    play_sound = true
+    save_history = false
+    show_toast = true
 
 [osd]
 background_opacity = 0.89999997988343239
@@ -133,6 +133,21 @@ background_opacity = 0.89999997988343239
     power_profile = false
     volume = false
     wifi = false
+
+[plugins]
+auto_update = "none"
+
+    [[plugins.source]]
+    enabled = false
+    kind = "git"
+    location = "https://github.com/noctalia-dev/official-plugins"
+    name = "official"
+
+    [[plugins.source]]
+    enabled = false
+    kind = "git"
+    location = "https://github.com/noctalia-dev/community-plugins"
+    name = "community"
 
 [shell]
 avatar_path = "/home/ashley/Documents/Art/pfp.jpg"
@@ -182,7 +197,10 @@ font_family = "JetBrainsMono Nerd Font"
     variant = "destructive"
 
 [system.monitor]
-enabled = false
+cpu_poll_seconds = 5
+enabled = true
+memory_poll_seconds = 5
+network_poll_seconds = 5
 
 [theme]
 builtin = "Rosé Pine"
@@ -224,5 +242,6 @@ drawer = true
 drawer_columns = 5
 
 [widget.workspaces]
+hide_when_empty = true
 interactive = false
 style = "minimal"

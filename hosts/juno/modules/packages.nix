@@ -43,7 +43,6 @@
 				darkly
 				ffmpeg
 				ffmpegthumbnailer
-				fzf
 				gnome-themes-extra
 				keepassxc
 				nicotine-plus
