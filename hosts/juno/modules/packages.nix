@@ -14,11 +14,14 @@
 
 		microshot = pkgs.callPackage "${self}/packages/microshot" {};
 
+		git = wrappers.git { hostName = "juno"; };
+
 		meowvim = inputs.meowvim.packages.${sys}.default;
 		zen = inputs.zen-browser.packages.${sys}.default;
 	in
 		builtins.attrValues {
 			inherit
+				git
 				meowvim
 				microshot
 				prism
@@ -26,11 +29,11 @@
 				;
 
 			#inherit
-				#(pkgs.jetbrains)
-				#clion
-				#idea
-				#webstorm
-				#;
+			#(pkgs.jetbrains)
+			#clion
+			#idea
+			#webstorm
+			#;
 
 			inherit
 				(pkgs)
@@ -64,10 +67,12 @@
 			qtsvg6 = pkgs.kdePackages.qtsvg;
 			qtsvg5 = pkgs.qt5.qtsvg;
 		}
-		++ [
-			(wrappers.git { hostName = "juno"; })
-			wrappers.kitty.drv
-			wrappers.noctalia.drv
-			wrappers.rmpc.drv
-		];
+		++ (let
+			mapWrappers = w: xs: map (xs': w.${xs'}.drv) xs;
+		in
+			mapWrappers wrappers [
+				"kitty"
+				"noctalia"
+				"rmpc"
+			]);
 }

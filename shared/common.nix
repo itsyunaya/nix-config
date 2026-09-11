@@ -19,14 +19,17 @@ in {
 				tack
 				;
 		}
-		++ (with wrappers; [
-			bat.drv
-			eza.drv
-			fd.drv
-			less.drv
-			ripgrep.drv
-			yazi.drv
-		]);
+		++ (let
+			mapWrappers = w: xs: map (xs': w.${xs'}.drv) xs;
+		in
+			mapWrappers wrappers [
+				"bat"
+				"eza"
+				"fd"
+				"less"
+				"ripgrep"
+				"yazi"
+			]);
 
 		variables = let
 			# because env vars are evaluated alphabetically, this is needed for cargo and rustup home to resolve correctly
