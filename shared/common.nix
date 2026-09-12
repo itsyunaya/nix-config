@@ -59,8 +59,6 @@ in {
 		channel.enable = false;
 		optimise = {
 			automatic = true;
-			dates = [ "daily" ];
-			persistent = true;
 		};
 		settings = {
 			# for more info see
