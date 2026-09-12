@@ -39,14 +39,6 @@
     "narHash": "sha256-UrAlku7KST0DT+j1bdVGYI8tCz23PWL88uGMer3IZ2U=",
     "lastModified": 1787500880
   },
-  "hyprland": {
-    "type": "github",
-    "owner": "hyprwm",
-    "repo": "Hyprland",
-    "rev": "f05d73f35795ded80d7e1264a37e41b461625f9f",
-    "narHash": "sha256-wWPN/kmzwp4kHBtC6JmVUJHg2Np2VtyfS53mFrI90us=",
-    "lastModified": 1789046904
-  },
   "mango": {
     "type": "path",
     "path": "../packages/mango"

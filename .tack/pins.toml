@@ -49,10 +49,6 @@ alejandra.url = "gh:itsyunaya/alejandra-opinionated"
 # https://github.com/feel-co/hjem
 hjem.url = "gh:feel-co/hjem"
 
-# https://github.com/hyprwm/Hyprland
-hyprland.url = "gh:hyprwm/Hyprland"
-#hyprland.exclude_follow = ["nixpkgs"]
-
 # https://github.com/mangowm/mango
 mango.url = "path:./packages/mango/"
 
