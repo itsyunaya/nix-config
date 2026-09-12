@@ -70,6 +70,8 @@ in {
 				"flakes"
 			];
 
+			flake-registry = "";
+
 			use-xdg-base-directories = true;
 
 			# disables git tree dirty warning because it's kinda useless for me
@@ -77,5 +79,12 @@ in {
 		};
 	};
 
-	nixpkgs.config.allowUnfree = true;
+	nixpkgs = {
+		config.allowUnfree = true;
+		flake = {
+			# we don't want `<nixpkgs>`
+			setNixPath = false;
+			setFlakeRegistry = true;
+		};
+	};
 }
