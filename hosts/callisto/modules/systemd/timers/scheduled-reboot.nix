@@ -1,8 +1,8 @@
 {
 	systemd.timers.scheduled-reboot = {
-		description = "Nightly 4AM System Reboot";
+		description = "4AM System Reboot";
 
 		wantedBy = [ "timers.target" ];
-		timerConfig.OnCalendar = "*-*-* 4:00:00";
+		timerConfig.OnCalendar = "*-*-1/3 4:00:00";
 	};
 }
