@@ -24,11 +24,11 @@
     "mango": {
       "flake": false,
       "locked": {
-        "lastModified": 1789138182,
-        "narHash": "sha256-cISA4XjxkrRs7cHM7Dauizi56j9yspjIvTuTmcbnBqY=",
+        "lastModified": 1789299502,
+        "narHash": "sha256-zvm/Hb+mmDtC1c+0HbDDCCAH1TBebHDI0h+bP3rMkcw=",
         "owner": "mangowm",
         "repo": "mango",
-        "rev": "287fa031fe086c364e17928406cd52fa6dee3b3f",
+        "rev": "fb36fb46a9728a62ba08322690baaefd5f8806cd",
         "type": "github"
       },
       "original": {

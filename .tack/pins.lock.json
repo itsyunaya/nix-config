@@ -35,9 +35,9 @@
     "type": "github",
     "owner": "feel-co",
     "repo": "hjem",
-    "rev": "d248f0e4f7abd6e1f0eb9ace778dd7928481943e",
-    "narHash": "sha256-UrAlku7KST0DT+j1bdVGYI8tCz23PWL88uGMer3IZ2U=",
-    "lastModified": 1787500880
+    "rev": "e5e30b4320a8cbcd6cdfc65f044763669a8f0363",
+    "narHash": "sha256-0nvWuRbgL4GEKpR8Y4wsB3kmsVgyd0cW8kLHc2BqlTc=",
+    "lastModified": 1789234255
   },
   "mango": {
     "type": "path",
@@ -69,9 +69,9 @@
   },
   "nixpkgs": {
     "type": "tarball",
-    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1070770.8ce4ef6cb6f8/nixexprs.tar.zst",
-    "rev": "8ce4ef6cb6f871616146b9fe26d2a5ae594e94fe",
-    "narHash": "sha256-q+GdZ3yq4Y2LXHRK0vKTM32Hwy7RCgUgy+hjwZLI5pY="
+    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1072397.eaad089433ca/nixexprs.tar.zst",
+    "rev": "eaad089433ca2bb662274377d33df3d0e51ef28b",
+    "narHash": "sha256-eQUZVehWLDBbpBR2rq6DnuRee1ULT6Y675RhsYDSjYI="
   },
   "qtengine": {
     "type": "github",
@@ -85,9 +85,9 @@
     "type": "github",
     "owner": "Gerg-L",
     "repo": "spicetify-nix",
-    "rev": "a4ef43fb13e3615f36e5a0935aabe8cc29363dc9",
-    "narHash": "sha256-bERpuakmPAC2b36zgXy6OXh+SkZUjbaV+vV2sPmm6p8=",
-    "lastModified": 1788683578
+    "rev": "09eed5c95105aada9ffabd4c7eb6b345dc4ba66f",
+    "narHash": "sha256-lfZ7yAaTZMuAzOSLjJ7ivrKIFk0E11koWTVgkWSXwuE=",
+    "lastModified": 1789291406
   },
   "xwl-notifier": {
     "type": "github",
@@ -101,8 +101,8 @@
     "type": "github",
     "owner": "0xc000022070",
     "repo": "zen-browser-flake",
-    "rev": "975870eb40a0cb6dc1baf6d63a704f9cfd5d4f27",
-    "narHash": "sha256-wJJGLMs78PDdbdXd0f50vq7s+xpKOuAUMZPsyDgXyew=",
-    "lastModified": 1789133576
+    "rev": "b66d03970382d5185e040110b24ecb7a39df0e80",
+    "narHash": "sha256-x6LDRbyl+trEnwrFth2SAdDf8x4SM7DWcjmR2JUxtAg=",
+    "lastModified": 1789239533
   }
 }
