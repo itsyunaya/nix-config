@@ -70,8 +70,6 @@ in {
 				"flakes"
 			];
 
-			flake-registry = "";
-
 			use-xdg-base-directories = true;
 
 			# disables git tree dirty warning because it's kinda useless for me

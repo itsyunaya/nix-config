@@ -46,7 +46,6 @@
 				system = "x86_64-linux";
 
 				overlays = [
-					inputs.musicpresence.overlays.default
 					inputs.xwl-notifier.overlays.default
 				];
 
@@ -83,7 +82,7 @@
 		darwinConfigurations."ashleys-macbook-pro" = mkHost {
 			system = "aarch64-darwin";
 
-			overlays = [ inputs.musicpresence.overlays.default ];
+			overlays = [ ];
 
 			modules = [
 				./hosts/ashleys-macbook-pro/configuration.nix
