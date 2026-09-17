@@ -11,9 +11,9 @@
     "type": "github",
     "owner": "llakala",
     "repo": "adios-wrappers",
-    "rev": "52df6462ab9d3075410eddbaaba0e29cbdbd208e",
-    "narHash": "sha256-NsbCeoyGtrtVh/01VK72nOUR2AJbF7pAuaXkf7iRhmg=",
-    "lastModified": 1789480131
+    "rev": "18554df7243b4f9abe0b138f80a7a5b75094c278",
+    "narHash": "sha256-WT5u2Eq2QYuFyMQlMDOk5imjt4Csd8Ob6DPtuoLXLRU=",
+    "lastModified": 1789613138
   },
   "agenix": {
     "type": "github",
@@ -47,9 +47,9 @@
     "type": "github",
     "owner": "itsyunaya",
     "repo": "meowvim",
-    "rev": "642f42e969bed1e1dc7c8164473bdf8a580f8a74",
-    "narHash": "sha256-7p6FkveXSOJjFCIRhPy1M6ASOm3iclkTi6uZUSxVXZg=",
-    "lastModified": 1789346702
+    "rev": "69beda1f5217f5514d3fb7c3adc52da04e023dd9",
+    "narHash": "sha256-cEZYOuJtUBN1GtEZW8Rw7q+gjSmrN4/0eGJoLfxaWFM=",
+    "lastModified": 1789638787
   },
   "nix-darwin": {
     "type": "github",
@@ -61,9 +61,9 @@
   },
   "nixpkgs": {
     "type": "tarball",
-    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1074086.efe6f071ede9/nixexprs.tar.zst",
-    "rev": "efe6f071ede9d21c37462d2d6682d5e670099684",
-    "narHash": "sha256-LMzzTWExGdJ1S8U3IP5egkZEtyMswAwYowTAxIlkEZs="
+    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1074753.b1b875982b17/nixexprs.tar.zst",
+    "rev": "b1b875982b17dabde9b4a37f3e229e74913e6db3",
+    "narHash": "sha256-vWkSk5bbfTqdtMoSgD9FshACO8JCvXTFi+3cqEp0mH0="
   },
   "qtengine": {
     "type": "github",
@@ -93,8 +93,8 @@
     "type": "github",
     "owner": "0xc000022070",
     "repo": "zen-browser-flake",
-    "rev": "5bc359ec4e967a852cb3723dd2f56eb2f4414bc2",
-    "narHash": "sha256-8oEUwQ3QKYIMPDPDS8b/IiQg4jR6Fbp/7l/IFopRYc0=",
-    "lastModified": 1789533592
+    "rev": "a12d482485d877cc066516ea256b435b209a1a8c",
+    "narHash": "sha256-C9BpLH4dNggam12nz/Fx/M0Vlbw8WcT/cpOc37DPQAA=",
+    "lastModified": 1789584125
   }
 }
