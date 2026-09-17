@@ -35,9 +35,10 @@ in {
 			# because env vars are evaluated alphabetically, this is needed for cargo and rustup home to resolve correctly
 			xdgDataHome = "$HOME/.local/share";
 			xdgCacheHome = "$HOME/.cache";
+			xdgConfigHome = "$HOME/.config";
 		in {
 			XDG_CACHE_HOME = xdgCacheHome;
-			XDG_CONFIG_HOME = "$HOME/.config";
+			XDG_CONFIG_HOME = xdgConfigHome;
 			XDG_DATA_HOME = xdgDataHome;
 			XDG_STATE_HOME = "$HOME/.local/state";
 			XDG_BIN_HOME = "$HOME/.local/bin";
@@ -52,6 +53,10 @@ in {
 			# idk what these even are but they're in my /home/ so they must go
 			CUDA_CACHE_PATH = "${xdgCacheHome}/nv";
 			XCOMPOSECACHE = "${xdgCacheHome}/X11/xcompose";
+
+			# jvm
+			_JAVA_OPTIONS = ''-Djava.util.prefs.userRoot="${xdgConfigHome}"/java'';
+			GRADLE_USER_HOME = "${xdgDataHome}/gradle";
 		};
 	};
 
