@@ -51,10 +51,6 @@ in {
 			# meant to speed up eval speeds, 4GB rn
 			GC_INITIAL_HEAP_SIZE = 1024 * 1024 * 1024 * 4;
 		};
-
-		shellAliases = {
-			rb = "nh os switch /home/ashley/Documents/sysflake -H juno";
-		};
 	};
 
 	# state version should only be changed when it is really necessary,

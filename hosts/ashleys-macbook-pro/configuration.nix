@@ -23,8 +23,6 @@ in {
 			"PATH" = "$PATH:$HOME/.local/bin";
 			"EDITOR" = "nvim";
 		};
-
-		shellAliases.rb = "nh darwin switch /Users/ashley/.config/nix";
 	};
 
 	system.stateVersion = 7;

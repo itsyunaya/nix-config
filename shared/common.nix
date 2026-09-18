@@ -14,7 +14,6 @@ in {
 				(pkgs)
 				alejandra
 				musicpresence
-				nh
 				statix
 				tack
 				;
@@ -27,6 +26,7 @@ in {
 				"eza"
 				"fd"
 				"less"
+				"nh"
 				"ripgrep"
 				"yazi"
 			]);

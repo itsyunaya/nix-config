@@ -9,13 +9,17 @@
 	gap = "git add --patch";
 	gp = "git push";
 
+	nho = "nh os switch";
+	nhd = "nh darwin switch";
+
 	# nix
 	ns = "nix shell";
-	nr = {
+	nr = "nix run";
+	nrp = "nix repl";
+	nrr = {
 		expansion = "nix run nixpkgs#%";
 		setCursor = true;
 	};
-	nrp = "nix repl";
 	nb = {
 		expansion = "nix build .#%";
 		setCursor = true;
