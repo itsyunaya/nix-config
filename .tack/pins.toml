@@ -58,6 +58,9 @@ meowvim.url = "gh:itsyunaya/meowvim"
 # https://github.com/kossLAN/qtengine
 qtengine.url = "gh:kossLAN/qtengine"
 
+# https://github.com/mierak/rmpc
+rmpc.url = "gh:mierak/rmpc"
+
 # https://github.com/Gerg-L/spicetify-nix/
 spicetify-nix.url = "gh:Gerg-L/spicetify-nix"
 

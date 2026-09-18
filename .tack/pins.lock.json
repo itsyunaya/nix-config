@@ -73,6 +73,14 @@
     "narHash": "sha256-D7mzavE5WfLyvEXV0pvO3/gxC+SSmfjw4Lxy7I5qvnI=",
     "lastModified": 1778644540
   },
+  "rmpc": {
+    "type": "github",
+    "owner": "mierak",
+    "repo": "rmpc",
+    "rev": "f677f677101ba95e6c0ace0617924608fd82a973",
+    "narHash": "sha256-22M9Ph67OYnsgCW3qyggJ0g39eyPDE6Ja1u/ZFDMMWE=",
+    "lastModified": 1789319209
+  },
   "spicetify-nix": {
     "type": "github",
     "owner": "Gerg-L",

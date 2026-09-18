@@ -67,11 +67,12 @@
 			qtsvg5 = pkgs.qt5.qtsvg;
 		}
 		++ (let
-			mapWrappers = w: xs: map (xs': w.${xs'}.drv) xs;
+			mapWrappers = w: xs: map (x: w.${x}.drv) xs;
 		in
 			mapWrappers wrappers [
 				"kitty"
 				"noctalia"
 				"rmpc"
+				"rmpcd"
 			]);
 }
