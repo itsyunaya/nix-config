@@ -53,7 +53,7 @@ in {
 		};
 
 		shellAliases = {
-			nr = "nh os switch /home/ashley/Documents/sysflake -H juno";
+			rb = "nh os switch /home/ashley/Documents/sysflake -H juno";
 		};
 	};
 
