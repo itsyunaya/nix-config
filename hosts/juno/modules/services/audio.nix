@@ -34,18 +34,4 @@
 	systemd.services.mpd.environment = {
 		XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.${username}.uid}";
 	};
-
-	# replacement for mpd-mpris since it doesn't handle play state changes well
-	systemd.user.services.mpdris2 = {
-		description = "MPRIS 2 support for MPD";
-		after = [ "mpd.service" ];
-		wantedBy = [ "default.target" ];
-		serviceConfig = {
-			Type = "simple";
-			Restart = "on-failure";
-			RestartSec = "5s";
-			ExecStart = "${pkgs.mpdris2}/bin/mpDris2";
-			BusName = "org.mpris.MediaPlayer2.mpd";
-		};
-	};
 }

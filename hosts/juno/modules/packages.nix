@@ -57,7 +57,6 @@
 				wl-clipboard
 				xdg-utils
 				xwl-notifier
-				yams
 				;
 
 			qt6-qtwayland = pkgs.qt6.qtwayland;
