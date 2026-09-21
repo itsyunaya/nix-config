@@ -24,11 +24,11 @@
     "mango": {
       "flake": false,
       "locked": {
-        "lastModified": 1789549683,
-        "narHash": "sha256-+DQ1NzVmLJ8JkFKqZYKCkhAPT5hUN/FeDuvLCQ4cMHA=",
+        "lastModified": 1789989848,
+        "narHash": "sha256-5CAospomVqu951iU1Z57QfXFkdHjtvCd0alSV0oVpus=",
         "owner": "mangowm",
         "repo": "mango",
-        "rev": "d4b1e49fcbfd14e62acec4e9a0d895230f25da8f",
+        "rev": "9ae4bad4b8fa97665233946a49e386d334c46b6e",
         "type": "github"
       },
       "original": {
@@ -66,11 +66,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1788359964,
-        "narHash": "sha256-Cy1/nVurgywYpmTQ66MTRIBLPYoQ6SxF33qt8IxgNzY=",
+        "lastModified": 1789930608,
+        "narHash": "sha256-bwENSlz6FEld+QEQFyTHlsRY2fzXuOsdBea31ysyVog=",
         "owner": "wlrfx",
         "repo": "scenefx",
-        "rev": "3606f3d3bb4bb97e13228adc5190bf57fc687c88",
+        "rev": "dc3cddc3d40def29ed7a5ac16d3a48d348a8d75a",
         "type": "github"
       },
       "original": {
