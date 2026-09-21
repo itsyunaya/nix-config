@@ -10,6 +10,7 @@ in {
 			groupSession
 			volumePercentage
 			aiBandBlocker
+			hidePodcasts
 		];
 	};
 }
