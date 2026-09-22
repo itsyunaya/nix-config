@@ -1,12 +1,12 @@
 {
 	fileSystems = {
 		"/" = {
-			device = "/dev/disk/by-uuid/a543f583-469d-49a8-aec6-b114be316b7f";
+			device = "/dev/disk/by-uuid/ae7b8368-606e-4a07-b495-916518e748a4";
 			fsType = "ext4";
 		};
 
 		"/boot" = {
-			device = "/dev/disk/by-uuid/C6CC-5385";
+			device = "/dev/disk/by-uuid/A45D-0886";
 			fsType = "vfat";
 			options = [ "fmask=0077" "dmask=0077" ];
 		};

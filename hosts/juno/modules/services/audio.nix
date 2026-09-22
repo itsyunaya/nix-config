@@ -6,7 +6,7 @@
 			startWhenNeeded = true;
 
 			settings = {
-				music_directory = "/home/${username}/Nextcloud/";
+				music_directory = "/home/${username}/Nextcloud/music";
 				auto_update = true;
 
 				audio_output = [

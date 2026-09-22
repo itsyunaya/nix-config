@@ -47,9 +47,9 @@
     "type": "github",
     "owner": "itsyunaya",
     "repo": "meowvim",
-    "rev": "7ebcf4b5476977d6d5f3ca4c3e714b66651f11fb",
-    "narHash": "sha256-HoMg4sicxBRf50PgCdqHFHIQ6p5rS7FVTQH4YIMZhbc=",
-    "lastModified": 1789684660
+    "rev": "307c3041b71d7697df25da049f621d4a17ad0abf",
+    "narHash": "sha256-wsx+Fx0WUOU74fb4I1Suwla5gAU0RYqem68Xn50BYmI=",
+    "lastModified": 1789996757
   },
   "nix-darwin": {
     "type": "github",

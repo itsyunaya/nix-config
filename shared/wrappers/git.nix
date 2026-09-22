@@ -1,6 +1,6 @@
 { types, ... }: let
 	keys = {
-		juno = "198EA594738FED19";
+		juno = " 7E19FD86C0DC7481";
 		callisto = "C3BC6629CF0FC433";
 		macbook = "2E7FD19FA57EEAA4";
 	};
