@@ -1,4 +1,4 @@
-{ pkgs, inputs, wrappers, ... }: {
+{ pkgs, inputs, self, wrappers, ... }: {
 	programs = {
 		direnv = {
 			enable = true;
@@ -21,7 +21,7 @@
 		mango = {
 			enable = true;
 			#package = wrappers.mangowc.drv;
-			package = inputs.mango.packages.${pkgs.stdenv.hostPlatform.system}.mango;
+			package = (import "${self}/packages/mango.nix" { inherit inputs pkgs; });
 		};
 
 		steam.enable = true;

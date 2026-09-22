@@ -49,9 +49,6 @@ alejandra.url = "gh:itsyunaya/alejandra-opinionated"
 # https://github.com/feel-co/hjem
 hjem.url = "gh:feel-co/hjem"
 
-# https://github.com/mangowm/mango
-mango.url = "path:./packages/mango/"
-
 # https://github.com/itsyunaya/meowvim
 meowvim.url = "gh:itsyunaya/meowvim"
 
@@ -70,3 +67,10 @@ xwl-notifier.url = "gh:itsyunaya/xwl-notifier-rs"
 # https://github.com/0xc000022070/zen-browser-flake
 zen-browser.url = "gh:0xc000022070/zen-browser-flake"
 zen-browser.follows = { home-manager = "" }
+
+# https://github.com/mangowm/mango
+# replacement for the mango flake since it uses flake parts (ew)
+mango-src.url = "gh:mangowm/mango"
+mango-src.type = "fetch"
+scenefx.url = "gh:wlrfx/scenefx"
+

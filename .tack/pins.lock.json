@@ -39,9 +39,13 @@
     "narHash": "sha256-0nvWuRbgL4GEKpR8Y4wsB3kmsVgyd0cW8kLHc2BqlTc=",
     "lastModified": 1789234255
   },
-  "mango": {
-    "type": "path",
-    "path": "../packages/mango"
+  "mango-src": {
+    "type": "github",
+    "owner": "mangowm",
+    "repo": "mango",
+    "rev": "4972b6ced4cebe342bc5f485921cad79c6a2e67e",
+    "narHash": "sha256-Q6D7R0UzNvv/uY8fGQIgIOslpbgLPAftjqTW8yePQd4=",
+    "lastModified": 1790077061
   },
   "meowvim": {
     "type": "github",
@@ -80,6 +84,14 @@
     "rev": "f677f677101ba95e6c0ace0617924608fd82a973",
     "narHash": "sha256-22M9Ph67OYnsgCW3qyggJ0g39eyPDE6Ja1u/ZFDMMWE=",
     "lastModified": 1789319209
+  },
+  "scenefx": {
+    "type": "github",
+    "owner": "wlrfx",
+    "repo": "scenefx",
+    "rev": "dc3cddc3d40def29ed7a5ac16d3a48d348a8d75a",
+    "narHash": "sha256-bwENSlz6FEld+QEQFyTHlsRY2fzXuOsdBea31ysyVog=",
+    "lastModified": 1789930608
   },
   "spicetify-nix": {
     "type": "github",
