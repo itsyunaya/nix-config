@@ -8,7 +8,7 @@
 			additionalLibs = [ pkgs.glfw ];
 			# any version can run with the newest jdk, atleast theoretically
 			# tested on 1.0, 1.7.10 and 1.20
-			jdks = [ pkgs.jdk25 ];
+			jdks = [ pkgs.jdk25 pkgs.jdk21 ];
 			textToSpeechSupport = false;
 		};
 

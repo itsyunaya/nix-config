@@ -33,6 +33,7 @@ nix-darwin.url = "gh:nix-darwin/nix-darwin"
 
 # https://github.com/llakala/lladios
 adios.url = "gh:llakala/lladios"
+#adios.url = "path:../projects/lladios"
 
 # https://github.com/llakala/adios-wrappers
 adios-wrappers.url = "gh:llakala/adios-wrappers"
