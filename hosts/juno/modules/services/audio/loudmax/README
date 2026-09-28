@@ -1,0 +1,52 @@
+LoudMax Loudness Maximizer plugin by Thomas Mundt.
+Visit https://loudmax.blogspot.com for updates.
+Mail to loudmax@yahoo.de
+
+LADSPA version for Linux x86.
+The LADSPA API documentation and SDK can be be found at http://www.ladspa.org
+
+32 bit version: la_LoudMax.so
+64 bit version: la_LoudMax64.so
+Copy the library for your system to /usr/lib/ladspa/
+Copy ladspa.h to /usr/include/
+Read the description of your LADSPA host, e.g. Audacity, to make it work.
+Some hosts may use other directories for LADSPA plugins.
+
+Available plugins: ldmx_mono, ldmx_stereo, ldmx_5dot1
+
+The usage of ldmx_mono and ldmx_stereo is simple. Just give it a try.
+Controls: Threshold (0), Output (1), Inter-Sample Peaks (2)
+
+Usage ldmx_5dot1:
+The input channels must be arranged in the following order: "Front Left" = 1, "Front Right" = 2, "Center" = 3, "LFE" = 4, "Back Left" = 5, "Back Right" = 6
+The channels "Front Left", "Front Right", "Back Left" and "Back Right" are controled by "Threshold Quad" and "Output Quad".
+The channels "Center" and "LFE" use seperate controls.
+Controls: Threshold Quad (0), Output Quad (1), Threshold Center (2), Output Center (3), Threshold LFE (4), Output LFE (5), Link Mode (6), Inter-Sample Peaks (7)
+Link modes:
+0 = Link all -> Peak detectors of all channels are linked.
+1 = 5-Link -> "Front Left", "Front Right", "Center", "Back Left" and "Back Right" are linked. "LFE" is independent. This is the default.
+2 = Quad+C Link -> "Front Left", "Front Right", "Back Left" and "Back Right" are linked. "Center" and "LFE" are independent, but "Center" peaks are included to quad link.
+3 = Quad Link -> "Front Left", "Front Right", "Back Left" and "Back Right" are linked. "Center" and "LFE" are independent.
+
+Inter-Sample Peaks:
+The higher the frequency, the greater the probability that the true peak will be between two digital audio samples.
+These true peak overshoots can be up to 3 dB for proper band-limited audio and even much more for pathological signals.
+This can become a problem not only with poor D/A converters, but also with subsequent sample rate conversions, e.g. from 44.1 to 48 kHz or vice versa, and the use of audio compression such as MP3 or AAC.
+For more information visit https://loudmax.blogspot.com
+When Inter-Sample Peaks is turned on, four additional samples are calculated between every two samples present.
+This reduces true peak overshoots for proper band-limited audio to 0.2 dB and for pathological signals to 0.5 dB.
+ITU-R BS.1770: There are coefficients given in this recommendation for the calculation of inter-sample peaks. Unfortunately these coefficients do not seem very accurate.
+They have a negative effect on transients and lead to high overshoots in true peak meters that use higher quality upsampling.
+Therefore LoudMax uses optimized coefficients that do not affect transients and reduce the overshoots to similar values with all true peak meters tested.
+The downside is that BS.1770 calibrated true peak meters will also detect overshoots of up to 0.2 dB with LoudMax Inter-Sample Peaks.
+So if you need to guarantee a true peak level of -1.0 dB for example, set the output level to -1.2 dB or even -1.5 dB.
+
+Disclaimer:
+----------
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+USE IT AT YOUR OWN RISK!
+IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+LoudMax is freeware and not commercial in any mean.
+You may not distribute and/or modify LoudMax without having an explicit permission from me.
+

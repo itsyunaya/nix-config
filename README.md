@@ -63,6 +63,15 @@ contains modules which are portable through other means like
 
 `packages/` contains self-made or vendored package derivations.
 
+## Credits
+This section contains a list of other configs or Nix related things I took inspiration from
+while creating my config. Do check them out as well!
+
+- [llakala/nixos](https://github.com/llakala/nixos/) — Adios wrappers, recursive import function and Neovim
+- [poz/niksos](https://git.poz.pet/poz/niksos) — The idea for this credits section
+- [NotAShelf/nyx](https://github.com/NotAShelf/nyx) — (Parts of the) config structure
+- [PartlyAwesome/nixos](https://github.com/PartlyAwesome/nixos) — Audio setup
+
 ## Note
 
 This config is still work in progress and may change drastically at any time.
