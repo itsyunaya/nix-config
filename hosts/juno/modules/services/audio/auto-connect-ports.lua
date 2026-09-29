@@ -203,23 +203,12 @@ function auto_connect_ports(args)
 	end
 end
 
--- Connect Discord Audio -> DFN
-auto_connect_ports({
-	output = Constraint({ "object.path", "matches", "Discord Audio*" }),
-	input = Constraint({ "object.path", "matches", "DeepFilterNet Input*" }),
-	connect = {
-		["FL"] = "FL",
-		["FR"] = "FR",
-	},
-})
-
 -- Connect DFN -> Compressor
 auto_connect_ports({
 	output = Constraint({ "object.path", "matches", "DeepFilterNet Output*" }),
 	input = Constraint({ "object.path", "matches", "Compressor Input*" }),
 	connect = {
-		["FL"] = "FL",
-		["FR"] = "FR",
+		["MONO"] = { "FL", "FR" },
 	},
 })
 

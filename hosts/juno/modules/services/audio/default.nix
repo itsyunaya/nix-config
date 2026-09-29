@@ -51,18 +51,18 @@ in {
 				control = {
 					"Attenuation Limit (dB)" = 100;
 				};
-				captureProps = {
-					"node.autoconnect" = "false";
-				};
 			};
 
 			compressor = mkFilterChain {
 				name = "Compressor";
-				plugin = loudmax_plugin;
+				plugin = "${loudmax_plugin}/lib/ladspa/${loudmax_plugin_name}";
 				label = "ldmx_stereo";
 				control = {
 					"Threshold (dB)" = -25.0;
 					"Output (dB)" = 0;
+				};
+				captureProps = {
+					"node.autoconnect" = "false";
 				};
 			};
 		};
