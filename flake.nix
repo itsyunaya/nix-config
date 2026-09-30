@@ -45,9 +45,7 @@
 			"juno" = mkHost {
 				system = "x86_64-linux";
 
-				overlays = [
-					inputs.xwl-notifier.overlays.default
-				];
+				overlays = [ ];
 
 				modules = [
 					./hosts/juno/configuration.nix

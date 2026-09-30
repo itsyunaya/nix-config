@@ -17,6 +17,7 @@
 		git = wrappers.git { hostName = "juno"; };
 
 		meowvim = inputs.meowvim.packages.${sys}.default;
+		xwl-notifier = inputs.xwl-notifier.packages.${sys}.default;
 		zen = inputs.zen-browser.packages.${sys}.default;
 	in
 		builtins.attrValues {
@@ -25,6 +26,7 @@
 				meowvim
 				microshot
 				prism
+				xwl-notifier
 				zen
 				;
 
@@ -56,7 +58,6 @@
 				whitesur-icon-theme
 				wl-clipboard
 				xdg-utils
-				xwl-notifier
 				;
 
 			qt6-qtwayland = pkgs.qt6.qtwayland;

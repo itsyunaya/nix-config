@@ -1,4 +1,4 @@
-{ config, lib, ... }: {
+{ config, lib, pkgs, ... }: {
 	services = {
 		displayManager.ly = {
 			enable = true;
@@ -19,6 +19,13 @@
 				if (config.system.etc.overlay.enable == true)
 				then lib.mkForce "/var/lib/nixos"
 				else "/etc";
+		};
+
+		# ios compat
+		# see https://wiki.nixos.org/wiki/Libimobiledevice#Usage
+		usbmuxd = {
+			enable = true;
+			package = pkgs.usbmuxd2;
 		};
 
 		xserver = {

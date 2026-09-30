@@ -105,9 +105,9 @@
     "type": "github",
     "owner": "itsyunaya",
     "repo": "xwl-notifier-rs",
-    "rev": "599848c78014000139e9826ffea458e844a6998c",
-    "narHash": "sha256-r01JRwOJTgUmNXTh0/J8zZ0c4lmuwe44Y5zQAwii7u8=",
-    "lastModified": 1783518494
+    "rev": "972af3a9d195dcfd83310d3549f9592dbf3de760",
+    "narHash": "sha256-f6ko/i4gDjtY5E+0DaRBzQEkmoLV65Sm2kr4Yv9Jtwc=",
+    "lastModified": 1790784291
   },
   "zen-browser": {
     "type": "github",
