@@ -4,7 +4,7 @@ in {
 	users = {
 		knownUsers = [ username ];
 		users.${username} = {
-			home = /Users/${username};
+			home = "/Users/${username}";
 			shell = pkgs.fish;
 			uid = 501;
 		};
