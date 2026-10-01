@@ -5,7 +5,10 @@ _: {
 
 	options = {
 		configFile.default = ./config.ron;
-		themes.default."silly" = ./silly.ron;
+		themes.default = {
+			"silly" = ./silly.ron;
+			"theme" = ./theme.ron;
+		};
 
 		package.defaultFunc = { inputs }: let
 			inherit (inputs.self.sysInputs.rmpc) packages;
