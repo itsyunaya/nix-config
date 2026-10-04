@@ -1,4 +1,4 @@
-{ types, ... }: let
+{ promise, types, ... }: let
 	keys = {
 		juno = "6A161336141B9F44";
 		callisto = "C3BC6629CF0FC433";
@@ -9,10 +9,10 @@ in {
 		settings.mutators = [ "/git" "/less" ];
 		hostName.type = types.string;
 
-		package.defaultFunc = { inputs }: inputs.nixpkgs.pkgs.git.override { perlSupport = false; };
+		package.default = promise ({ inputs }: inputs.nixpkgs.pkgs.git.override { perlSupport = false; });
 	};
 
-	mutations."/git".settings = { options }: {
+	mutations."/git".settings = promise ({ options }: {
 		user = {
 			name = "itsyunaya";
 			email = "40719746+itsyunaya@users.noreply.github.com";
@@ -23,5 +23,5 @@ in {
 		tag.gpgsign = true;
 
 		init.defaultBranch = "main";
-	};
+	});
 }

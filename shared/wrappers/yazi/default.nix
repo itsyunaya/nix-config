@@ -1,12 +1,12 @@
-_: {
+{ promise, ... }: {
 	options = {
 		settingsFile.default = ./yazi.toml;
 		initLuaFile.default = ./init.lua;
 
-		plugins.defaultFunc = { inputs }: import ./plugins.nix { inherit inputs; };
+		plugins.default = promise ({ inputs }: import ./plugins.nix { inherit inputs; });
 	};
 
-	mutations."/fish".interactiveShellInit = _: ''
+	mutations."/fish".interactiveShellInit = ''
 		function y
 			set tmp (mktemp -t "yazi-cwd.XXXXXX")
 			command yazi $argv --cwd-file="$tmp"

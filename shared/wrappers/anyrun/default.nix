@@ -1,4 +1,4 @@
-_: {
+{ promise, ... }: {
 	inputs = {
 		nixpkgs.from = { parent }: parent.nixpkgs;
 	};
@@ -8,12 +8,12 @@ _: {
 
 		cssFile.default = ./style.css;
 
-		pluginPaths.defaultFunc = { inputs }: let
+		pluginPaths.default = promise ({ inputs }: let
 			inherit (inputs.nixpkgs.pkgs) anyrun;
 		in [
 			"${anyrun}/lib/libapplications.so"
 			"${anyrun}/lib/librink.so"
 			"${anyrun}/lib/libshell.so"
-		];
+		]);
 	};
 }

@@ -1,10 +1,10 @@
 _: {
 	options = {
 		# abbreviates nix store hashes, *very* useful for readability
-		flags.defaultFunc = _: [ "--short-nix" ];
+		flags.default = [ "--short-nix" ];
 	};
 
-	mutations."/fish".abbreviations = _: {
+	mutations."/fish".abbreviations = {
 		ls = "eza";
 		ll = "eza -l";
 		la = "eza -a";

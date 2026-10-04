@@ -1,4 +1,4 @@
-_: {
+{ promise, ... }: {
 	inputs = {
 		self.from = { parent }: parent.self;
 	};
@@ -10,10 +10,12 @@ _: {
 			"theme" = ./theme.ron;
 		};
 
-		package.defaultFunc = { inputs }: let
-			inherit (inputs.self.sysInputs.rmpc) packages;
-			inherit (inputs.nixpkgs.pkgs.stdenv.hostPlatform) system;
-		in
-			packages.${system}.default;
+		package.default = promise (
+			{ inputs }: let
+				inherit (inputs.self.sysInputs.rmpc) packages;
+				inherit (inputs.nixpkgs.pkgs.stdenv.hostPlatform) system;
+			in
+				packages.${system}.default
+		);
 	};
 }
