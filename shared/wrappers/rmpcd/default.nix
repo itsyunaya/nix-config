@@ -5,19 +5,20 @@
 		self.from = { parent }: parent.self;
 	};
 
-	result = promise ({ inputs }: let
+	inputs.mkWrapper.options = promise ({ inputs }: let
 		inherit (inputs.self.sysInputs.rmpc) packages;
 		inherit (inputs.nixpkgs.pkgs.stdenv.hostPlatform) system;
-	in
-		inputs.mkWrapper {
-			package = packages.${system}.rmpcd;
+	in {
+		package = packages.${system}.rmpcd;
 
-			symlinks = {
-				"$out/rmpcd/init.lua" = ./init.lua;
-			};
+		symlinks = {
+			"$out/rmpcd/init.lua" = ./init.lua;
+		};
 
-			environment = {
-				XDG_CONFIG_HOME = "$out";
-			};
-		});
+		environment = {
+			XDG_CONFIG_HOME = "$out";
+		};
+	});
+
+	result = promise ({ results }: results.mkWrapper);
 }
