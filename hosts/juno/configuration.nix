@@ -1,4 +1,4 @@
-{ fnLib, theme, pkgs, self, ... }: let
+{ fnLib, pkgs, self, ... }: let
 	username = "ashley";
 in {
 	imports = [
@@ -6,18 +6,6 @@ in {
 		"${self}/shared/common.nix"
 		"${self}/shared/spicetify"
 	];
-
-	hjem = {
-		specialArgs = { inherit theme; };
-		users.${username} = {
-			files."wallpapers" = {
-				source = "${self}/assets/wallpapers/";
-				target = ".local/share/wallpapers";
-			};
-
-			imports = [ (fnLib.recImport ./hjem) ];
-		};
-	};
 
 	users.users.${username} = {
 		isNormalUser = true;
@@ -42,6 +30,11 @@ in {
 
 			# meant to speed up eval speeds, 4GB rn
 			GC_INITIAL_HEAP_SIZE = 1024 * 1024 * 1024 * 4;
+		};
+
+		# previously managed with hjem, but this is simpler
+		etc."wallpapers" = {
+			source = "${self}/assets/wallpapers/";
 		};
 	};
 

@@ -1,4 +1,4 @@
-{ pkgs, inputs, self, wrappers, ... }: {
+{ pkgs, wrappers, ... }: {
 	programs = {
 		fish = {
 			enable = true;
@@ -14,8 +14,7 @@
 
 		mango = {
 			enable = true;
-			#package = wrappers.mangowc.drv;
-			package = (import "${self}/packages/mango.nix" { inherit inputs pkgs; });
+			package = wrappers.mango.drv;
 		};
 
 		steam.enable = true;

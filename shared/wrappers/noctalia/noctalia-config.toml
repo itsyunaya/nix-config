@@ -211,19 +211,19 @@ builtin = "Rosé Pine"
     enable_builtin_templates = false
 
 [wallpaper]
-directory = "/home/ashley/.local/share/wallpapers"
+directory = "/etc/wallpapers"
 
     [wallpaper.default]
-    path = "/home/ashley/.local/share/wallpapers/clouds.jpg"
+    path = "/etc/wallpapers/clouds.jpg"
 
     [wallpaper.last]
-    path = "/home/ashley/.local/share/wallpapers/clouds.jpg"
+    path = "/etc/wallpapers/clouds.jpg"
 
     [wallpaper.monitors.DP-2]
-    path = "/home/ashley/.local/share/wallpapers/clouds.jpg"
+    path = "/etc/wallpapers/clouds.jpg"
 
     [wallpaper.monitors.DP-3]
-    path = "/home/ashley/.local/share/wallpapers/clouds.jpg"
+    path = "/etc/wallpapers/clouds.jpg"
 
 [widget.active_window]
 display = "text_only"

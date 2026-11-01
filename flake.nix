@@ -50,7 +50,6 @@
 				modules = [
 					./hosts/juno/configuration.nix
 
-					inputs.hjem.nixosModules.default
 					inputs.qtengine.nixosModules.default
 					inputs.spicetify-nix.nixosModules.spicetify
 					(import "${inputs.mango-src}/nix/nixos-modules.nix" self)

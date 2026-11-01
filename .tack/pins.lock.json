@@ -31,14 +31,6 @@
     "narHash": "sha256-Abn+BP9gnseH2uVHSf6Zbdbn8Q5+7fn50u6vTsC6JQ8=",
     "lastModified": 1788269658
   },
-  "hjem": {
-    "type": "github",
-    "owner": "feel-co",
-    "repo": "hjem",
-    "rev": "d219ef55ab7311d884cf33e114561082fec95f34",
-    "narHash": "sha256-BohcZsIqBOd6YL6+jUkdM4GE+aQc72E6yrqVyt1z5X4=",
-    "lastModified": 1793026809
-  },
   "mango-src": {
     "type": "github",
     "owner": "mangowm",

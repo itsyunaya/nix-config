@@ -2,11 +2,11 @@
 
 # autostart
 exec_once = [
-	"noctalia"
-	"rmpcd"
-	"musicpresence"
-	"fcitx5"
-	"playerctld"
+	"noctalia",
+	"rmpcd",
+	"musicpresence",
+	"fcitx5",
+	"playerctld",
 	"xwl-notifier"
 ]
 
