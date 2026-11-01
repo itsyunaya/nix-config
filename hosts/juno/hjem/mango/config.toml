@@ -1,0 +1,298 @@
+[global]
+
+# autostart
+exec_once = [
+	"noctalia"
+	"rmpcd"
+	"musicpresence"
+	"fcitx5"
+	"playerctld"
+	"xwl-notifier"
+]
+
+# theming
+blur = 1
+blur_layer = 0
+blur_optimized = 0
+blur_params_num_passes = 2
+blur_params_radius = 3
+blur_params_noise = 0.02
+blur_params_brightness = 0.9
+blur_params_contrast = 0.9
+blur_params_saturation = 1.2
+
+shadows = 1
+layer_shadows = 0
+shadow_only_floating = 0
+shadows_size = 5
+shadows_blur = 15
+shadows_position_x = 0
+shadows_position_y = 0
+shadows_color = 0x000000ff
+
+border_radius = 10
+no_radius_when_single = 0
+focused_opacity = 1.0
+unfocused_opacity = 1.0
+
+gap_inner_horizontal = 5
+gap_inner_vertical = 5
+gap_outer_horizontal = 10
+gap_outer_vertical = 10
+scratchpad_width_ratio = 0.8
+scratchpad_height_ratio = 0.9
+border_px = 3
+
+border_color = 0x444444ff
+maximized_screen_color = 0xFFEE8Cff
+urgent_color = 0xFF746Cff
+# these are default for now
+root_color = 0x201b14ff
+drop_color = 0x8FBA7C55
+split_color = 0xEB441EFF
+focus_color = 0xffc8ddff
+scratchpad_color = 0x516c93ff
+global_color = 0xb153a7ff
+overlay_color = 0x14a57cff
+
+# animations
+tag_animation_direction = 1
+animations = 1
+layer_animations = 1
+
+animation_type_open = "zoom"
+animation_type_close = "zoom"
+animation_fade_in = 1
+animation_fade_out = 1
+tag_animation_direction = 1
+
+zoom_initial_ratio = 0.87
+zoom_end_ratio = 1.0
+
+fade_in_begin_opacity = 0
+fade_out_begin_opacity = 1
+
+animation_duration_move = 480
+animation_duration_open = 380
+animation_duration_tag = 195
+animation_duration_close = 200
+animation_duration_focus = 0
+
+animation_curve_open = [0.23, 1, 0.32, 1]
+animation_curve_move = [0.23, 1, 0.32 ,1]
+animation_curve_tag = [0.5, 0.5, 0.75, 1.0]
+animation_curve_close = [0, 0, 1, 1]
+animation_curve_focus = [0.23, 1, 0.32, 1]
+animation_curve_opacity_fade_out = [0.5, 0.5, 0.75, 1.0]
+animation_curve_opacity_fade_in = [0.5, 0.5, 0.75, 1.0]
+
+# master layout settings
+new_is_master=1
+default_master_factor=0.55
+default_master_count=1
+tag_num=9
+smart_gaps=0
+
+# dwindle layout settings
+dwindle_smart_split=0
+dwindle_drop_simple_split=1
+dwindle_manual_split=0
+dwindle_horizontal_split=1
+dwindle_vertical_split=1
+dwindle_preserve_split=0
+
+# miscellaneous
+no_border_when_single = 0
+axis_bind_apply_timeout = 100
+focus_on_activate = 0
+idle_inhibit_ignore_visible = 0
+sloppy_focus = 1
+warp_cursor = 1
+focus_cross_monitor = 1
+focus_cross_tag = 1
+enable_floating_snap = 0
+snap_distance = 30
+cursor_size = 24
+cursor_theme = "WhiteSur-cursors"
+drag_tile_to_tile = 1
+drag_tile_small = 1
+
+# keyboard
+repeat_rate = 25
+repeat_delay = 600
+numlock_on = 0
+xkb_rules_layout = "us"
+
+# trackpad
+disable_trackpad = 1
+
+# mouse
+mouse_natural_scrolling = 0
+mouse_accel_speed = -0.70
+
+# monitors
+[[rule.monitor_rule]]
+name = "DP-3"
+width = 2560
+height = 1440
+refresh = 144
+x = 1920
+y = 0
+scale = 1.25
+
+[[rule.monitor_rule]]
+name = "DP-2"
+width = 1920
+height = 1080
+refresh = 60
+x = 0
+y = 0
+scale = 1
+
+# layout
+[[rule.tag_rule]]
+id = 1
+layout_name = "dwindle"
+
+[[rule.tag_rule]]
+id = 2
+layout_name = "dwindle"
+
+[[rule.tag_rule]]
+id = 3
+layout_name = "dwindle"
+
+[[rule.tag_rule]]
+id = 4
+layout_name = "dwindle"
+
+[[rule.tag_rule]]
+id = 5
+layout_name = "dwindle"
+
+[[rule.tag_rule]]
+id = 6
+layout_name = "dwindle"
+
+[[rule.tag_rule]]
+id = 7
+layout_name = "dwindle"
+
+[[rule.tag_rule]]
+id = 8
+layout_name = "dwindle"
+
+[[rule.tag_rule]]
+id = 9
+layout_name = "dwindle"
+
+# layer rules
+[[rule.layer_rule]]
+layer_name = "selection"
+no_animation = 1
+no_blur = 1
+no_shadow = 1
+
+# window rules
+[[rule.window_rule]]
+app_id = ".*"
+ignore_maximize = 1
+
+[[rule.window_rule]]
+is_floating = 1
+is_global = 1
+is_overlay = 1
+title = "^(Picture-in-Picture)$"
+
+# binds
+[bind.default]
+"SUPER+SHIFT+R" = "reload_config"
+
+# most used
+"SUPER+r" = "spawn,noctalia msg panel-open launcher"
+"SUPER+q" = "spawn,kitty"
+"SUPER+e" = "spawn,dolphin"
+"SUPER+l" = "spawn,noctalia msg session lock"
+
+# media
+"SUPER+z" = "spawn,amixer set Capture toggle"
+"code:164" = "spawn,rmpc togglepause"
+
+"XF86AudioRaiseVolume" = "spawn,wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+"XF86AudioLowerVolume" = "spawn,wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+"XF86AudioMute" = "spawn,wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+"XF86AudioMicMute" = "spawn,wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+"XF86AudioNext" = "spawn,playerctl next"
+"XF86AudioPlay" = "spawn,playerctl play-pause"
+"XF86AudioPrev" = "spawn,playerctl previous"
+
+# screenshots
+"SUPER+x" = "spawn,microshot"
+"SUPER+SHIFT+X" = "spawn,microshot --annotate"
+"SUPER+ALT+x" = "spawn,microshot --annotate --freeze"
+
+# exit-related
+#"SUPER+m" = "quit"
+"SUPER+c" = "killclient"
+"SUPER+SHIFT+C" = "killclient,force"
+
+# window focus
+"SUPER+Tab" = "focusstack,next"
+"SUPER+Left" = "focusdir,left"
+"SUPER+Right" = "focusdir,right"
+"SUPER+Up" = "focusdir,up"
+"SUPER+Down" = "focusdir,down"
+
+# swap windows
+"SUPER+SHIFT+Left" = "exchange_client,left"
+"SUPER+SHIFT+Right" = "exchange_client,right"
+"SUPER+SHIFT+Up" = "exchange_client,up"
+"SUPER+SHIFT+Down" = "exchange_client,down"
+
+# window state
+"SUPER+v" = "togglefloating"
+"SUPER+f" = "togglemaximizescreen"
+"SUPER+SHIFT+F" = "togglefullscreen"
+"ALT+SHIFT+F" = "togglefakefullscreen"
+
+# miscellaneous
+"SUPER+j" = "dwindle_toggle_split_direction"
+"SUPER+code:49" = "focusmon,left"
+
+# move to tag
+"SUPER+1" = "view,1,0"
+"SUPER+2" = "view,2,0"
+"SUPER+3" = "view,3,0"
+"SUPER+4" = "view,4,0"
+"SUPER+5" = "view,5,0"
+"SUPER+6" = "view,6,0"
+"SUPER+7" = "view,7,0"
+"SUPER+8" = "view,8,0"
+"SUPER+9" = "view,9,0"
+
+# move window to tag and focus
+"SUPER+SHIFT+1" = "tag,1,0"
+"SUPER+SHIFT+2" = "tag,2,0"
+"SUPER+SHIFT+3" = "tag,3,0"
+"SUPER+SHIFT+4" = "tag,4,0"
+"SUPER+SHIFT+5" = "tag,5,0"
+"SUPER+SHIFT+6" = "tag,6,0"
+"SUPER+SHIFT+7" = "tag,7,0"
+"SUPER+SHIFT+8" = "tag,8,0"
+"SUPER+SHIFT+9" = "tag,9,0"
+
+# resize window
+"SUPER+ALT+Left" = "resizewin,-50,+0"
+"SUPER+ALT+Right" = "resizewin,+50,+0"
+"SUPER+ALT+Up" = "resizewin,+0,-50"
+"SUPER+ALT+Down" = "resizewin,+0,+50"
+
+# mouse button binds
+[mousebind.default]
+"SUPER+btn_left" = "moveresize,curmove"
+"SUPER+btn_right" = "moveresize,curresize"
+
+# mousewheel binds
+[axisbind.default]
+"SUPER+SHIFT+UP" = "spawn,rmpc volume +5"
+"SUPER+SHIFT+DOWN" = "spawn,rmpc volume -5"

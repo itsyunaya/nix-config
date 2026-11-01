@@ -1,5 +1,5 @@
 _: {
-	xdg.config.files."mango/config.conf" = {
-		source = ./config.conf;
+	xdg.config.files."mango/config.toml" = {
+		source = ./config.toml;
 	};
 }
