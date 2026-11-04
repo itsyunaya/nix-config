@@ -5,6 +5,6 @@ _: {
 			"~/.ssh/ceres_key" 
 		];
 
-		flags.default = [ "--quiet" ];
+		flags.default = [ "--quiet" "--noask" ];
 	};
 }
