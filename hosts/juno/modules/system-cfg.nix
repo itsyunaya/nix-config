@@ -15,7 +15,10 @@
 		kernel.sysctl = { "fs.inotify.max_user_watches" = 1048576; };
 	};
 
-	system.etc.overlay.enable = true;
+	# see https://github.com/manic-systems/nixos-core#synopsis
+	system.nixos-core.enable = true;
+	system.etc.overlay.enable = !config.system.nixos-core.enable;
+
 	services.fstrim.enable = true;
 
 	nixpkgs = let

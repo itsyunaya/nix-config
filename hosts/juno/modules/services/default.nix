@@ -12,7 +12,7 @@
 		udisks2.enable = true;
 
 		userborn = {
-			enable = true;
+			enable = !config.system.nixos-core.enable;
 			# this absolutely needs to be set when the etc overlay is enabled
 			# else authentication completely breaks
 			passwordFilesLocation =

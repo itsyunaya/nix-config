@@ -50,6 +50,9 @@ alejandra.url = "gh:itsyunaya/alejandra-opinionated"
 # https://github.com/itsyunaya/meowvim
 meowvim.url = "gh:itsyunaya/meowvim"
 
+# https://github.com/manic-systems/nixos-core
+nixos-core.url = "gh:manic-systems/nixos-core/fix-systemd-initrd"
+
 # https://github.com/kossLAN/qtengine
 qtengine.url = "gh:kossLAN/qtengine"
 
