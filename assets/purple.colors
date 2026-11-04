@@ -1,6 +1,6 @@
 [General]
-Name=purple
-ColorScheme=purple
+font=Sans Serif,11,-1,5,50,0,0,0,0,0
+fixed=Sans Serif,11,-1,5,50,0,0,0,0,0
 
 [Colors:Window]
 BackgroundNormal=26,30,45
@@ -62,3 +62,4 @@ activeBackground=108,106,144
 activeForeground=26,30,45
 inactiveBackground=26,30,45
 inactiveForeground=197,198,202
+
