@@ -35,9 +35,9 @@
     "type": "github",
     "owner": "mangowm",
     "repo": "mango",
-    "rev": "faaf4a961f943692f2657eb992a8aa90022f921e",
-    "narHash": "sha256-B2o+D2ywW0UNE9ok0jXha6YvRXMaBfTmGOXTgtZrj8s=",
-    "lastModified": 1793772792
+    "rev": "6f322a3be4ff2f3d07b707e36ac130f259201140",
+    "narHash": "sha256-SKwA0ixTBldZd+wX4EUd8NjJKk1821GI9wsYzrjuBBI=",
+    "lastModified": 1793078412
   },
   "meowvim": {
     "type": "github",
@@ -57,9 +57,9 @@
   },
   "nixpkgs": {
     "type": "tarball",
-    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1106360.0bb2eedc20e4/nixexprs.tar.zst",
-    "rev": "0bb2eedc20e4739f29e8045034f2828ad7054f8f",
-    "narHash": "sha256-us2GRWGXbOQpN1blyJGvmdx+g4bv9GoFYq5iiOHRiZ8="
+    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1107793.1d060086d60c/nixexprs.tar.zst",
+    "rev": "1d060086d60cb76a40cf37109f979d88a5bd6396",
+    "narHash": "sha256-iNjybNORi/2+shilhMlkNr01UHWKOHRGzQyIyvobs9o="
   },
   "qtengine": {
     "type": "github",
@@ -81,9 +81,9 @@
     "type": "github",
     "owner": "wlrfx",
     "repo": "scenefx",
-    "rev": "bef6e5e2566096cc0fd1b543c7830b4a1cd1d3b6",
-    "narHash": "sha256-0YT2DYCEYmzhQqYRVr2JtkJwEhs8vsASFmBkNLfXVKk=",
-    "lastModified": 1793478752
+    "rev": "440b256c9eb1f73f144aa8719e194ed5c37a36b5",
+    "narHash": "sha256-q5yFSNkIIUmYX46/GCYBEYCJfFEBjxfsx5ueZojZ6ew=",
+    "lastModified": 1793044137
   },
   "spicetify-nix": {
     "type": "github",
