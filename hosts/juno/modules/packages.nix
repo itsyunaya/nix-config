@@ -53,6 +53,7 @@
 				playerctl
 				pwvucontrol
 				qimgv
+				tailscale-systray
 				unzip
 				whitesur-cursors
 				whitesur-icon-theme

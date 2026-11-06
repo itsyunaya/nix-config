@@ -11,6 +11,8 @@
 		samba.enable = true;
 		udisks2.enable = true;
 
+		tailscale.enable = true;
+
 		userborn = {
 			enable = !config.system.nixos-core.enable;
 			# this absolutely needs to be set when the etc overlay is enabled
