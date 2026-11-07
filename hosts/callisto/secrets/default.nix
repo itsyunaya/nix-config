@@ -9,6 +9,7 @@
 				group = "grafana";
 				mode = "0400";
 			};
+			miniflux-creds.file = ./miniflux.age;
 		};
 	};
 }

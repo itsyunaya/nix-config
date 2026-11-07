@@ -28,6 +28,7 @@
 				443 
 				81 # nextcloud local
 				9090 # prometheus web dashboard
+				9020 # miniflux
 			];
 		};
 	};

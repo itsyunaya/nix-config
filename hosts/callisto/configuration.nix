@@ -39,6 +39,7 @@
 		vim
 		wget
 
+		inputs.meowvim.packages.${pkgs.stdenv.hostPlatform.system}.default
 		inputs.agenix.packages.${pkgs.stdenv.hostPlatform.system}.default
 	];
 
