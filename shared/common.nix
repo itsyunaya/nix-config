@@ -85,6 +85,14 @@ in {
 				"flakes"
 			];
 
+			substituters = [
+				"https://ci.itsyunaya.app/nix-cache"
+			];
+
+			trusted-public-keys = [
+				"ci.itsyunaya.app-1:fG2iQIuGodAl7chEd/EXsxr0JpQYLe/P416IGq1ot4g="
+			];
+
 			use-xdg-base-directories = true;
 
 			# disables git tree dirty warning because it's kinda useless for me
