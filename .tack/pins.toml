@@ -47,6 +47,9 @@ agenix.follows = { darwin = "", home-manager = "" }
 # https://github.com/itsyunaya/alejandra-opinionated
 alejandra.url = "gh:itsyunaya/alejandra-opinionated"
 
+# https://github.com/manic-systems/circus
+circus.url = "gh:manic-systems/circus"
+
 # https://github.com/itsyunaya/meowvim
 meowvim.url = "gh:itsyunaya/meowvim"
 

@@ -14,6 +14,23 @@
 				sslCertificateKey = "/var/lib/nginx/certs/cloudflare.key";
 			};
 
+			"ci.itsyunaya.app" = {
+				forceSSL = true;
+				locations."/" = {
+					proxyPass = "http://127.0.0.1:9200";
+					proxyWebsockets = true;
+					extraConfig = ''
+						proxy_set_header X-Real-IP $remote_addr;
+						proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+						proxy_set_header X-Forwarded-Proto $scheme;
+						client_max_body_size 50M;
+					'';
+				};
+
+				sslCertificate = "/var/lib/nginx/certs/cloudflare.crt";
+				sslCertificateKey = "/var/lib/nginx/certs/cloudflare.key";
+			};
+
 			${config.services.nextcloud.hostName} = {
 				forceSSL = true;
 				listen = [

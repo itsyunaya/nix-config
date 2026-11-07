@@ -39,6 +39,7 @@
 		vim
 		wget
 
+		inputs.circus.packages.${pkgs.stdenv.hostPlatform.system}.circus-cli
 		inputs.meowvim.packages.${pkgs.stdenv.hostPlatform.system}.default
 		inputs.agenix.packages.${pkgs.stdenv.hostPlatform.system}.default
 	];

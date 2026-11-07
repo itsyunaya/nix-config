@@ -63,6 +63,7 @@
 					./hosts/callisto/configuration.nix
 
 					inputs.agenix.nixosModules.default
+					inputs.circus.nixosModules.default
 				];
 			};
 

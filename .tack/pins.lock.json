@@ -31,6 +31,14 @@
     "narHash": "sha256-Abn+BP9gnseH2uVHSf6Zbdbn8Q5+7fn50u6vTsC6JQ8=",
     "lastModified": 1788269658
   },
+  "circus": {
+    "type": "github",
+    "owner": "manic-systems",
+    "repo": "circus",
+    "rev": "90e6328cad33a463bba74dc046be09848a4ae868",
+    "narHash": "sha256-w5sdalq2PbuCrCaglUXJsvQkfjvZPYiDgdYZVlyTDsk=",
+    "lastModified": 1793402889
+  },
   "mango-src": {
     "type": "github",
     "owner": "mangowm",
