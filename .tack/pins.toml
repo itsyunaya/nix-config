@@ -8,6 +8,7 @@
 [shorturls]
 gh = "github:{path}"
 cb = "git+https://codeberg.org/{path}"
+tg = "git+https://tangled.org/{path}"
 
 # all_follow maps input names to the top-level pin they follow
 # opt out per-input with exclude_follow
@@ -50,8 +51,8 @@ alejandra.url = "gh:itsyunaya/alejandra-opinionated"
 # https://github.com/manic-systems/circus
 circus.url = "gh:manic-systems/circus"
 
-# https://github.com/itsyunaya/meowvim
-meowvim.url = "gh:itsyunaya/meowvim"
+# https://tangled.org/itsyunaya.tngl.sh/meowvim
+meowvim.url = "tg:itsyunaya.tngl.sh/meowvim"
 
 # https://github.com/manic-systems/nixos-core
 nixos-core.url = "gh:manic-systems/nixos-core/fix-systemd-initrd"
