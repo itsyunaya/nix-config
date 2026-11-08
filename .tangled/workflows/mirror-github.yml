@@ -1,0 +1,21 @@
+when:
+  - event: push
+    branch: main
+  - event: manual
+
+engine: microvm
+image: nixos
+dependencies:
+  - git
+
+clone:
+  skip: true
+
+steps:
+  - name: "clone repo"
+    command: 'git clone --mirror "$TANGLED_REPO_URL" "$TANGLED_REPO_NAME.git"'
+
+  - name: "push to github"
+    command: |
+      cd "$TANGLED_REPO_NAME.git"
+      git push --mirror "https://x-access-token:$GITHUB_TOKEN@github.com/itsyunaya/nix-config.git"
