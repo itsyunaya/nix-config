@@ -9,13 +9,13 @@ in {
 		settings.mutators = [ "/git" "/less" ];
 		hostName.type = types.string;
 
-		package.default = promise ({ inputs }: inputs.nixpkgs.pkgs.git.override { perlSupport = false; });
+		package.default = promise ({ inputs }: inputs.nixpkgs.pkgs.gitMinimal);
 	};
 
 	mutations."/git".settings = promise ({ options }: {
 		user = {
 			name = "itsyunaya";
-			email = "40719746+itsyunaya@users.noreply.github.com";
+			email = "git@itsyunaya.app";
 			signingKey = keys.${options.hostName};
 		};
 
