@@ -43,17 +43,17 @@
     "type": "github",
     "owner": "mangowm",
     "repo": "mango",
-    "rev": "6f322a3be4ff2f3d07b707e36ac130f259201140",
-    "narHash": "sha256-SKwA0ixTBldZd+wX4EUd8NjJKk1821GI9wsYzrjuBBI=",
-    "lastModified": 1793078412
+    "rev": "5040bc34536e7b1aeaba5deee4c44fcea66abf3c",
+    "narHash": "sha256-7GSMjCN0pWgc3C/a/jJAY/SbrZUHXVw92iiPEdTcgds=",
+    "lastModified": 1794102501
   },
   "meowvim": {
     "type": "github",
     "owner": "itsyunaya",
     "repo": "meowvim",
-    "rev": "08ab65bab54af719c6ffa1ad6f8c21b69b5b4fab",
-    "narHash": "sha256-4fRBgkZLCuUwxkYDkLflkOeSUGwF2qENdorgJ95/b7g=",
-    "lastModified": 1793092236
+    "rev": "0e85caf595e9dbc1882934af03b49e41f1cd905d",
+    "narHash": "sha256-/AYFXbT6IT2kYgp1WVFMDDuhU2M6FO5dPY/R2OiU+X8=",
+    "lastModified": 1793877263
   },
   "nix-darwin": {
     "type": "github",
@@ -73,25 +73,25 @@
   },
   "nixpkgs": {
     "type": "tarball",
-    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1107793.1d060086d60c/nixexprs.tar.zst",
-    "rev": "1d060086d60cb76a40cf37109f979d88a5bd6396",
-    "narHash": "sha256-iNjybNORi/2+shilhMlkNr01UHWKOHRGzQyIyvobs9o="
+    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1108983.f9a75f41be3a/nixexprs.tar.zst",
+    "rev": "f9a75f41be3a74eab55d3a7679d34ad6cc0da977",
+    "narHash": "sha256-Q62pssAT9r01POiSyXW0IPXBWhntiKqMhzlsp3bsl5I="
   },
   "rmpc": {
     "type": "github",
     "owner": "mierak",
     "repo": "rmpc",
-    "rev": "d7c144a0962024e978a5d283fed39d2b2dbf65ba",
-    "narHash": "sha256-MzaikQKQxxcnQ9f+7Xffe3EAqOf8HUlqz1C2bbqtREo=",
-    "lastModified": 1793613571
+    "rev": "3f5bb1e5d47ad16caff0f43960a9319e0d209a58",
+    "narHash": "sha256-p+OrJaZB+qlp8dKpchBKYjIs1lwX6lseDraNN9VFXNc=",
+    "lastModified": 1793881664
   },
   "scenefx": {
     "type": "github",
     "owner": "wlrfx",
     "repo": "scenefx",
-    "rev": "440b256c9eb1f73f144aa8719e194ed5c37a36b5",
-    "narHash": "sha256-q5yFSNkIIUmYX46/GCYBEYCJfFEBjxfsx5ueZojZ6ew=",
-    "lastModified": 1793044137
+    "rev": "bef6e5e2566096cc0fd1b543c7830b4a1cd1d3b6",
+    "narHash": "sha256-0YT2DYCEYmzhQqYRVr2JtkJwEhs8vsASFmBkNLfXVKk=",
+    "lastModified": 1793478752
   },
   "spicetify-nix": {
     "type": "github",
@@ -113,8 +113,8 @@
     "type": "github",
     "owner": "0xc000022070",
     "repo": "zen-browser-flake",
-    "rev": "3c9750e20fd25605fbd2f7a71253997cc45838c5",
-    "narHash": "sha256-5c93tSlnE1VVunrw3/Q75EayZLkMQmoUcNZv/1fXWKU=",
-    "lastModified": 1793781856
+    "rev": "5f45f55b9f6f2de78504a95b372e13951793be3a",
+    "narHash": "sha256-zQgtR/G5j0eZayjrb6fpBVmy1fkOGlCHyLxW4Tboy2M=",
+    "lastModified": 1794113319
   }
 }

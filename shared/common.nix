@@ -86,10 +86,12 @@ in {
 			];
 
 			substituters = [
+				"https://cache.nixos.org/"
 				"https://ci.itsyunaya.app/nix-cache"
 			];
 
 			trusted-public-keys = [
+				"cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
 				"ci.itsyunaya.app-1:fG2iQIuGodAl7chEd/EXsxr0JpQYLe/P416IGq1ot4g="
 			];
 
