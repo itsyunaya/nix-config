@@ -1,0 +1,10 @@
+when:
+  - event: push
+    branch: main
+
+engine: microvm
+image: nixos
+
+steps:
+  - name: "Run nix flake check"
+    command: "nix flake check --show-trace"
