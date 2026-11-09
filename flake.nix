@@ -12,10 +12,9 @@
 		};
 
 		mkHost = { system, modules, overlays ? [] }: let
-			sysFn =
-				if system == "aarch64-darwin"
-				then inputs.nix-darwin.lib.darwinSystem
-				else inputs.nixpkgs.lib.nixosSystem;
+			sysFn = if system == "aarch64-darwin"
+			then inputs.nix-darwin.lib.darwinSystem
+			else inputs.nixpkgs.lib.nixosSystem;
 
 			pkgs = import inputs.nixpkgs { inherit system overlays; };
 			wrappers = import ./shared/wrappers { inherit pkgs inputs; };
@@ -27,9 +26,6 @@
 				specialArgs = {
 					inherit self inputs wrappers;
 					fnLib = import ./lib/default.nix { inherit self pkgs; };
-					# i don't need this on every device but it's easier to import it unconditionally than to make a
-					# separate option for it (thank you nix lazy evaluation)
-					theme = import ./theme.nix { inherit self; };
 				};
 			};
 
@@ -45,7 +41,7 @@
 			"juno" = mkHost {
 				system = "x86_64-linux";
 
-				overlays = [ ];
+				overlays = [];
 
 				modules = [
 					./hosts/juno/configuration.nix
@@ -80,7 +76,7 @@
 		darwinConfigurations."ashleys-macbook-pro" = mkHost {
 			system = "aarch64-darwin";
 
-			overlays = [ ];
+			overlays = [];
 
 			modules = [
 				./hosts/ashleys-macbook-pro/configuration.nix

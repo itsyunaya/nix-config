@@ -1,13 +1,13 @@
-{ theme, ... }: {
+_: {
 	services.dunst = {
 		enable = false;
 		enableX11 = false;
 
 		settings = {
 			global = {
-				frame_color = "#${theme.colours.accent-pink}";
+				frame_color = "#ffc8dd";
 				separator_color = "frame";
-				highlight = "#${theme.colours.accent-pink}";
+				highlight = "#ffc8dd";
 				transparency = 20;
 				offset = 20;
 				font = "JetbrainsMonoNL Nerd Font";
