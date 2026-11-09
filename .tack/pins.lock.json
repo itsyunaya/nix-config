@@ -1,4 +1,7 @@
 {
+  "$declared": {
+    "crane": "github:ipetkov/crane"
+  },
   "adios": {
     "type": "github",
     "owner": "llakala",
@@ -38,6 +41,14 @@
     "rev": "90e6328cad33a463bba74dc046be09848a4ae868",
     "narHash": "sha256-w5sdalq2PbuCrCaglUXJsvQkfjvZPYiDgdYZVlyTDsk=",
     "lastModified": 1793402889
+  },
+  "crane": {
+    "type": "github",
+    "owner": "ipetkov",
+    "repo": "crane",
+    "rev": "79fd63528501446749c09f08cad486a58c7d173e",
+    "narHash": "sha256-TREenflwEjxOSq292FYwbc3kEm7TDRtXCZRNWEdjBmg=",
+    "lastModified": 1793836618
   },
   "mango-src": {
     "type": "github",
