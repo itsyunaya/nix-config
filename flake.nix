@@ -17,7 +17,7 @@
 			else inputs.nixpkgs.lib.nixosSystem;
 
 			pkgs = import inputs.nixpkgs { inherit system overlays; };
-			wrappers = import ./shared/wrappers { inherit pkgs inputs; };
+			wrappers = import ./modules/wrappers { inherit pkgs inputs; };
 		in
 			sysFn {
 				inherit system;

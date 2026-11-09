@@ -12,8 +12,9 @@ in {
 
 	imports = [
 		./programs.nix
-		"${self}/shared/common.nix"
-		"${self}/shared/spicetify"
+		./tack.nix
+		"${self}/modules/"
+		"${self}/modules/spicetify"
 	];
 
 	documentation.enable = false;

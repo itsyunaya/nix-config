@@ -3,8 +3,8 @@
 in {
 	imports = [
 		(fnLib.recImport "${self}/hosts/juno/modules" { inherit username; })
-		"${self}/shared/common.nix"
-		"${self}/shared/spicetify"
+		"${self}/modules/"
+		"${self}/modules/spicetify"
 	];
 
 	users.users.${username} = {

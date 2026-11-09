@@ -1,6 +1,6 @@
 { promise, ... }: {
 	options = {
-		abbreviations.mutators = [ "/fish" "/eza" ];
+		abbreviations.mutators = [ "/fish" "/eza" "/git" ];
 		interactiveShellInit.mutators = [ "/fish" "/kitty" "/keychain" "/yazi" ];
 	};
 
