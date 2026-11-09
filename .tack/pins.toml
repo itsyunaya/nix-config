@@ -14,6 +14,7 @@ tg = "git+https://tangled.org/{path}"
 # opt out per-input with exclude_follow
 [all_follow]
 nixpkgs = "nixpkgs"
+crane = "crane"
 # nixpkgs = ["nixpkgs-stable", "nixpkgs-unstable"]
 
 # inputs.<name> fields
@@ -26,6 +27,14 @@ nixpkgs = "nixpkgs"
 #   submodules      fetch git submodules
 #   unpack          fixed-only tarball or file
 [inputs]
+
+# dependencies of other inputs
+
+# https://github.com/ipetkov/crane
+crane.url = "gh:ipetkov/crane"
+
+# actual inputs
+
 # github uptime is abysmal and .zst archives are allegedly faster to unpack
 nixpkgs.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst"
 
@@ -43,7 +52,7 @@ adios-wrappers.follows = { adios = "adios" }
 
 # https://github.com/ryantm/agenix
 agenix.url = "gh:ryantm/agenix"
-agenix.follows = { darwin = "", home-manager = "" }
+agenix.omit_inputs = [ "darwin", "home-manager" ]
 
 # https://github.com/itsyunaya/alejandra-opinionated
 alejandra.url = "gh:itsyunaya/alejandra-opinionated"
@@ -68,7 +77,7 @@ xwl-notifier.url = "gh:itsyunaya/xwl-notifier-rs"
 
 # https://github.com/0xc000022070/zen-browser-flake
 zen-browser.url = "gh:0xc000022070/zen-browser-flake"
-zen-browser.follows = { home-manager = "" }
+zen-browser.omit_inputs = [ "home-manager" ]
 
 # https://github.com/mangowm/mango
 # replacement for the mango flake since it uses flake parts (ew)
