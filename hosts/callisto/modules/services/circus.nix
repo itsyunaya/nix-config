@@ -1,4 +1,7 @@
-{ config, ... }: {
+{ config, pkgs, ... }: {
+	# TODO: open issue about this on circus repo
+	systemd.services.circus-server.path = [ pkgs.git ];
+
 	services.circus = {
 		enable = true;
 
@@ -7,12 +10,14 @@
 		queueRunner.enable = true;
 
 		settings = {
-			server.host = "127.0.0.1";
-			server.port = 9200;
+			server = {
+				host = "127.0.0.1";
+				port = 9200;
 
-			server.force_secure_cookies = true;
-			server.rate_limit_rps = 100;
-			server.rate_limit_burst = 20;
+				force_secure_cookies = true;
+				rate_limit_rps = 100;
+				rate_limit_burst = 20;
+			};
 
 			signing = {
 				enabled = true;
