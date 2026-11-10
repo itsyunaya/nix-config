@@ -64,7 +64,10 @@ circus.url = "gh:manic-systems/circus"
 meowvim.url = "tg:itsyunaya.tngl.sh/meowvim"
 
 # https://github.com/manic-systems/nixos-core
-nixos-core.url = "gh:manic-systems/nixos-core/fix-systemd-initrd"
+nixos-core.url = "gh:manic-systems/nixos-core"
+nixos-core.patches = [
+	"https://github.com/manic-systems/nixos-core/pull/84"
+]
 
 # https://github.com/mierak/rmpc
 rmpc.url = "gh:mierak/rmpc"
