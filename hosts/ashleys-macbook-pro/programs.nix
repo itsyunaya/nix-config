@@ -29,5 +29,6 @@ in {
 		# since zsh is the default shell on macos, this is on by default
 		# and needs to be disabled to not add unnecessary files
 		zsh.enable = false;
+		bash.enable = false;
 	};
 }

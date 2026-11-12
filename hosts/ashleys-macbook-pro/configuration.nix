@@ -17,8 +17,6 @@ in {
 		"${self}/modules/spicetify"
 	];
 
-	documentation.enable = false;
-
 	environment = {
 		variables = {
 			"PATH" = "$PATH:$HOME/.local/bin";
