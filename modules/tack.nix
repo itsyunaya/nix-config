@@ -2,20 +2,23 @@
 	src = pkgs.fetchFromGitHub {
 		owner = "manic-systems";
 		repo = "tack";
-		rev = "ea48abbf5ceb99d4e150b545767a2159f3e07979";
-		hash = "sha256-rpcW35sv5exqvhZ0uuyY/14KXaS9hndXJ5qb4DiLFIo=";
+		rev = "c107b0fc252b0b33b01e6b7d6111aaaedc49613e";
+		hash = "sha256-bdNCaHUF3c8hgsYw6FCI+lGcZanZIDxt2Sefu5AsERY=";
 	};
 in {
 	programs.tack = {
 		enable = true;
-		package = pkgs.tack.overrideAttrs {
-			version = "1.0.1-unstable-2026-11-9";
+		package = pkgs.tack.overrideAttrs (old: {
+			version = "1.0.1-unstable-2026-11-12";
 			inherit src;
 
 			cargoDeps = pkgs.rustPlatform.fetchCargoVendor {
 				inherit src;
-				hash = "sha256-edYigZ2aQYbxmHuuIiQo9lMTsu3YFgaRySgVbbSVY0I=";
+				hash = "sha256-U8PVSnkQSmv+CZCJbwg3PltrJFXg1QKPX/7ABcAbBsA=";
 			};
-		};
+
+			nativeBuildInputs = (old.nativeBuildInputs or []) ++ [ pkgs.pkg-config ];
+			buildInputs = (old.buildInputs or []) ++ [ pkgs.zstd ];
+		});
 	};
 }
