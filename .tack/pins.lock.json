@@ -7,6 +7,7 @@
     "circus": "github:manic-systems/circus",
     "crane": "github:ipetkov/crane",
     "mango-src": "github:mangowm/mango",
+    "meowvim": "git+https://tangled.org/itsyunaya.tngl.sh/meowvim",
     "nix-darwin": "github:nix-darwin/nix-darwin",
     "nixos-core": "github:manic-systems/nixos-core",
     "nixpkgs": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst",
@@ -77,12 +78,12 @@
     }
   },
   "meowvim": {
-    "type": "github",
-    "owner": "itsyunaya",
-    "repo": "meowvim",
-    "rev": "0e85caf595e9dbc1882934af03b49e41f1cd905d",
-    "narHash": "sha256-/AYFXbT6IT2kYgp1WVFMDDuhU2M6FO5dPY/R2OiU+X8=",
-    "lastModified": 1793877263
+    "type": "git",
+    "url": "https://tangled.org/itsyunaya.tngl.sh/meowvim",
+    "ref": "HEAD",
+    "rev": "451cb7d8238d1e0d8be15922d1f69df6f96315db",
+    "narHash": "sha256-5N9BLsN6fMLDaPGd/SRPKmTcAT5Xn3ghmEaDqleag2M=",
+    "lastModified": 1794575997
   },
   "nix-darwin": {
     "type": "github",
