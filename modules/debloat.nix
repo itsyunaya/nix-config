@@ -34,6 +34,7 @@ in {
 				nixos-enter.enable = false;
 				nixos-generate-config.enable = false;
 				nixos-install.enable = false;
+				nixos-rebuild.enable = false;
 			};
 		})
 
