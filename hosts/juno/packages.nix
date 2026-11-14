@@ -30,13 +30,6 @@
 				zen
 				;
 
-			#inherit
-			#(pkgs.jetbrains)
-			#clion
-			#idea
-			#webstorm
-			#;
-
 			inherit
 				(pkgs)
 				alsa-utils
@@ -49,7 +42,6 @@
 				keepassxc
 				nicotine-plus
 				pinentry-qt
-				picard
 				playerctl
 				pwvucontrol
 				qimgv

@@ -18,15 +18,12 @@
 
 			pkgs = import inputs.nixpkgs { inherit system overlays; };
 			wrappers = import ./modules/wrappers { inherit pkgs inputs; };
+			fnLib = import ./lib/default.nix { inherit self pkgs; };
 		in
 			sysFn {
 				inherit system;
 				modules = modules ++ [ { nixpkgs.overlays = overlays ++ [ alejandra-overlay ]; } ];
-
-				specialArgs = {
-					inherit self inputs wrappers;
-					fnLib = import ./lib/default.nix { inherit self pkgs; };
-				};
+				specialArgs = { inherit fnLib self inputs wrappers; };
 			};
 
 		systems = [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" ];
@@ -44,7 +41,7 @@
 				overlays = [];
 
 				modules = [
-					./hosts/juno/configuration.nix
+					./hosts/juno
 
 					inputs.nixos-core.nixosModules.default
 					inputs.spicetify-nix.nixosModules.spicetify
