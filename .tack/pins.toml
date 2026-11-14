@@ -10,6 +10,8 @@ gh = "github:{path}"
 cb = "git+https://codeberg.org/{path}"
 tg = "git+https://tangled.org/{path}"
 
+manic = "github:manic-systems/{path}"
+
 # all_follow maps input names to the top-level pin they follow
 # opt out per-input with exclude_follow
 [all_follow]
@@ -58,13 +60,16 @@ agenix.omit_inputs = [ "darwin", "home-manager" ]
 alejandra.url = "gh:itsyunaya/alejandra-opinionated"
 
 # https://github.com/manic-systems/circus
-circus.url = "gh:manic-systems/circus"
+circus.url = "manic:circus"
 
 # https://tangled.org/itsyunaya.tngl.sh/meowvim
 meowvim.url = "tg:itsyunaya.tngl.sh/meowvim"
 
+# https://github.com/manic-systems/ncro
+ncro.url = "manic:ncro"
+
 # https://github.com/manic-systems/nixos-core
-nixos-core.url = "gh:manic-systems/nixos-core"
+nixos-core.url = "manic:nixos-core"
 
 # https://github.com/mierak/rmpc
 rmpc.url = "gh:mierak/rmpc"

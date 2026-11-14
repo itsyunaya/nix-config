@@ -8,6 +8,7 @@
     "crane": "github:ipetkov/crane",
     "mango-src": "github:mangowm/mango",
     "meowvim": "git+https://tangled.org/itsyunaya.tngl.sh/meowvim",
+    "ncro": "github:manic-systems/ncro",
     "nix-darwin": "github:nix-darwin/nix-darwin",
     "nixos-core": "github:manic-systems/nixos-core",
     "nixpkgs": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst",
@@ -84,6 +85,14 @@
     "rev": "451cb7d8238d1e0d8be15922d1f69df6f96315db",
     "narHash": "sha256-5N9BLsN6fMLDaPGd/SRPKmTcAT5Xn3ghmEaDqleag2M=",
     "lastModified": 1794575997
+  },
+  "ncro": {
+    "type": "github",
+    "owner": "manic-systems",
+    "repo": "ncro",
+    "rev": "ad44cfbc00a6ed1fff20bb09407f21144f5d27fd",
+    "narHash": "sha256-/sw6LJGSbIytu/z/DX4mJYHfyNC2ZqOor1rxoEN5tD0=",
+    "lastModified": 1794564469
   },
   "nix-darwin": {
     "type": "github",
