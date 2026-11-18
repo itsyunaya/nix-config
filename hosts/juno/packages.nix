@@ -17,6 +17,7 @@
 		git = wrappers.git { hostName = "juno"; };
 
 		meowvim = inputs.meowvim.packages.${sys}.default;
+		nightingale = inputs.nightingale.packages.${sys}.default;
 		xwl-notifier = inputs.xwl-notifier.packages.${sys}.default;
 		zen = inputs.zen-browser.packages.${sys}.default;
 	in
@@ -24,6 +25,7 @@
 			inherit
 				git
 				meowvim
+				nightingale
 				microshot
 				prism
 				xwl-notifier
@@ -34,6 +36,7 @@
 				(pkgs)
 				alsa-utils
 				aseprite
+				awww
 				btop
 				darkly
 				ffmpeg
@@ -63,8 +66,8 @@
 			mapWrappers = w: xs: map (x: w.${x}.drv) xs;
 		in
 			mapWrappers wrappers [
+				"anyrun"
 				"kitty"
-				"noctalia"
 				"rmpc"
 				"rmpcd"
 			]);

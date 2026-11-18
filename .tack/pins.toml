@@ -62,11 +62,14 @@ alejandra.url = "gh:itsyunaya/alejandra-opinionated"
 # https://github.com/manic-systems/circus
 circus.url = "manic:circus"
 
-# https://tangled.org/itsyunaya.tngl.sh/meowvim
-meowvim.url = "tg:itsyunaya.tngl.sh/meowvim"
+# https://tangled.org/itsyunaya.app/meowvim
+meowvim.url = "tg:itsyunaya.app/meowvim"
 
 # https://github.com/manic-systems/ncro
 ncro.url = "manic:ncro"
+
+# https://tangled.org/itsyunaya.app/nightingale
+nightingale.url = "tg:itsyunaya.app/nightingale"
 
 # https://github.com/manic-systems/nixos-core
 nixos-core.url = "manic:nixos-core"

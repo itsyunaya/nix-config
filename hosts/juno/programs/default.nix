@@ -24,10 +24,6 @@
 		enable = true;
 		wlr = {
 			enable = true;
-			settings.screencast = {
-				chooser_type = "dmenu";
-				chooser_cmd = "${wrappers.noctalia.drv}/bin/noctalia dmenu";
-			};
 		};
 	};
 }

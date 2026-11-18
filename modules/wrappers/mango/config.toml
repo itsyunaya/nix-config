@@ -2,7 +2,10 @@
 
 # autostart
 exec_once = [
-	"noctalia",
+	"nightingale",
+	"awww-daemon",
+	"awww img /etc/wallpapers/clouds.jpg",
+	"anyrun daemon",
 	"rmpcd",
 	"musicpresence",
 	"fcitx5",
@@ -44,13 +47,13 @@ scratchpad_height_ratio = 0.9
 border_px = 3
 
 border_color = 0x444444ff
-maximized_screen_color = 0xFFEE8Cff
-urgent_color = 0xFF746Cff
+maximized_screen_color = 0xF6C177ff
+urgent_color = 0xEB6F92ff
+focus_color = 0xEBBCBAff
 # these are default for now
 root_color = 0x201b14ff
 drop_color = 0x8FBA7C55
 split_color = 0xEB441EFF
-focus_color = 0xffc8ddff
 scratchpad_color = 0x516c93ff
 global_color = 0xb153a7ff
 overlay_color = 0x14a57cff
@@ -209,10 +212,9 @@ title = "^(Picture-in-Picture)$"
 "SUPER+SHIFT+R" = "reload_config"
 
 # most used
-"SUPER+r" = "spawn,noctalia msg panel-open launcher"
+"SUPER+r" = "spawn,anyrun"
 "SUPER+q" = "spawn,kitty"
 "SUPER+e" = "spawn,dolphin"
-"SUPER+l" = "spawn,noctalia msg session lock"
 
 # media
 "SUPER+z" = "spawn,amixer set Capture toggle"

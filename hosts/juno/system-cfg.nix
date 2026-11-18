@@ -22,7 +22,7 @@
 	services.fstrim.enable = true;
 
 	# ncro
-	nix.settings.substituters = lib.mkForce [ "http://localhost:8081" ];
+	nix.settings.substituters = lib.mkForce [ "http://localhost:8080" ];
 
 	nixpkgs = let
 		insecurePkgs = [ ];
