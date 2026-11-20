@@ -1,10 +1,6 @@
 { pkgs, wrappers, ... }: {
 	programs = {
-		fish = {
-			enable = true;
-			package = wrappers.fish.drv;
-			useBabelfish = true;
-		};
+		fuse.userAllowOther = true;
 
 		gnupg.agent = {
 			enable = true;

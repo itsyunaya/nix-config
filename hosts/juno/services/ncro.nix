@@ -10,6 +10,11 @@ _: {
 					priority = 10;
 				}
 				{
+					url = "https://cache.manic.systems";
+					public_key = "cache.manic.systems-1:s6OZanN8Us8vRi0jVivP3qlMn0cYHBjBALKrNe5nH8s=";
+					priority = 20;
+				}
+				{
 					url = "https://ci.itsyunaya.app/nix-cache";
 					public_key = "ci.itsyunaya.app-1:fG2iQIuGodAl7chEd/EXsxr0JpQYLe/P416IGq1ot4g=";
 					priority = 30;

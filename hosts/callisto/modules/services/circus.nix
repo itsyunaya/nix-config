@@ -1,5 +1,4 @@
 { config, pkgs, ... }: {
-	# TODO: open issue about this on circus repo
 	systemd.services.circus-server.path = [ pkgs.git ];
 
 	services.circus = {

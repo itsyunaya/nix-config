@@ -83,9 +83,9 @@
     "type": "git",
     "url": "https://tangled.org/itsyunaya.app/meowvim",
     "ref": "HEAD",
-    "rev": "3d1e0eba798012abf5f1b19fc23188edd4f44b61",
-    "narHash": "sha256-6tTgBzIogzMA/oHLdhpuY6yvKGiVctTTtviYEmvHouo=",
-    "lastModified": 1794687400
+    "rev": "cf450bed40f3cdb9191b32ce71e21c742009790b",
+    "narHash": "sha256-4G1nm1UMcvr+5yHWW76iSAvQfg5uz5pAKEYDAICpVbA=",
+    "lastModified": 1795193285
   },
   "ncro": {
     "type": "github",
@@ -99,9 +99,9 @@
     "type": "git",
     "url": "https://tangled.org/itsyunaya.app/nightingale",
     "ref": "HEAD",
-    "rev": "ce9eb6a30ac18eff4bc67364a7ed49625aae07c2",
-    "narHash": "sha256-zbQ1TcEoLrUXXwB/tPpJp51T7aIIqDKHE0fBHRk8R/4=",
-    "lastModified": 1794687290
+    "rev": "1ca9e2caa29a40337d7eeadda2443abf615dfbe7",
+    "narHash": "sha256-DJ5oC3LRGkgJcuSINQFFoz4TkueC+MS7ecJTnbuye1c=",
+    "lastModified": 1795032568
   },
   "nix-darwin": {
     "type": "github",
