@@ -14,7 +14,7 @@
     "nixos-core": "github:manic-systems/nixos-core",
     "nixpkgs": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst",
     "rmpc": "github:mierak/rmpc",
-    "scenefx": "github:wlrfx/scenefx",
+    "scenefx-src": "github:wlrfx/scenefx",
     "spicetify-nix": "github:Gerg-L/spicetify-nix",
     "xwl-notifier": "github:itsyunaya/xwl-notifier-rs",
     "zen-browser": "github:0xc000022070/zen-browser-flake"
@@ -134,13 +134,18 @@
     "narHash": "sha256-PkTgdz/TcvQuYUIs/GxzMdIx+jXSOF9QFasfGUBoySM=",
     "lastModified": 1794933727
   },
-  "scenefx": {
+  "scenefx-src": {
     "type": "github",
     "owner": "wlrfx",
     "repo": "scenefx",
-    "rev": "54563add31e75cbaa30a0572d4fb10819cf4da5f",
-    "narHash": "sha256-kvBMNKLwNk+vKHaZUCjR4OuWfzHUuNkJqhpolludzyE=",
-    "lastModified": 1794181196
+    "rev": "6a7c568bd7dbdac4b2b92d6b9fa73881c603d665",
+    "narHash": "sha256-/i6D2Zh91ff9VQ8PIcrVVT9W5YKrlF5an3P0RXR+QvQ=",
+    "lastModified": 1795094735,
+    "archive": {
+      "hash": "sha256-ieflzaWcGfGdueF2Et64k97Ap/mN25PTQCOwnUXAGmA=",
+      "outHash": "sha256-JTze7MJq6QBc2K5kPuJ7f02YqL6pedL97ITMnkFsTK8="
+    },
+    "public": true
   },
   "spicetify-nix": {
     "type": "github",

@@ -91,5 +91,6 @@ zen-browser.omit_inputs = [ "home-manager" ]
 # replacement for the mango flake since it uses flake parts (ew)
 mango-src.url = "gh:mangowm/mango"
 mango-src.type = "fetch"
-scenefx.url = "gh:wlrfx/scenefx"
+scenefx-src.url = "gh:wlrfx/scenefx"
+scenefx-src.type = "fetch"
 
