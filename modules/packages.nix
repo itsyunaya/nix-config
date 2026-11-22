@@ -12,6 +12,7 @@ in {
 		inherit
 			(pkgs)
 			alejandra
+			jq
 			musicpresence
 			;
 	}

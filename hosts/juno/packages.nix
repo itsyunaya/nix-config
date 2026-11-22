@@ -12,6 +12,7 @@
 			textToSpeechSupport = false;
 		};
 
+		lc = pkgs.callPackage "${self}/packages/lc" {};
 		microshot = pkgs.callPackage "${self}/packages/microshot" {};
 
 		git = wrappers.git { hostName = "juno"; };
@@ -24,9 +25,10 @@
 		builtins.attrValues {
 			inherit
 				git
+				lc
 				meowvim
-				nightingale
 				microshot
+				nightingale
 				prism
 				xwl-notifier
 				zen

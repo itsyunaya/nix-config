@@ -83,9 +83,9 @@
     "type": "git",
     "url": "https://tangled.org/itsyunaya.app/meowvim",
     "ref": "HEAD",
-    "rev": "cf450bed40f3cdb9191b32ce71e21c742009790b",
-    "narHash": "sha256-4G1nm1UMcvr+5yHWW76iSAvQfg5uz5pAKEYDAICpVbA=",
-    "lastModified": 1795193285
+    "rev": "4e4f297e72bf038d1f7fb8e4a47f7ba73dc5166a",
+    "narHash": "sha256-7nELUIM6Jn1Ir/yPA6kAjDW/St9mhoDO4EWtS5ipTbs=",
+    "lastModified": 1795352584
   },
   "ncro": {
     "type": "github",
