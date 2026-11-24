@@ -83,6 +83,13 @@
 			];
 		};
 
+		packages = forAllSystems (system: let
+			pkgs = pkgsFor system;
+		in {
+			lc = pkgs.callPackage ./packages/lc {};
+			microshot = pkgs.callPackage ./packages/microshot {};
+		});
+
 		formatter = forAllSystems (
 			system: let
 				pkgs = pkgsFor system;

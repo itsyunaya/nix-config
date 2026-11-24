@@ -1,6 +1,7 @@
 { pkgs, inputs, self, wrappers, ... }: {
 	environment.systemPackages = let
-		sys = pkgs.stdenv.hostPlatform.system;
+		inherit (pkgs.stdenv.hostPlatform) system;
+		inherit (self.packages.${system}) microshot;
 
 		prism = pkgs.prismlauncher.override {
 			# system glfw for running mc natively on wayland
@@ -12,20 +13,16 @@
 			textToSpeechSupport = false;
 		};
 
-		lc = pkgs.callPackage "${self}/packages/lc" {};
-		microshot = pkgs.callPackage "${self}/packages/microshot" {};
-
 		git = wrappers.git { hostName = "juno"; };
 
-		meowvim = inputs.meowvim.packages.${sys}.default;
-		nightingale = inputs.nightingale.packages.${sys}.default;
-		xwl-notifier = inputs.xwl-notifier.packages.${sys}.default;
-		zen = inputs.zen-browser.packages.${sys}.default;
+		meowvim = inputs.meowvim.packages.${system}.default;
+		nightingale = inputs.nightingale.packages.${system}.default;
+		xwl-notifier = inputs.xwl-notifier.packages.${system}.default;
+		zen = inputs.zen-browser.packages.${system}.default;
 	in
 		builtins.attrValues {
 			inherit
 				git
-				lc
 				meowvim
 				microshot
 				nightingale
