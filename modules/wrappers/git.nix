@@ -1,8 +1,9 @@
 { promise, types, ... }: let
+	default = "~/.ssh/id_ed25519.pub";
 	keys = {
-		juno = "23D5842B2455388D";
-		callisto = "C3BC6629CF0FC433";
-		macbook = "2E7FD19FA57EEAA4";
+		juno = default;
+		callisto = default;
+		macbook = default;
 	};
 in {
 	options = {
@@ -20,6 +21,7 @@ in {
 				signingKey = keys.${options.hostName};
 			};
 
+			gpg.format = "ssh";
 			commit.gpgsign = true;
 			tag.gpgsign = true;
 
@@ -29,7 +31,8 @@ in {
 		"/fish".abbreviations = {
 			gs = "git status";
 			gc = "git commit -v";
-			gd = "git diff --name-only --relative --diff-filter=d -z | xargs -0 bat --diff";
+			gd = "git diff";
+			gds = "git diff --staged";
 			ga = "git add -A";
 			gap = "git add --patch";
 			gp = "git push";
