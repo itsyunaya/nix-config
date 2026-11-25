@@ -3,4 +3,5 @@
 in {
 	recImport = callPackage ./recursiveImport.nix { inherit lib; };
 	fromShared = callPackage ./importFromShared.nix { inherit self; };
+	mapWrappers = callPackage ./mapWrappers.nix {};
 }

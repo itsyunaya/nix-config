@@ -1,7 +1,8 @@
-{ pkgs, inputs, self, wrappers, ... }: {
+{ fnLib, pkgs, inputs, self, wrappers, ... }: {
 	environment.systemPackages = let
 		inherit (pkgs.stdenv.hostPlatform) system;
 		inherit (self.packages.${system}) microshot;
+		inherit (fnLib) mapWrappers;
 
 		prism = pkgs.prismlauncher.override {
 			# system glfw for running mc natively on wayland
@@ -61,13 +62,10 @@
 			qtsvg6 = pkgs.kdePackages.qtsvg;
 			qtsvg5 = pkgs.qt5.qtsvg;
 		}
-		++ (let
-			mapWrappers = w: xs: map (x: w.${x}.drv) xs;
-		in
-			mapWrappers wrappers [
-				"anyrun"
-				"kitty"
-				"rmpc"
-				"rmpcd"
-			]);
+		++ (mapWrappers wrappers [
+			"anyrun"
+			"kitty"
+			"rmpc"
+			"rmpcd"
+		]);
 }
