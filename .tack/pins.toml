@@ -58,6 +58,7 @@ agenix.omit_inputs = [ "darwin", "home-manager" ]
 
 # https://github.com/itsyunaya/alejandra-opinionated
 alejandra.url = "gh:itsyunaya/alejandra-opinionated"
+alejandra.omit_inputs = [ "fenix" ]
 
 # https://github.com/manic-systems/circus
 circus.url = "manic:circus"
