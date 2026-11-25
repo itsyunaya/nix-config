@@ -1,15 +1,6 @@
-{ promise, types, ... }: let
-	default = "~/.ssh/id_ed25519.pub";
-	keys = {
-		juno = default;
-		callisto = default;
-		macbook = default;
-	};
-in {
+{ promise, ... }: {
 	options = {
 		settings.mutators = [ "/git" "/less" ];
-		hostName.type = types.string;
-
 		package.default = promise ({ inputs }: inputs.nixpkgs.pkgs.gitMinimal);
 	};
 
@@ -18,7 +9,7 @@ in {
 			user = {
 				name = "itsyunaya";
 				email = "git@itsyunaya.app";
-				signingKey = keys.${options.hostName};
+				signingKey = "~/.ssh/id_ed25519.pub";
 			};
 
 			gpg.format = "ssh";

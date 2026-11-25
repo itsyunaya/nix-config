@@ -14,8 +14,6 @@
 			textToSpeechSupport = false;
 		};
 
-		git = wrappers.git { hostName = "juno"; };
-
 		meowvim = inputs.meowvim.packages.${system}.default;
 		nightingale = inputs.nightingale.packages.${system}.default;
 		xwl-notifier = inputs.xwl-notifier.packages.${system}.default;
@@ -23,7 +21,6 @@
 	in
 		builtins.attrValues {
 			inherit
-				git
 				meowvim
 				microshot
 				nightingale
@@ -64,6 +61,7 @@
 		}
 		++ (mapWrappers wrappers [
 			"anyrun"
+			"git"
 			"kitty"
 			"rmpc"
 			"rmpcd"

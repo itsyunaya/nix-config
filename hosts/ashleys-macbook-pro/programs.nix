@@ -1,8 +1,9 @@
 { inputs, pkgs, wrappers, ... }: let
 	meowvim = inputs.meowvim.packages.${pkgs.stdenv.hostPlatform.system}.default;
+	git = wrappers.git.drv;
 in {
 	environment.systemPackages = builtins.attrValues {
-		inherit meowvim;
+		inherit git meowvim;
 
 		inherit
 			(pkgs)
@@ -11,8 +12,7 @@ in {
 			pinentry_mac
 			skimpdf
 			;
-	}
-	++ [ (wrappers.git { hostName = "macbook"; }) ];
+	};
 
 	programs = {
 		# since zsh is the default shell on macos, this is on by default
