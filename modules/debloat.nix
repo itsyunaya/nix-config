@@ -41,6 +41,7 @@ in {
 		# operating systems: linux, macOS; mental illnesses: everything else
 		(optionalAttrs (!isLinux) {
 			system.tools = {
+				darwin-rebuild.enable = false;
 				darwin-option.enable = false;
 				darwin-version.enable = false;
 				darwin-uninstaller.enable = false;
